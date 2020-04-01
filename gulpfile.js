@@ -115,6 +115,7 @@ gulp.task("server", function () {
 gulp.task("build", function(done) {
   runSequence(
     "dir",
+    "img",
     "fonts",
     "css",
     "js",
