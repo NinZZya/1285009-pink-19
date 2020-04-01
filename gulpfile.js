@@ -90,6 +90,12 @@ gulp.task("html", function (done) {
   done();
 });
 
+gulp.task("img", function (done) {
+  gulp.src(path.src.img)
+    .pipe(gulp.dest(path.build.img));
+  done();
+});
+
 gulp.task("server", function () {
   server.init({
     server: path.build.html,
