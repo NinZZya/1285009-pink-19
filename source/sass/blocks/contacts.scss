@@ -1,0 +1,31 @@
+.contacts {
+  margin: 0;
+  padding: 0 25px;
+  text-align: center;
+}
+
+.contacts__title {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.contacts__text {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.contacts__name {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.contacts__value {
+  color: $pink;
+  font-weight: 300;
+  text-decoration: none;
+}

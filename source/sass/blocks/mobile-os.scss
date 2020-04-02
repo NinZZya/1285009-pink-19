@@ -1,0 +1,17 @@
+.mobile-os {
+  margin: 0;
+  padding: 30px 20px 153px;
+}
+
+.mobile-os__list {
+  @include list-reset;
+  padding: 30px 35px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mobile-os__text {
+  font-weight: 300;
+  color: $white;
+}

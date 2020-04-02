@@ -1,0 +1,29 @@
+.tariffs {
+  margin: 0;
+  padding: 0;
+}
+
+.tariffs__header {
+  color: $white;
+  background-color: $blue-dark;
+  text-transform: uppercase;
+}
+
+.tariffs__header--feature{
+  background-color: transparent;
+  border-style: none;
+  width: 0;
+}
+
+.tariffs__option {
+  width: 100%;
+  background-color: $white;
+}
+
+.tariffs__option--feature {
+  width: 0;
+}
+
+.tariffs__feature {
+  display: none;
+}

@@ -1,4 +1,23 @@
-body {
-  margin: 0;
-  padding: 0;
-}
+@import "global/normalize.scss";
+@import "global/fonts.scss";
+@import "global/variables.scss";
+@import "global/mixins.scss";
+
+@import "blocks/visually-hidden.scss";
+@import "blocks/btn-round.scss";
+@import "blocks/btn.scss";
+@import "blocks/slider.scss";
+@import "blocks/rewie.scss";
+@import "blocks/page.scss";
+@import "blocks/page-header.scss";
+@import "blocks/main-nav.scss";
+@import "blocks/logo.scss";
+@import "blocks/menu.scss";
+@import "blocks/mobile-os.scss";
+@import "blocks/intro.scss";
+@import "blocks/information.scss";
+@import "blocks/page-main.scss";
+@import "blocks/prices.scss";
+@import "blocks/tariffs.scss";
+@import "blocks/contacts.scss";
+@import "blocks/page-footer.scss";

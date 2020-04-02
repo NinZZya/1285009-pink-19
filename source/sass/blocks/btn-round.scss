@@ -1,0 +1,35 @@
+.btn-round {
+  display: inline-block;
+  padding: 16px  39px 16px 40px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: $white;
+  background-color: transperent;
+  border: 3px solid $white;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btn-round--download {
+  display: inline-block;
+  padding: 16px  39px 16px 40px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: $white;
+  background-color: transperent;
+  border: 3px solid $white;
+  border-radius: 30px;
+  cursor: pointer;
+}

@@ -1,0 +1,43 @@
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 21px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo__link {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  line-height: 0;
+}
+
+.logo__image {
+  margin: 0;
+  padding: 0;
+}
+
+.logo__btn {
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 24px;
+  background-color: transparent;
+  background-image: url("../img/icon-menu-burger.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-style: none;
+  &::hover {
+    opacity: 0.5;
+  }
+}
+
+.logo__btn--close {
+  background-image: url("../img/icon-menu-cross.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
