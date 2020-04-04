@@ -108,6 +108,7 @@ gulp.task("server", function () {
   gulp.watch(path.watch.js, gulp.series("js"));
   gulp.watch(path.watch.html, gulp.series("html"));
   gulp.watch(path.watch.fonts, gulp.series("fonts"));
+  gulp.watch(path.watch.img, gulp.series("img"));
   gulp.watch(path.watch.style, gulp.series("css"));
   gulp.watch(path.watch.html).on("change", server.reload);
 });
