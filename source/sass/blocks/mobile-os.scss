@@ -1,6 +1,7 @@
 .mobile-os {
   margin: 0;
-  padding: 30px 20px 153px;
+  padding-top: 30px;
+  padding-bottom: 153px;
 }
 
 .mobile-os__list {
@@ -8,7 +9,7 @@
   padding: 30px 35px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .mobile-os__text {

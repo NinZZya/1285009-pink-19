@@ -11,9 +11,13 @@
 }
 
 .contacts__text {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-size: 24px;
+  line-height: normal;
   font-weight: 300;
 }
 
@@ -25,6 +29,7 @@
 }
 
 .contacts__value {
+  padding: 10px 20px 28px;
   color: $pink;
   font-weight: 300;
   text-decoration: none;

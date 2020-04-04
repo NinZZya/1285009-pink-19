@@ -1,29 +1,124 @@
 .tariffs {
+  display: block;
   margin: 0;
   padding: 0;
+  width: 840px;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .tariffs__header {
+  box-sizing: border-box;
+  min-width: 278px;
+  padding-top: 16px;
+  padding-bottom: 20px;
   color: $white;
   background-color: $blue-dark;
+  border-left: 2px solid $grey-light;
+}
+
+.tariffs__title {
+  font-size: 18px;
+  line-height: 30px;
   text-transform: uppercase;
 }
 
-.tariffs__header--feature{
+.tariffs__value {
+  margin-top: 2px;
+  margin-bottom: 0;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.tariffs__header--feature {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
   background-color: transparent;
-  border-style: none;
-  width: 0;
+  border: none;
+}
+
+.tariffs__header--hit {
+  position: relative;
+  background-image: url("../img/bg-hit.svg");
+  background-repeat: no-repeat;
+  &::before {
+    position: absolute;
+    content: "хит";
+    height: 10px;
+    width: 28px;
+    top: 20px;
+    left: 9px;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    vertical-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #d22856;
+    transform: rotate(-45deg);
+    z-index: 1;
+  }
+
 }
 
 .tariffs__option {
-  width: 100%;
   background-color: $white;
+  box-sizing: border-box;
+  padding-top: 16px;
+  padding-right: 20px;
+  padding-bottom: 13px;
+  padding-left: 22px;
+  font-size: 14px;
+  line-height: 30px;
+  text-transform: uppercase;
+  border: 2px solid $grey-light;
+  border-top: none;
 }
 
 .tariffs__option--feature {
-  width: 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  background-color: transparent;
+  border: none;
 }
 
 .tariffs__feature {
   display: none;
+}
+
+.tariffs__feature-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.tariffs__feature-value {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tariffs__feature-value--on {
+  width: 31px;
+  height: 21px;
+  background-image: url("../img/icon-yes.svg");
+  background-size: 31px 21px;
+}
+
+.tariffs__feature-value--off {
+  width: 27px;
+  height: 26px;
+  background-image: url("../img/icon-no.svg");
+  background-size: 27px 26px;
 }

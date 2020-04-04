@@ -1,10 +1,25 @@
 .prices {
+  position: relative;
+  top: -50px;
+  z-index: 0;
+  width: 100%;
   margin: 0;
   padding: 0;
+  padding-top: 94px;
   background-color: $grey-light;
+  background-image: url("../img/bg-triangle-white.svg");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-color: $grey-light;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .prices__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
   width: 100%;
   overflow: hidden;
 }
@@ -33,4 +48,23 @@
   background-color: $white;
   border-radius: 50%;
   box-sizing: content-box;
+}
+
+.prices__tariffs {
+  transform: translateX(0);
+}
+
+.prices__tariffs--base {
+  transform: translateX(280px);
+  transition: 0.5s;
+}
+
+.prices__tariffs--standart {
+  transform: translateX(0);
+  transition: 0.5s;
+}
+
+.prices__tariffs--unlim {
+  transform: translateX(-280px);
+  transition: 0.5s;
 }
