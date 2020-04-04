@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Фотографии пользователей</title>
+  </head>
+
+  <body class="page">
+    <header class="page-header">
+      <nav class="page-header__nav main-nav">
+        <div class="main-nav__logo logo">
+          <a href="index.html" class="logo__link"><img src="https://via.placeholder.com/75x22" class="logo__image" alt="логотип Pink" width="75" height="22"></a>
+          <button type="button" class="logo__btn">
+            <span class="visually-hidden">Открыть</span>
+          </button>
+        </div>
+        <ul id="menu" class="main-nav__menu menu">
+          <li class="menu__item">
+            <a href="index.html" class="menu__link">Главная</a>
+          </li>
+          <li class="menu__item">
+            <a href="photo.html" class="menu__link">Фотографии</a>
+          </li>
+          <li class="menu__item">
+            <a href="contest.html" class="menu__link menu__link--active">Конкурс</a>
+          </li>
+          <li class="menu__item">
+            <a href="https://htmlacademy.ru/intensive/adaptive" class="menu__link" target="_blank">Html Academy</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page-main contest">
+      <h1 class="page-main__title">Конкурс на самое безбашенное путешествие с Пинк</h1>
+      <p class="page-main__text">
+        Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! Пожалуйста, заполните форму ниже:
+      </p>
+      <form action="https://echo.htmlacademy.ru" class="contest__form" method="POST">
+        <fieldset class="contest__user">
+          <legend class="visually-hidden">Введите ФИО</legend>
+          <p class="contest__user-wrapper">
+            <label for="contest__user-surname" class="contest__label">Фамилия:</label>
+            <input type="text" id="contest__user-surname" class="contest__user-surname" name="user-surname" placeholder="Укажите фамилию *" value="" required>
+          </p>
+          <p class="contest__user-wrapper">
+            <label for="contest__user-name" class="contest__label">Имя:</label>
+            <input type="text" id="contest__user-name" class="contest__user-name" name="user-name" placeholder="Введите ваше имя *" value="" required>
+          </p>
+          <p class="contest__user-wrapper">
+            <label for="contest__user-secondname" class="contest__label">Отчество:</label>
+            <input type="text" id="contest__user-secondname" class="contest__user-secondname" name="user-secondname" placeholder="Ну и отчество тоже" value="">
+          </p>
+        </fieldset>
+        <fieldset class="contest__progress">
+          <p class="contest__label">
+            Ваши безбашенные достижения в путешествии
+          </p>
+          <ul class="contest__progress-list">
+            <li class="contest__progress-item">
+              <input type="checkbox" id="contest__progress-value-1" name="progress-value" value="contest__progress-value-1" class="contest__progress-value visually-hidden" checked>
+              <label for="contest__progress-value-1" class="contest__progress-label">Сделал селфи с акулой</label>
+            </li>
+            <li class="contest__progress-item">
+              <input type="checkbox" id="contest__progress-value-2" name="progress-value" value="contest__progress-value-2" class="contest__progress-value visually-hidden" checked>
+              <label for="contest__progress-value-2" class="contest__progress-label">Обгорел на пляже</label>
+            </li>
+            <li class="contest__progress-item">
+              <input type="checkbox" id="contest__progress-value-3" name="progress-value" value="contest__progress-value-3" class="contest__progress-value visually-hidden">
+              <label for="contest__progress-value-3" class="contest__progress-label">Видел Чака Норриса</label>
+            </li>
+            <li class="contest__progress-item">
+              <input type="checkbox" id="contest__progress-value-4" name="progress-value" value="contest__progress-value-4" class="contest__progress-value visually-hidden">
+              <label for="contest__progress-value-4" class="contest__progress-label">Накупил сувениров</label>
+            </li>
+            <li class="contest__progress-item">
+              <input type="checkbox" id="contest__progress-value-5" name="progress-value" value="contest__progress-value-5" class="contest__progress-value visually-hidden" checked>
+              <label for="contest__progress-value-5" class="contest__progress-label">Удержал башню</label>
+            </li>
+            <li class="contest__progress-item">
+              <input type="checkbox" id="contest__progress-value-6" name="progress-value" value="contest__progress-value-6" class="contest__progress-value visually-hidden">
+              <label for="contest__progress-value-6" class="contest__progress-label">Разгромил отель</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset class="contest__contacts">
+          <legend class="visually-hidden">Укажите контакты</legend>
+          <p class="contest__contacts-wrapper">
+            <label for="contest__contacts-tel" class="contest__label">Номер телефона</label>
+            <input type="tel" id="contest__contacts-tel" class="contest__contacts-tel"  name="user-tel" placeholder="Номер, пожалуйста" value="">
+          </p>
+          <p class="contest__contacts-wrapper">
+            <label for="contest__contacts-email" class="contest__label">Адрес почты</label>
+            <input type="email" id="contest__contacts-email" class="contest__contacts-email" name="user-email" placeholder="Введите почту *" value="" required>
+          </p>
+        </fieldset>
+        <fieldset class="contest__application">
+          <p class="contest__label">
+            С каким приложением путешествовали?
+          </p>
+          <ul class="contest__application-list">
+            <li class="contest__application-item">
+              <input type="radio" id="contest__application-value-1" name="application-value" value="contest__application-value-1" class="contest__application-value visually-hidden" checked>
+              <label for="contest__application-value-1" class="contest__application-label">Pink для iOS</label>
+            </li>
+            <li class="contest__application-item">
+              <input type="radio" id="contest__application-value-2" name="application-value" value="contest__application-value-2" class="contest__application-value visually-hidden">
+              <label for="contest__application-value-2" class="contest__application-label">Pink на Android</label>
+            </li>
+            <li class="contest__application-item">
+              <input type="radio" id="contest__application-value-3" name="application-value" value="contest__application-value-3" class="contest__application-value visually-hidden">
+              <label for="contest__application-value-3" class="contest__application-label">Windows Phone</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset class="contest__comment">
+          <p class="contest__comment-wrapper">
+            <label for="contest__comment-text" class="contest__label">Опишите свои эмоции</label>
+            <textarea name="comment-text" id="contest__comment-text" cols="30" rows="10" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
+          </p>
+        </fieldset>
+        <button type="submit" class="contest__btn-submit btn btn-submit">Отправить форму</button>
+        <p class="contest__required-text">
+          <span class="contest__required-label">*</span> — обязательные поля
+        </p>
+      </form>
+    </main>
+
+    <footer class="page-footer">
+      <div class="page-footer__logo logo">
+        <a href="index.html" class="logo__link">
+          <img src="https://via.placeholder.com/75x22" class="logo__image" alt="логотип Pink" width="75" height="22">
+        </a>
+      </div>
+      <div class="footer__social social">
+        <ul class="social__list">
+          <li class="social__item">
+            <a href="https://vk.com" class="social__link social__link--vk" target="_blank">
+              <span class="visually-hidden">группа ВКонтакте</span>
+              </a>
+          </li>
+          <li class="social__item">
+            <a href="https://facebook.com" class="social__link social__link--facebook" target="_blank">
+              <span class="visually-hidden">группа Фейсбук</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="https://www.youtube.com" class="social__link social__link--youtube" target="_blank">
+              <span class="visually-hidden">канал Ютуб</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="page-footer__developer developer">
+        <span class="developer__text">Разработано</span>
+        <a href="https://htmlacademy.ru/intensive/adaptive" class="developer__link" target="_blank">
+          <img src="https://via.placeholder.com/27x34" class="developer__image" alt="логотип Html Academy" width="27" height="34">
+        </a>
+      </div>
+    </footer>
+    <script src="js/script.min.js"></script>
+  </body>
+</html>

@@ -29,7 +29,7 @@ const menuContainer = menuNav.querySelector(menuConfig.menu.id);
 const menuBtn = menuNav.querySelector(menuConfig.btn.class.item);
 
 if (menuContainer && menuBtn) {
-  menuBtn.addEventListener("click", function (evt) {
+  menuBtn.addEventListener("click", function(evt){
     menuContainer.classList.toggle(menuConfig.menu.name.active);
     menuBtn.classList.toggle(menuConfig.btn.name.close);
     menuNav.classList.toggle(menuConfig.container.name.active);
@@ -88,7 +88,7 @@ if (slider) {
   const sliderController = slider.querySelector(sliderConfig.controls.class.item);
   const sliderToggles = Array.prototype.slice.call(sliderController.children);
 
-  //Toggle slide
+   //Toggle slide
   function nextSlide(sliderList, sliderToggles, sliderIndex) {
     toggleElementsState(sliderList[sliderIndex.current], sliderList[sliderIndex.next], sliderConfig.slide.name.active);
     toggleElementsState(sliderToggles[sliderIndex.current], sliderToggles[sliderIndex.next], sliderConfig.btn.name.active);
@@ -118,7 +118,7 @@ const pricesConfig = {
     name: {
       list: ["prices__tariffs--base", "prices__tariffs--standart", "prices__tariffs--unlim"]
     }
-  },
+  } ,
   btn: {
     name: {
       active: "prices__toogle--active"
@@ -140,7 +140,7 @@ const pricesController = pricesContainer.querySelector(pricesConfig.controls.cla
 const pricesToggles = Array.prototype.slice.call(pricesController.children);
 
 if (pricesContainer) {
-  pricesController.addEventListener("click", function (evt) {
+  pricesController.addEventListener("click", function(evt) {
     const pricesToggleActive = pricesController.querySelector(pricesConfig.btn.class.active);
     pricesIndex.current = pricesToggles.indexOf(pricesToggleActive);
     pricesIndex.next = pricesToggles.indexOf(evt.target);
