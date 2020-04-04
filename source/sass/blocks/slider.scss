@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .slider__list {
   @include list-reset;
   display: flex;

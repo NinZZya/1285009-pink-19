@@ -36,9 +36,11 @@
 .information__item {
   margin: 0;
   padding: 20px 0;
+
   &:first-child {
     padding-top: 60px;
   }
+
   &:last-child {
     padding-bottom: 322px;
     background-image: url("../img/iphone-screen-mobile@1x.png");
