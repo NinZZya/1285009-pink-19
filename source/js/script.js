@@ -98,7 +98,9 @@ if (slider) {
     const sliderToggleActive = slider.querySelector(sliderConfig.btn.class.active);
     sliderIndex.current = sliderToggles.indexOf(sliderToggleActive);
     sliderIndex.next = sliderToggles.indexOf(evt.target);
-    nextSlide(sliderList, sliderToggles, sliderIndex);
+    if (sliderIndex.next != -1) {
+      nextSlide(sliderList, sliderToggles, sliderIndex);
+    }
   });
 }
 
@@ -144,8 +146,10 @@ if (pricesContainer) {
     const pricesToggleActive = pricesController.querySelector(pricesConfig.btn.class.active);
     pricesIndex.current = pricesToggles.indexOf(pricesToggleActive);
     pricesIndex.next = pricesToggles.indexOf(evt.target);
-    pricesTariffs.classList.remove(pricesConfig.tariffs.name.list[pricesIndex.current]);
-    pricesTariffs.classList.add(pricesConfig.tariffs.name.list[pricesIndex.next]);
-    toggleElementsState(pricesToggles[pricesIndex.current], pricesToggles[pricesIndex.next], pricesConfig.btn.name.active);
+    if (pricesIndex.next != -1) {
+      pricesTariffs.classList.remove(pricesConfig.tariffs.name.list[pricesIndex.current]);
+      pricesTariffs.classList.add(pricesConfig.tariffs.name.list[pricesIndex.next]);
+      toggleElementsState(pricesToggles[pricesIndex.current], pricesToggles[pricesIndex.next], pricesConfig.btn.name.active);
+    }
   });
 }
