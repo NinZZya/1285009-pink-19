@@ -1,11 +1,11 @@
 const menuConfig = {
-  menu: {
+  container: {
     id: "#menu",
     name: {
       active: "menu--active"
     }
   },
-  container: {
+  item: {
     class: {
       item: ".main-nav"
     },
@@ -23,25 +23,11 @@ const menuConfig = {
   }
 };
 
-
-const menuNav = document.querySelector(menuConfig.container.class.item);
-const menuContainer = menuNav.querySelector(menuConfig.menu.id);
-const menuBtn = menuNav.querySelector(menuConfig.btn.class.item);
-
-if (menuContainer && menuBtn) {
-  menuBtn.addEventListener("click", function (evt) {
-    menuContainer.classList.toggle(menuConfig.menu.name.active);
-    menuBtn.classList.toggle(menuConfig.btn.name.close);
-    menuNav.classList.toggle(menuConfig.container.name.active);
-  });
-}
-
-
-const sliderConfig = {
-  slider: {
+let sliderConfig = {
+  container: {
     id: "#slider"
   },
-  slide: {
+  item: {
     class: {
       item: ".slider__item",
       active: ".slider__item--active"
@@ -63,18 +49,87 @@ const sliderConfig = {
       active: "slider__toogle--active"
     }
   },
-  sliderItem: "slider__item",
-  sliderItemActive: "slider__item--active",
-  sliderControls: "slider__controls",
-  sliderToggleActicve: "slider__toogle--active"
+  index: {
+    current: 0,
+    next: 0
+  }
 };
 
-let sliderIndex = {
-  next: 0,
-  current: 0
+const pricesConfig = {
+  container: {
+    id: "#prices"
+  },
+  item: {
+    class: {
+      item: ".prices__tariffs"
+    },
+    name: {
+      list: ["prices__tariffs--base", "prices__tariffs--standart", "prices__tariffs--unlim"],
+      active: "prices__tariffs--standart"
+    }
+  },
+  controls: {
+    class: {
+      item: ".prices__control"
+    }
+  },
+  btn: {
+    class: {
+      active: ".prices__toogle--active"
+    },
+    name: {
+      active: "prices__toogle--active"
+    }
+  },
+  index: {
+    current: 0,
+    next: 0
+  }
 };
 
-const slider = document.querySelector(sliderConfig.slider.id);
+let applicationConfig = {
+  container: {
+    id: "#application-controls"
+  },
+  item: {
+    class: {
+      item: ".application__ranges-item",
+      active: ".application__ranges-item--active"
+    },
+    name: {
+      active: "application__ranges-item--active"
+    }
+  },
+  controls: {
+    class: {
+      item: ".application__buttons-list"
+    }
+  },
+  btn: {
+    class: {
+      active: ".application__button--active"
+    },
+    name: {
+      active: "application__button--active"
+    }
+  },
+  index: {
+    current: 0,
+    next: 0
+  }
+};
+
+const menuNav = document.querySelector(menuConfig.item.class.item);
+const menuContainer = menuNav.querySelector(menuConfig.container.id);
+const menuBtn = menuNav.querySelector(menuConfig.btn.class.item);
+
+if (menuContainer && menuBtn) {
+  menuBtn.addEventListener("click", function (evt) {
+    menuContainer.classList.toggle(menuConfig.container.name.active);
+    menuBtn.classList.toggle(menuConfig.btn.name.close);
+    menuNav.classList.toggle(menuConfig.container.name.active);
+  });
+}
 
 //Toogle element state or remove from old and add to new
 function toggleElementsState(elementOld, elementNew, elementClass) {
@@ -83,73 +138,51 @@ function toggleElementsState(elementOld, elementNew, elementClass) {
   elementNew.classList.add(elementClass);
 }
 
-if (slider) {
-  const sliderList = slider.querySelectorAll(sliderConfig.slide.class.item);
-  const sliderController = slider.querySelector(sliderConfig.controls.class.item);
-  const sliderToggles = Array.prototype.slice.call(sliderController.children);
-
-  //Toggle slide
-  function nextSlide(sliderList, sliderToggles, sliderIndex) {
-    toggleElementsState(sliderList[sliderIndex.current], sliderList[sliderIndex.next], sliderConfig.slide.name.active);
-    toggleElementsState(sliderToggles[sliderIndex.current], sliderToggles[sliderIndex.next], sliderConfig.btn.name.active);
-  };
-
-  sliderController.addEventListener("click", function (evt) {
-    const sliderToggleActive = slider.querySelector(sliderConfig.btn.class.active);
-    sliderIndex.current = sliderToggles.indexOf(sliderToggleActive);
-    sliderIndex.next = sliderToggles.indexOf(evt.target);
-    if (sliderIndex.next != -1) {
-      nextSlide(sliderList, sliderToggles, sliderIndex);
+function toggleElement(elementContainer, elementConfig) {
+  const elementList = elementContainer.querySelectorAll(elementConfig.item.class.item);
+  const elementController = elementContainer.querySelector(elementConfig.controls.class.item);
+  const elementToggles = Array.prototype.slice.call(elementController.children);
+  elementController.addEventListener("click", function (evt) {
+    elementConfig.index.next = elementToggles.indexOf(evt.target);
+    if (elementConfig.index.next != -1) {
+      const elementToggleActive = elementContainer.querySelector(elementConfig.btn.class.active);
+      elementConfig.index.current = elementToggles.indexOf(elementToggleActive);
+      toggleElementsState(elementList[elementConfig.index.current], elementList[elementConfig.index.next], elementConfig.item.name.active);
+      toggleElementsState(elementToggles[elementConfig.index.current], elementToggles[elementConfig.index.next], elementConfig.btn.name.active);
     }
   });
 }
 
-const pricesConfig = {
-  container: {
-    id: "#prices"
-  },
-  controls: {
-    class: {
-      item: ".prices__control"
-    }
-  },
-  tariffs: {
-    class: {
-      item: ".prices__tariffs"
-    },
-    name: {
-      list: ["prices__tariffs--base", "prices__tariffs--standart", "prices__tariffs--unlim"]
-    }
-  },
-  btn: {
-    name: {
-      active: "prices__toogle--active"
-    },
-    class: {
-      active: ".prices__toogle--active"
-    }
-  }
-};
-
-let pricesIndex = {
-  next: 0,
-  current: 0
-};
-
-const pricesContainer = document.querySelector(pricesConfig.container.id);
-const pricesTariffs = pricesContainer.querySelector(pricesConfig.tariffs.class.item);
-const pricesController = pricesContainer.querySelector(pricesConfig.controls.class.item);
-const pricesToggles = Array.prototype.slice.call(pricesController.children);
-
-if (pricesContainer) {
-  pricesController.addEventListener("click", function (evt) {
-    const pricesToggleActive = pricesController.querySelector(pricesConfig.btn.class.active);
-    pricesIndex.current = pricesToggles.indexOf(pricesToggleActive);
-    pricesIndex.next = pricesToggles.indexOf(evt.target);
-    if (pricesIndex.next != -1) {
-      pricesTariffs.classList.remove(pricesConfig.tariffs.name.list[pricesIndex.current]);
-      pricesTariffs.classList.add(pricesConfig.tariffs.name.list[pricesIndex.next]);
-      toggleElementsState(pricesToggles[pricesIndex.current], pricesToggles[pricesIndex.next], pricesConfig.btn.name.active);
+function swipeElement(elementContainer, elementConfig) {
+  const elementItem = elementContainer.querySelector(elementConfig.item.class.item);
+  const elementController = elementContainer.querySelector(elementConfig.controls.class.item);
+  const elementToggles = Array.prototype.slice.call(elementController.children);
+  elementController.addEventListener("click", function (evt) {
+    elementConfig.index.next = elementToggles.indexOf(evt.target);
+    if (elementConfig.index.next != -1) {
+      const elementToggleActive = elementContainer.querySelector(elementConfig.btn.class.active);
+      elementConfig.index.current = elementToggles.indexOf(elementToggleActive);
+      elementItem.classList.remove(elementConfig.item.name.list[elementConfig.index.current]);
+      elementItem.classList.add(elementConfig.item.name.list[elementConfig.index.next]);
+      toggleElementsState(elementToggles[elementConfig.index.current], elementToggles[elementConfig.index.next], elementConfig.btn.name.active);
     }
   });
+}
+
+const sliderContainer = document.querySelector(sliderConfig.container.id);
+
+if (sliderContainer) {
+  toggleElement(sliderContainer, sliderConfig);
+}
+
+const pricesContainer = document.querySelector(pricesConfig.container.id);
+
+if (pricesContainer) {
+  swipeElement(pricesContainer, pricesConfig);
+}
+
+const applicationContainer = document.querySelector(applicationConfig.container.id);
+
+if (applicationContainer) {
+  toggleElement(applicationContainer, applicationConfig);
 }

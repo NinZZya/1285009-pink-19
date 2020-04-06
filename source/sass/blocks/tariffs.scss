@@ -109,16 +109,10 @@
   background-position: center;
 }
 
-.tariffs__feature-value--on {
-  width: 31px;
-  height: 21px;
-  background-image: url("../img/icon-yes.svg");
-  background-size: 31px 21px;
+.tariffs__feature-value--on .tariffs__feature-icon {
+  fill: $green-light;
 }
 
-.tariffs__feature-value--off {
-  width: 27px;
-  height: 26px;
-  background-image: url("../img/icon-no.svg");
-  background-size: 27px 26px;
+.tariffs__feature-value--off .tariffs__feature-icon {
+  fill: $red;
 }

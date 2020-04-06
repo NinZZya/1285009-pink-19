@@ -1,8 +1,20 @@
 .page-footer {
   margin: 0;
-  padding: 0;
+  padding: 40px 20px 50px;
 }
 
 .page-footer--index {
   display: none;
+}
+
+.page-footer__logo {
+  text-align: center;
+}
+
+.page-footer__social {
+  padding: 41px 0 43px;
+}
+
+.page-footer__developer {
+  text-align: center;
 }

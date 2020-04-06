@@ -9,9 +9,28 @@
   line-height: 18px;
   text-align: center;
   text-decoration: none;
-  color: #000000;
-  background-color: #eeeeee;
-  border: 1px solid #eeeeee;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $green;
+  border: none;
   border-radius: 3px;
   cursor: pointer;
+
+  &:hover {
+    background-color: $green-darker;
+  }
+
+  &:active {
+    color: rgba($white, 0.3);
+    background-color: $green-darker;
+  }
+
+  &:disabled {
+    background-color: $grey;
+  }
+}
+
+.btn--disabled {
+  background-color: $grey;
+  color: $white;
 }

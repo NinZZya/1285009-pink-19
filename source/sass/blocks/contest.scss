@@ -1,0 +1,136 @@
+.contest__form {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.contest__wrapper {
+  margin: 0;
+  padding: 0 20px;
+  text-align: left;
+  border-style: none;
+}
+
+.contest__wrapper--progress,
+.contest__wrapper--application {
+  padding-top: 41px;
+  padding-bottom: 44px;
+  background-color: $grey-light;
+}
+
+.contest__progress-list,
+.contest__application-list {
+  @include list-reset;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.contest__progress-item,
+.contest__application-item {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 44px;
+  margin-top: 44px;
+}
+
+.contest__progress-label {
+  position: relative;
+  padding-left: 60px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    left: 2px;
+    width: 35px;
+    height: 35px;
+    box-sizing: border-box;
+    border: solid 2px $grey;
+    background-color: $white;
+    transform: translateY(50%);
+  }
+}
+
+.contest__progress-value:checked + .contest__progress-label::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  left: 8px;
+  width: 22px;
+  height: 16px;
+  background-image: url("../img/icon-yes.svg");
+  transform: translateY(50%);
+}
+
+.contest__label {
+  display: block;
+  text-transform: uppercase;
+  color: $pink;
+  line-height: 30px;
+}
+
+.contest__label--center {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+.contest__input,
+.contest__comment-text {
+  width: 100%;
+  padding: 22px 22px 18px;
+  font-size: 18px;
+  line-height: 30px;
+  border: 2px solid $grey;
+  box-sizing: border-box;
+}
+
+.contest__required-text {
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 30px;
+}
+
+.contest__required-label {
+  color: $pink;
+}
+
+.contest__application-label {
+  position: relative;
+  padding-left: 60px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    left: 2px;
+    width: 35px;
+    height: 35px;
+    box-sizing: border-box;
+    border: solid 2px $grey;
+    border-radius: 50%;
+    background-color: $white;
+    transform: translateY(50%);
+  }
+}
+
+.contest__application-value:checked + .contest__application-label::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 12px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: $pink;
+}
+
+.contest__btn-wrapper {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.contest__btn-submit {
+  width: 100%;
+  box-sizing: border-box;
+}

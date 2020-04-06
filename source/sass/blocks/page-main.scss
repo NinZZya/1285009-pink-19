@@ -1,7 +1,7 @@
 .page-main {
   position: relative;
-  top: -65px;
   padding-top: 65px;
+  color: $blue-dark;
   background-image: url("../img/bg-back-mobile@1x.jpg");
   background-position: top center;
   background-repeat: no-repeat;
@@ -14,4 +14,20 @@
   font-weight: 300;
   color: $white;
   text-align: center;
+}
+
+.page-main__text {
+  padding: 55px 15px;
+  text-align: center;
+}
+
+.page-main__wrapper {
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+}
+
+.page-main__application {
+  margin: 0;
+  padding: 20px 20px 40px;
 }
