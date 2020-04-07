@@ -333,6 +333,16 @@ template {
 /*project colors*/
 /*global colors rules*/
 /*global font rules*/
+body {
+  max-width: 320px;
+  margin: 0 auto;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  background-color: #ffffff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -348,7 +358,7 @@ template {
 
 .btn-round {
   display: inline-block;
-  padding: 16px  39px 16px 40px;
+  padding: 16px 20px 16px 20px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   vertical-align: middle;
@@ -653,16 +663,6 @@ template {
   margin: 0;
   padding: 0 22px; }
 
-.page {
-  max-width: 320px;
-  margin: 0 auto;
-  font-family: "Open Sans", "Arial", sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  background-color: #ffffff;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-
 .page-header {
   position: relative;
   z-index: 1;
@@ -821,6 +821,9 @@ template {
 .mobile-os__text {
   font-weight: 300;
   color: #ffffff; }
+
+.mobile-os__btn {
+  width: 100%; }
 
 .intro {
   position: relative;
