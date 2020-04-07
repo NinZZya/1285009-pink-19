@@ -1,0 +1,48 @@
+.slider {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slider__list {
+  @include list-reset;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.slider__item {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slider__item--active {
+  display: block;
+}
+
+.slider__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  padding: 0;
+}
+
+.slider__toogle {
+  width: 6px;
+  height: 6px;
+  margin: 0 10px;
+  padding: 0;
+  background-color: $blue-dark;
+  opacity: 0.3;
+  border-radius: 50%;
+}
+
+.slider__toogle--active {
+  opacity: 1;
+  border: 3px solid $blue-dark;
+  background-color: $white;
+  border-radius: 50%;
+  box-sizing: content-box;
+}

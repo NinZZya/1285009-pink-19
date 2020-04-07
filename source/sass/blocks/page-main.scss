@@ -1,0 +1,33 @@
+.page-main {
+  position: relative;
+  padding-top: 65px;
+  color: $blue-dark;
+  background-image: url("../img/bg-back-mobile@1x.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.page-main__title {
+  margin: 0;
+  padding: 35px;
+  font-size: 24px;
+  font-weight: 300;
+  color: $white;
+  text-align: center;
+}
+
+.page-main__text {
+  padding: 55px 15px;
+  text-align: center;
+}
+
+.page-main__wrapper {
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+}
+
+.page-main__application {
+  margin: 0;
+  padding: 20px 20px 40px;
+}

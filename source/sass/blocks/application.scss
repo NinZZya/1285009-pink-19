@@ -1,0 +1,99 @@
+.application {
+  margin: 0;
+  background-color: $grey-light;
+}
+
+.application__form {
+  margin: 0;
+  padding: 0;
+}
+
+.application__controls {
+  margin: 0;
+  padding: 0;
+}
+
+.application__buttons-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 42px 0 40px;
+  padding: 0;
+}
+
+.application__button {
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-style: none;
+}
+
+.application__button--crop {
+  background-image: url("../img/icon-editor-crop.svg");
+}
+
+.application__button--fill {
+  background-image: url("../img/icon-editor-fill.svg");
+}
+
+.application__button--contrast {
+  background-image: url("../img/icon-editor-contrast.svg");
+}
+
+.application__button--active.application__button--crop {
+  background-image: url("../img/icon-editor-crop-active.svg");
+}
+
+.application__button--active.application__button--fill {
+  background-image: url("../img/icon-editor-fill-active.svg");
+}
+
+.application__button--active.application__button--contrast {
+  background-image: url("../img/icon-editor-contrast-active.svg");
+}
+
+.application__ranges-list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 24px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 34px;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: 1px;
+    background-color: rgba($blue-dark, 0.1);
+  }
+}
+
+.application__ranges-item {
+  display: none;
+}
+
+.application__ranges-item--active {
+  display: block;
+}
+
+.application__wrapper-buttons {
+  margin: 0;
+  padding: 38px 0 0;
+  line-height: 0;
+}
+
+.application__btn-upload {
+  width: 100%;
+  margin-bottom: 12px;
+  background-color: transparent;
+}
+
+.application__btn-reset {
+  width: 100%;
+  background-color: transparent;
+}

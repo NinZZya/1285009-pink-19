@@ -1,0 +1,61 @@
+.information {
+  margin: 0;
+  padding: 45px 0;
+  text-align: center;
+}
+
+.information__promo {
+  margin: 0;
+  padding: 24px 30px;
+  font-size: 24px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: $blue-dark;
+}
+
+.information__list-header {
+  fill: $white;
+  width: 100%;
+}
+
+.information__list {
+  @include list-reset;
+  position: relative;
+  margin: 0;
+  padding: 94px 30px 0;
+  background-color: $grey-light;
+  background-image: url("../img/bg-triangle-white.svg");
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+.information__item {
+  margin: 0;
+  padding: 20px 0;
+
+  &:first-child {
+    padding-top: 60px;
+  }
+
+  &:last-child {
+    padding-bottom: 322px;
+    background-image: url("../img/iphone-screen-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: bottom -43px center;
+    overflow-y: hidden;
+  }
+}
+
+.information__title {
+  font-size: 18px;
+  font-weight: bold;
+  color: $black;
+}
+
+.information__effect {
+  display: none;
+}

@@ -1,0 +1,49 @@
+.range {
+  position: relative;
+  margin: 10px 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.range__bar {
+  width: 100%;
+  height: 2px;
+  background-color: $blue-dark;
+}
+
+.range__toggle {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  width: 14px;
+  height: 15px;
+  padding: 0;
+  box-sizing: border-box;
+  border: solid 2px $pink;
+  border-radius: 50%;
+  background-color: $white;
+  transform: translateY(50%);
+  cursor: pointer;
+
+  &:focus,
+  &:active,
+  &:hover {
+    background-color: $pink;
+  }
+}
+
+.range--crop .range__toggle {
+  left: 85%;
+}
+
+.range--fill .range__toggle {
+  left: 55%;
+}
+
+.range--contrast .range__toggle {
+  left: 25%;
+}
+
+.range__toggle--grey {
+  background-color: $grey-light;
+}

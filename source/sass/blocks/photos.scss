@@ -1,0 +1,83 @@
+.photos {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  padding-top: 40px;
+}
+
+.photos__list {
+  @include list-reset;
+}
+
+.photos__item {
+  margin-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  line-height: 0;
+  box-sizing: border-box;
+}
+
+.photos__item--panorama {
+  padding: 0;
+  line-height: 0;
+  box-sizing: border-box;
+}
+
+.photos__item--panorama .photos__wrapper {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.photos__image {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  width: 100%;
+}
+
+.photos__wrapper {
+  margin: 0;
+  padding: 25px 18px;
+  background-color: $grey-light;
+  line-height: 24px;
+}
+
+.photos__title {
+  margin: 0;
+  padding: 0;
+}
+
+.photos__author {
+  font-weight: bold;
+}
+
+.photos__time {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.photos__text {
+  margin: 0;
+  padding: 0;
+}
+
+.photos__rates {
+  position: relative;
+  margin: 20px 0 0;
+  padding: 0;
+  padding-left: 38px;
+  color: $pink;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+
+    width: 13px;
+    height: 12px;
+    background-image: url("../img/icon-heart.svg");
+    background-repeat: no-repeat;
+    transform: translateY(50%);
+  }
+}
