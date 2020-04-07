@@ -9,19 +9,67 @@
   line-height: 18px;
   text-align: center;
   text-decoration: none;
-  color: rgba($blue-dark, 0.1);
+  color: $blue-dark;
   background-color: transperent;
-  border: 3px solid rgba($blue-dark, 0.1);
+  border: 3px solid $blue-dark;
   border-radius: 30px;
   cursor: pointer;
+
+  &:disabled {
+    background-color: rgba($grey, 0.1);
+    color: $white;
+  }
 }
 
 .btn-round--download {
   color: $white;
   border: 3px solid $white;
+
+  &:hover {
+    color: $pink;
+    background-color: $white;
+  }
+
+  &:active {
+    color: rgba($pink, 0.3);
+    background-color: $white;
+  }
 }
 
 .btn-round--upload {
   color: $pink;
   border: 3px solid $pink;
+
+  &:hover {
+    color: $white;
+    background-color: $pink;
+  }
+
+  &:active {
+    color: rgba($white, 0.3);
+    background-color: $pink;
+  }
+}
+
+
+.btn-round--reset {
+  color: rgba($blue-dark, 0.1);
+  border: 3px solid rgba($blue-dark, 0.1);
+
+  &:hover {
+    color: rgba($blue-dark, 0.3);
+    border-color: rgba($blue-dark, 0.3);
+  }
+
+  &:active {
+    color: rgba($white, 0.3);
+    border-color: transparent;
+    background-color: rgba($blue-dark, 0.3);
+  }
+}
+
+
+.btn--disabled {
+  background-color: rgba($grey, 0.1);
+  color: $white;
 }

@@ -124,6 +124,11 @@ const menuContainer = menuNav.querySelector(menuConfig.container.id);
 const menuBtn = menuNav.querySelector(menuConfig.btn.class.item);
 
 if (menuContainer && menuBtn) {
+  window.onload = function(){
+    menuContainer.classList.toggle(menuConfig.container.name.active);
+    menuBtn.classList.toggle(menuConfig.btn.name.close);
+    menuNav.classList.toggle(menuConfig.container.name.active);
+  };
   menuBtn.addEventListener("click", function (evt) {
     menuContainer.classList.toggle(menuConfig.container.name.active);
     menuBtn.classList.toggle(menuConfig.btn.name.close);

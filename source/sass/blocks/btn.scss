@@ -26,11 +26,12 @@
   }
 
   &:disabled {
-    background-color: $grey;
+    background-color: rgba($grey, 0.1);
+    color: $white;
   }
 }
 
 .btn--disabled {
-  background-color: $grey;
+  background-color: rgba($grey, 0.1);
   color: $white;
 }
