@@ -1,16 +1,16 @@
 const menuConfig = {
   container: {
-    id: "#menu",
+    class: {
+      item: ".logo"
+    },
     name: {
-      active: "menu--active"
+      active: "logo--active"
     }
   },
   item: {
-    class: {
-      item: ".main-nav"
-    },
+    id: "#menu",
     name: {
-      active: "main-nav--active"
+      active: "menu--active"
     }
   },
   btn: {
@@ -119,20 +119,20 @@ let applicationConfig = {
   }
 };
 
-const menuNav = document.querySelector(menuConfig.item.class.item);
-const menuContainer = menuNav.querySelector(menuConfig.container.id);
-const menuBtn = menuNav.querySelector(menuConfig.btn.class.item);
+const menuContainer = document.querySelector(menuConfig.container.class.item);
+const menuItem = document.querySelector(menuConfig.item.id);
+const menuBtn = menuContainer.querySelector(menuConfig.btn.class.item);
 
-if (menuContainer && menuBtn) {
+if (menuItem && menuBtn) {
   window.onload = function(){
     menuContainer.classList.remove(menuConfig.container.name.active);
+    menuItem.classList.remove(menuConfig.item.name.active);
     menuBtn.classList.remove(menuConfig.btn.name.close);
-    menuNav.classList.remove(menuConfig.container.name.active);
   };
   menuBtn.addEventListener("click", function (evt) {
     menuContainer.classList.toggle(menuConfig.container.name.active);
+    menuItem.classList.toggle(menuConfig.item.name.active);
     menuBtn.classList.toggle(menuConfig.btn.name.close);
-    menuNav.classList.toggle(menuConfig.container.name.active);
   });
 }
 
