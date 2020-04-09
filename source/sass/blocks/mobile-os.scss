@@ -15,8 +15,19 @@
 .mobile-os__text {
   font-weight: 300;
   color: $white;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
 }
 
 .mobile-os__btn {
   width: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .mobile-os__text {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+  }
 }

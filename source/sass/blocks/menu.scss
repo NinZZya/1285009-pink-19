@@ -46,3 +46,9 @@
   text-transform: uppercase;
   color: $white;
 }
+
+@media (min-width: $tablet-width) {
+  .menu {
+    padding-top: 110px;
+  }
+}
