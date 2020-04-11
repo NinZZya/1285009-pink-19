@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   padding-top: 127px;
+  padding-bottom: 70px;
   background-color: $grey-light;
   background-image: url("../img/bg-triangle-white.svg");
   background-repeat: no-repeat;
@@ -17,8 +18,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: 60px;
   overflow: hidden;
 }
 
@@ -65,4 +68,16 @@
 .prices__tariffs--unlim {
   transform: translateX(-280px);
   transition: 0.5s;
+}
+
+@media (min-width: $tablet-width) {
+  .prices__control {
+    display: none;
+  }
+
+  .prices__tariffs--base,
+  .prices__tariffs--standart,
+  .prices__tariffs--unlim {
+    transform: translateX(0);
+  }
 }

@@ -5,6 +5,7 @@
   background-image: url("../img/bg-back-mobile@1x.jpg");
   background-position: top center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .page-main__title {
@@ -38,12 +39,10 @@
     background-image: url("../img/bg-back-tablet@1x.jpg");
   }
   .page-main__title--index {
-    position: relative;
     width: 340px;
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-right: 45px;
     padding-bottom: 30px;
-    z-index: 1;
+    padding-left: 45px;
     font-size: 40px;
     font-weight: 300;
     font-stretch: normal;

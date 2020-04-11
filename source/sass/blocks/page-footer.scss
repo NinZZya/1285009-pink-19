@@ -18,3 +18,15 @@
 .page-footer__developer {
   text-align: center;
 }
+
+@media (min-width: $tablet-width) {
+  .page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .page-footer--index {
+    display: flex;
+  }
+}

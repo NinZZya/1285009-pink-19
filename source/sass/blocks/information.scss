@@ -36,6 +36,7 @@
 .information__item {
   margin: 0;
   padding: 20px 0;
+  overflow: hidden;
 
   &:first-child {
     padding-top: 60px;
@@ -58,4 +59,118 @@
 
 .information__effect {
   display: none;
+}
+
+@media (min-width: $tablet-width) {
+  .information {
+    text-align: left;
+  }
+
+  .information__promo {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 40px;
+  }
+
+  .information__promo--slim {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  .information__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      width: 268px;
+      height: 481px;
+      background-image: url("../img/iphone-screen-3-tablet@1x.png");
+      background-repeat: no-repeat;
+    }
+
+  }
+
+  .information__item {
+    width: 320px;
+    padding: 0;
+    padding-left: 10px;
+    box-sizing: border-box;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 20px;
+      background-image: none;
+    }
+  }
+
+  .information__effect {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 117px 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 82px;
+      left: 21px;
+      width: 238px;
+      height: 276px;
+      background-image: url("../img/icon-timer.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 238px 276px;
+    }
+
+    &::after {
+      content: "24";
+      position: absolute;
+      top: 137px;
+      left: 39px;
+      width: 202px;
+      height: 202px;
+      padding: 33px;
+      box-sizing: border-box;
+      font-size: 96px;
+      line-height: 96px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      letter-spacing: normal;
+      text-align: center;
+      background-color: $white;
+      border: 15px solid $pink;
+      border-radius: 50%;
+      color: $pink;
+    }
+  }
+
+  .information__effect-wrapper {
+    width: 320px;
+  }
+
+  .information__title-effect {
+    width: 166px;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    line-height: 36px;
+    color: $black;
+  }
+
+  .information__link {
+    color: $pink;
+  }
 }
