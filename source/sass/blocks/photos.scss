@@ -18,9 +18,32 @@
 }
 
 .photos__item--panorama {
+  position: relative;
   padding: 0;
   line-height: 0;
   box-sizing: border-box;
+
+  &::before {
+    content: "Панорама дня";
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 140px;
+    height: 36px;
+    margin: 0;
+    padding: 7px 5px;
+    box-sizing: border-box;
+    background-color: $pink;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 24px;
+    letter-spacing: normal;
+    text-align: center;
+  }
 }
 
 .photos__item--panorama .photos__wrapper {
