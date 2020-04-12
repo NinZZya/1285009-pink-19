@@ -63,23 +63,31 @@
           <ul class="photos__list">
             <li class="photos__item photos__item--panorama">
               <a href="#" class="photos__link">
-                  <img src="img/panorama-mobile@1x.jpg" class="photos__image" alt="панарома моста" width="320" height="137">
+                <picture class="photos__picture">
+                  <source media="(min-width: 1200px)" srcset="img/panorama-desktop@1x.jpg">
+                  <source media="(min-width: 660px)" srcset="img/panorama-tablet@1x.jpg">
+                  <img class="photos__image" src="img/panorama-mobile@1x.jpg" alt="панарома моста" width="320" height="137">
+                </picture>
               </a>
-              <div class="photos__wrapper">
+              <div class="photos__wrapper photos__wrapper--panorama">
                 <p class="photos__title">
                   <span class="photos__author">Анна</span>
                   <span class="photos__time">(5 минут назад)</span>
                 </p>
-                <p class="photos__text">
+                <p class="photos__text photos__text--panorama">
                   Прыгать или нет?
                   Напишите в комментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!
                 </p>
-                <p class="photos__rates">Нравится:<span>215</span></p>
+                <p class="photos__rates photos__rates--panorama">Нравится:<span>215</span></p>
               </div>
             </li>
             <li class="photos__item">
               <a href="#" class="photos__link">
-                <img src="img/photo-car-mobile@1x.jpg" class="photos__image" alt="Фото автомобиоя" width="280" height="180">
+                <picture class="photos__picture">
+                  <source media="(min-width: 1200px)" srcset="img/photo-car-desktop@1x.jpg">
+                  <source media="(min-width: 660px)" srcset="img/photo-car-tablet@1x.jpg">
+                  <img src="img/photo-car-mobile@1x.jpg" class="photos__image" alt="Фото автомобиоя" width="280" height="180">
+                </picture>
               </a>
               <div class="photos__wrapper">
                 <p class="photos__title">
@@ -94,7 +102,11 @@
             </li>
             <li class="photos__item">
               <a href="#" class="photos__link">
-                <img src="img/photo-drumset-mobile@1x.jpg" class="photos__image" alt="Фото барабанной установки" width="280" height="180">
+                <picture class="photos__picture">
+                  <source media="(min-width: 1200px)" srcset="img/photo-drumset-desktop@1x.jpg">
+                  <source media="(min-width: 660px)" srcset="img/photo-drumset-tablet@1x.jpg">
+                  <img src="img/photo-drumset-mobile@1x.jpg" class="photos__image" alt="Фото автомобиоя" width="280" height="180">
+                </picture>
               </a>
               <div class="photos__wrapper">
                 <p class="photos__title">
@@ -109,7 +121,11 @@
             </li>
             <li class="photos__item">
               <a href="#" class="photos__link">
-                <img src="img/photo-window-mobile@1x.jpg" class="photos__image" alt="Фото крыши с облаками" width="280" height="180">
+                <picture class="photos__picture">
+                  <source media="(min-width: 1200px)" srcset="img/photo-window-desktop@1x.jpg">
+                  <source media="(min-width: 660px)" srcset="img/photo-window-tablet@1x.jpg">
+                  <img src="img/photo-window-mobile@1x.jpg" class="photos__image" alt="Фото крыши с облаками" width="280" height="180">
+                </picture>
               </a>
               <div class="photos__wrapper">
                 <p class="photos__title">
@@ -124,7 +140,11 @@
             </li>
             <li class="photos__item">
               <a href="#" class="photos__link">
-                <img src="img/photo-fair-mobile@1x.jpg" class="photos__image" alt="Фото рынка" width="280" height="180">
+                <picture class="photos__picture">
+                  <source media="(min-width: 1200px)" srcset="img/photo-fair-desktop@1x.jpg">
+                  <source media="(min-width: 660px)" srcset="img/photo-fair-tablet@1x.jpg">
+                  <img src="img/photo-fair-mobile@1x.jpg" class="photos__image" alt="Фото рынка" width="280" height="180">
+                </picture>
               </a>
               <div class="photos__wrapper">
                 <p class="photos__title">
@@ -139,7 +159,11 @@
             </li>
             <li class="photos__item">
               <a href="#" class="photos__link">
-                <img src="img/photo-pov-mobile@1x.jpg" class="photos__image" alt="Фото с вершиы горы" width="280" height="180">
+                <picture class="photos__picture">
+                  <source media="(min-width: 1200px)" srcset="img/photo-pov-desktop@1x.jpg">
+                  <source media="(min-width: 660px)" srcset="img/photo-pov-tablet@1x.jpg">
+                  <img src="img/photo-pov-mobile@1x.jpg" class="photos__image" alt="Фото с вершиы горы" width="280" height="180">
+                </picture>
               </a>
               <div class="photos__wrapper">
                 <p class="photos__title">
@@ -154,7 +178,11 @@
             </li>
             <li class="photos__item">
               <a href="#" class="photos__link">
-                <img src="img/photo-wing-mobile@1x.jpg" class="photos__image" alt="Фото неба и крыла самолета" width="280" height="180">
+                <picture class="photos__picture">
+                  <source media="(min-width: 1200px)" srcset="img/photo-wing-desktop@1x.jpg">
+                  <source media="(min-width: 660px)" srcset="img/photo-wing-tablet@1x.jpg">
+                  <img src="img/photo-wing-mobile@1x.jpg" class="photos__image" alt="Фото неба и крыла самолета" width="280" height="180">
+                </picture>
               </a>
               <div class="photos__wrapper">
                 <p class="photos__title">
@@ -177,26 +205,30 @@
           <h2 class="visually-hidden">Конструктор фотографий</h2>
           <form action="https://echo.htmlacademy.ru" class="application__form" method="POST">
             <picture class="application__wrapper">
+              <source media="(min-width: 1200px)" srcset="img/photo-road-desktop@1x.jpg">
+              <source media="(min-width: 660px)" srcset="img/photo-road-tablet@1x.jpg">
               <img src="img/photo-road-mobile@1x.jpg" alt="заснеженная дорога" class="application__image" width="280" height="374">
             </picture>
             <div id="application-controls" class="application__controls">
-              <nav class="application__buttons-list">
-                <button type="button" class="application__button application__button--crop application__button--active" aria-label="обрезать изображение"></button>
-                <button type="button" class="application__button application__button--fill" aria-label="залить изображение"></button>
-                <button type="button" class="application__button application__button--contrast" aria-label="контрастность изображения"></button>
-              </nav>
-              <div class="application__ranges-list">
-                <div class="application__ranges-item application__ranges-item--active range range--crop">
-                  <div class="range__bar"></div>
-                  <div class="range__toggle range__toggle--grey"></div>
-                </div>
-                <div class="application__ranges-item range range--fill">
-                  <div class="range__bar"></div>
-                  <div class="range__toggle range__toggle--grey"></div>
-                </div>
-                <div class="application__ranges-item range range--contrast">
-                  <div class="range__bar"></div>
-                  <div class="range__toggle range__toggle--grey"></div>
+              <div class="application__filters">
+                <nav class="application__buttons-list">
+                  <button type="button" class="application__button application__button--crop application__button--active" aria-label="обрезать изображение"></button>
+                  <button type="button" class="application__button application__button--fill" aria-label="залить изображение"></button>
+                  <button type="button" class="application__button application__button--contrast" aria-label="контрастность изображения"></button>
+                </nav>
+                <div class="application__ranges-list">
+                  <div class="application__ranges-item application__ranges-item--active range range--crop">
+                    <div class="range__bar"></div>
+                    <div class="range__toggle range__toggle--grey"></div>
+                  </div>
+                  <div class="application__ranges-item range range--fill">
+                    <div class="range__bar"></div>
+                    <div class="range__toggle range__toggle--grey"></div>
+                  </div>
+                  <div class="application__ranges-item range range--contrast">
+                    <div class="range__bar"></div>
+                    <div class="range__toggle range__toggle--grey"></div>
+                  </div>
                 </div>
               </div>
               <p class="application__wrapper-buttons">
