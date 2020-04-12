@@ -55,7 +55,7 @@
     <main class="page-main contest">
       <h1 class="page-main__title">Конкурс на самое безбашенное путешествие с Пинк</h1>
       <div class="page-main__wrapper">
-        <p class="page-main__text">
+        <p class="page-main__text page-main__text--contest">
           Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! Пожалуйста, заполните форму ниже:
         </p>
         <form action="https://echo.htmlacademy.ru" class="contest__form" method="POST">
@@ -75,9 +75,7 @@
             </p>
           </fieldset>
           <fieldset class="contest__wrapper contest__wrapper--progress">
-            <p class="contest__label contest__label--center">
-              Ваши безбашенные достижения в путешествии
-            </p>
+            <legend class="contest__legend">Ваши безбашенные достижения в путешествии</legend>
             <ul class="contest__progress-list">
               <li class="contest__progress-item">
                 <input type="checkbox" id="contest__progress-value-1" name="progress-value" value="contest__progress-value-1" class="contest__progress-value visually-hidden" checked>
@@ -106,7 +104,7 @@
             </ul>
           </fieldset>
           <fieldset class="contest__wrapper contest__wrapper--contacts">
-            <legend class="visually-hidden">Укажите контакты</legend>
+            <legend class="contest__legend contest__legend--contacts">Контактная информация</legend>
             <p class="contest__contacts-wrapper">
               <label for="contest__contacts-tel" class="contest__label">Номер телефона</label>
               <input type="tel" id="contest__contacts-tel" class="contest__input contest__input--contacts-tel"  name="user-tel" placeholder="Номер, пожалуйста" value="">
@@ -117,9 +115,9 @@
             </p>
           </fieldset>
           <fieldset class="contest__wrapper contest__wrapper--application">
-            <p class="contest__label  contest__label--center">
+            <legend class="contest__legend">
               С каким приложением путешествовали?
-            </p>
+            </legend>
             <ul class="contest__application-list">
               <li class="contest__application-item">
                 <input type="radio" id="contest__application-value-1" name="application-value" value="contest__application-value-1" class="contest__application-value visually-hidden" checked>
@@ -137,7 +135,7 @@
           </fieldset>
           <fieldset class="contest__wrapper contest__wrapper--comment">
             <p class="contest__comment-wrapper">
-              <label for="contest__comment-text" class="contest__label contest__label--center">Опишите свои эмоции</label>
+              <label for="contest__comment-text" class="contest__label contest__label--center ">Опишите свои эмоции</label>
               <textarea name="comment-text" id="contest__comment-text" class="contest__comment-text" cols="30" rows="10" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
             </p>
           </fieldset>

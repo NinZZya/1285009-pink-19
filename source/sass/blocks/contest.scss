@@ -6,6 +6,7 @@
 }
 
 .contest__wrapper {
+  position: relative;
   margin: 0;
   padding: 0 17px;
   text-align: left;
@@ -22,6 +23,7 @@
 .contest__progress-list,
 .contest__application-list {
   @include list-reset;
+  padding-top: 40px;
   font-size: 18px;
   line-height: 30px;
 }
@@ -74,6 +76,20 @@
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
+}
+
+.contest__legend {
+  position: absolute;
+  left: 0;
+  padding: 0 40px;
+  text-transform: uppercase;
+  text-align: center;
+  color: $pink;
+  line-height: 30px;
+}
+
+.contest__legend--contacts {
+  display: none;
 }
 
 .contest__input,
@@ -134,4 +150,39 @@
 .contest__btn-submit {
   width: 100%;
   box-sizing: border-box;
+}
+
+@media (min-width: $tablet-width) {
+  .contest__user-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 28px 0;
+  }
+
+  .contest__label {
+    padding-right: 25px;
+  }
+
+  .contest__wrapper--progress,
+  .contest__wrapper--application,
+  .contest__wrapper--contacts {
+    margin: 40px 20px;
+    background-color: $white;
+    border: 2px solid $grey;
+  }
+
+  .contest__legend {
+    position: static;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .contest__legend--contacts {
+    display: block;
+  }
+
+  .contest__contacts-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
