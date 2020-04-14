@@ -36,6 +36,12 @@
   padding: 0;
 }
 
+.logo__image-desktop {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
 .logo__btn {
   position: relative;
   margin: 0;
@@ -99,13 +105,42 @@
 
   .logo__image-mobile {
     display: none;
-    margin: 0;
-    padding: 0;
   }
 
   .logo__image-tablet {
     display: block;
+  }
+
+  .logo__image-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .logo,
+  .logo--active {
+    position: static;
+    align-items: center;
+    width: auto;
     margin: 0;
     padding: 0;
+    background-color: transparent;
+  }
+
+  .logo__image-mobile {
+    display: none;
+  }
+
+  .logo__image-tablet {
+    display: none;
+  }
+
+  .logo__image-desktop {
+    display: block;
+  }
+
+  .logo__btn,
+  .logo__btn--close {
+    display: none;
   }
 }

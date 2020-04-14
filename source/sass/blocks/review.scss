@@ -49,3 +49,14 @@
     font-size: 18px;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .rewiew__author {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .rewiew__author-info {
+    font-size: 18px;
+  }
+}

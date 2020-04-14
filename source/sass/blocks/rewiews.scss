@@ -9,3 +9,9 @@
   margin: 0;
   padding: 0 20px;
 }
+
+@media (min-width: $desktop-width) {
+  .reviews__slider {
+    padding: 0 130px;
+  }
+}

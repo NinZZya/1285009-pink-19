@@ -7,3 +7,18 @@
   margin: 0;
   padding: 0;
 }
+
+
+@media (min-width: $desktop-width) {
+  .main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0 130px;
+    box-sizing: border-box;
+  }
+}

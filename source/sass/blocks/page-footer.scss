@@ -30,3 +30,10 @@
     display: flex;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .page-footer {
+    padding-right: 130px;
+    padding-left: 130px;
+  }
+}

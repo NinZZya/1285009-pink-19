@@ -69,7 +69,14 @@
 }
 
 
-.btn--disabled {
+.btn-round---disabled {
   background-color: rgba($grey, 0.1);
   color: $white;
+}
+
+
+@media (min-width: $desktop-width) {
+  .btn-round {
+    font-size: 21px;
+  }
 }

@@ -31,3 +31,14 @@
     font-size: 18px;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .mobile-os__btn {
+    margin-bottom: 5px;
+  }
+
+  .mobile-os__list {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}

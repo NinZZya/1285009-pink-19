@@ -173,3 +173,110 @@
     color: $pink;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .information__promo {
+    font-size: 50px;
+  }
+
+  .information__promo--slim {
+    margin-right: 130px;
+    margin-left: 130px;
+    padding-right: 130px;
+    padding-left: 130px;
+    box-sizing: border-box;
+  }
+
+  .information__list {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0;
+    margin-top: 94px;
+    padding-top: 0;
+    padding-right: 130px;
+    padding-left: 130px;
+    text-align: center;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .information__item {
+    position: relative;
+    width: 240px;
+    padding: 0;
+    padding-top: 300px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 240px;
+      height: 300px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &:nth-child(1){
+      padding-top: 300px;
+    }
+
+    &:nth-child(1)::before {
+      background-image: url("../img/iphone-screen-1-desktop@1x.png");
+    }
+
+    &:nth-child(2)::before  {
+      background-image: url("../img/iphone-screen-2-desktop@1x.png");
+    }
+
+    &:nth-child(3)::before {
+      background-image: url("../img/iphone-screen-3-desktop@1x.png");
+    }
+  }
+
+  .information__title {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .information__wrapper {
+    background-color: $grey-light;
+  }
+
+  .information__effect {
+    margin-right: 130px;
+    margin-left: 130px;
+  }
+
+  .information__effect-wrapper {
+    width: 550px;
+  }
+
+  .information__title-effect {
+    width: 100%;
+  }
+
+  .information__effect {
+
+    &::before {
+      top: 35px;
+      left: 17px;
+      width: 298px;
+      height: 345px;
+      background-size: 298px 345px;
+    }
+
+    &::after {
+      top: 105px;
+      left: 39px;
+      width: 253px;
+      height: 253px;
+      padding: 15px;
+      font-size: 120px;
+      line-height: 187px;
+    }
+  }
+}

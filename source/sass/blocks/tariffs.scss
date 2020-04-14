@@ -193,3 +193,17 @@
     padding-bottom: 5px;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .tariffs {
+    width: 950px;
+  }
+
+  .tariffs__header {
+    min-width: 233px;
+  }
+
+  .tariffs__option {
+    font-size: 18px;
+  }
+}
