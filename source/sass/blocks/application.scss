@@ -181,3 +181,42 @@
     }
   }
 }
+
+@media (min-width: $desktop-width) {
+  .application {
+    width: 940px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .application__wrapper {
+    width: 50%;
+    margin: 0;
+    padding: 45px 90px;
+  }
+
+  .application__controls {
+    width: 50%;
+    margin: 0;
+    padding: 45px 60px 45px 0;
+  }
+  .application__button {
+    background-position: center;
+  }
+
+  .application__button--crop {
+    background-size: 44px 44px;
+  }
+
+  .application__button--fill {
+    background-size: 48px 43px;
+  }
+
+  .application__button--contrast {
+    background-size: 32px 32px;
+  }
+
+  .application__wrapper-buttons {
+    display: flex;
+  }
+}

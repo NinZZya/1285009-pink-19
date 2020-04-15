@@ -180,3 +180,27 @@
     }
   }
 }
+
+@media (min-width: $desktop-width) {
+  .photos__list {
+    justify-content: center;
+
+  }
+  .photos__item {
+    width: 320px;
+    padding-right: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+
+  .photos__item--panorama {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0;
+  }
+
+  .photos__wrapper--panorama {
+    margin-right: 130px;
+    margin-left: 130px;
+  }
+}
