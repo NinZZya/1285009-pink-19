@@ -220,7 +220,7 @@
       background-position: center;
     }
 
-    &:nth-child(1){
+    &:nth-child(1) {
       padding-top: 300px;
     }
 
@@ -228,7 +228,7 @@
       background-image: url("../img/iphone-screen-1-desktop@1x.png");
     }
 
-    &:nth-child(2)::before  {
+    &:nth-child(2)::before {
       background-image: url("../img/iphone-screen-2-desktop@1x.png");
     }
 
@@ -249,17 +249,6 @@
   .information__effect {
     margin-right: 130px;
     margin-left: 130px;
-  }
-
-  .information__effect-wrapper {
-    width: 550px;
-  }
-
-  .information__title-effect {
-    width: 100%;
-  }
-
-  .information__effect {
 
     &::before {
       top: 35px;
@@ -278,5 +267,13 @@
       font-size: 120px;
       line-height: 187px;
     }
+  }
+
+  .information__effect-wrapper {
+    width: 550px;
+  }
+
+  .information__title-effect {
+    width: 100%;
   }
 }
