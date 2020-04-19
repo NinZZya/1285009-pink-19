@@ -1,11 +1,8 @@
 .menu {
-  @include list-reset;
   display: none;
   flex-direction: column;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  padding-top: 66px;
+  list-style: none;
 }
 
 .menu--active {
@@ -15,13 +12,24 @@
 
 .menu__item {
   width: 100%;
-  padding: 27px 0;
+  padding: 15px 0;
   text-align: center;
   border-top: 1px solid rgba($white, 0.15);
   border-bottom: 1px solid $black;
 
   &:nth-child(1) {
-    box-shadow: inset 0 1px 0 0 $black;
+    position: relative;
+    margin-top: 4px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $black;
+    }
   }
 }
 
@@ -38,8 +46,10 @@
 }
 
 @media (min-width: $tablet-width) {
-  .menu {
-    padding-top: 110px;
+  .menu__item {
+    &:nth-child(1) {
+      margin-top: 0;
+    }
   }
 }
 

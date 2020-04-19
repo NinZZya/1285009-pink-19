@@ -20,11 +20,9 @@ $bg--body: $white;
 $link-color: $pink;
 $link-color--hover: $black;
 
-/*global font rules*/
-$font: "Open Sans", "Arial", sans-serif;
-$font-size: 14px;
-$line-height: 24px;
-
 /* project size of devices*/
 $tablet-width: 660px;
 $desktop-width: 1200px;
+$gap-mobile: 20px;
+$gap-table: 20px;
+$gap-desktop: 10px;

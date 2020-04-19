@@ -24,10 +24,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 31px $gap-table;
   }
 
   .page-footer--index {
     display: flex;
+  }
+
+  .page-footer__social {
+    padding: 0;
+    padding-top: 10px;
+    padding-right: 20px;
   }
 }
 

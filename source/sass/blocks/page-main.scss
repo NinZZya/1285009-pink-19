@@ -8,18 +8,38 @@
   overflow: hidden;
 }
 
+.page-main--index {
+  position: relative;
+  padding-top: 65px;
+  color: $blue-dark;
+  background-image: url("../img/iphone-hand-mobile@1x.png"), url("../img/bg-back-mobile@1x.jpg");
+  background-position: top 176px left, top center;
+  background-repeat: no-repeat, no-repeat;
+  overflow: hidden;
+}
+
 .page-main__title {
+  @include title-mobile;
   margin: 0;
-  padding: 35px;
-  font-size: 24px;
-  font-weight: 300;
+  padding: 30px $gap-mobile;
   color: $white;
   text-align: center;
+}
+
+.page-main__title--index {
+  padding-top: 19px;
+  padding-bottom: 22px;
 }
 
 .page-main__text {
   padding: 55px 15px;
   text-align: center;
+}
+
+.page-main__intro {
+  margin: 0;
+  margin-top: 288px;
+  padding: 0;
 }
 
 .page-main__wrapper {
@@ -33,36 +53,64 @@
   padding: 20px 20px 40px;
 }
 
+.page-main__information {
+  margin: 0;
+  padding: 26px 0;
+}
+
+.page-main__rewiews {
+  margin: 0;
+  padding: 0;
+}
+
+.page-main__prices {
+  margin: 0;
+  padding: 0;
+  padding-top: 127px;
+  padding-bottom: 9px;
+}
+
+.page-main__contacts {
+  margin: 0;
+  margin-top: 40px;
+  padding: 0;
+}
+
 @media (min-width: $tablet-width) {
   .page-main {
     padding-top: 178px;
     background-image: url("../img/bg-back-tablet@1x.jpg");
   }
 
+  .page-main--index {
+    background-image: url("../img/iphone-hand-tablet@1x.png"), url("../img/bg-back-tablet@1x.jpg");
+    background-position: top 184px left -20px, top center;
+    background-repeat: no-repeat, no-repeat;
+  }
+
   .page-main__title {
+    @include title-table;
+    margin: 0;
+    padding: 0;
+    padding-right: $gap-table;
     padding-bottom: 75px;
-    font-size: 50px;
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
+    padding-left: $gap-table;
     text-align: center;
   }
 
   .page-main__title--index {
-    width: 340px;
-    margin-left: 130px;
-    padding-right: 45px;
-    padding-bottom: 30px;
-    padding-left: 45px;
-    font-size: 40px;
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
+    width: 285px;
+    margin-top: 25px;
+    margin-left: 27px;
+    padding-bottom: 0;
+    line-height: 48px;
     box-sizing: border-box;
+  }
+
+  .page-main__intro {
+    width: 340px;
+    margin-top: 31px;
+    margin-bottom: 110px;
   }
 
   .page-main__text {
@@ -75,6 +123,18 @@
     line-height: 30px;
     letter-spacing: normal;
     text-align: center;
+  }
+
+  .page-main__information {
+    padding-top: 47px;
+  }
+
+  .page-main__prices {
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 65px;
   }
 
   .page-main__text--contest {

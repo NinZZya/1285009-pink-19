@@ -2,5 +2,21 @@
   position: relative;
   z-index: 1;
   margin: 0;
+  margin-bottom: -66px;
   padding: 0;
+}
+
+@media (min-width: $tablet-width) {
+  .page-header {
+    margin-bottom: -110px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-header__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 130px;
+  }
 }

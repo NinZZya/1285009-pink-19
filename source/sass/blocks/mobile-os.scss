@@ -1,12 +1,6 @@
-.mobile-os {
-  margin: 0;
-  padding-top: 30px;
-  padding-bottom: 153px;
-}
-
 .mobile-os__list {
   @include list-reset;
-  padding: 30px 15px;
+  padding: 30px 20px 2px;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -25,6 +19,10 @@
 }
 
 @media (min-width: $tablet-width) {
+  .mobile-os__list {
+    padding: 45px 30px 30px;
+  }
+
   .mobile-os__text {
     margin: 0;
     padding: 0;
