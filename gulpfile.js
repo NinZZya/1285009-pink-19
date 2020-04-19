@@ -62,13 +62,13 @@ gulp.task("css", function (done) {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(sourcemaps.write())
     .pipe(postcss([
       autoprefixer({cascade: false})
     ]))
     .pipe(gulp.dest(path.build.css))
     .pipe(cssmin())
     .pipe(rename({suffix: ".min"}))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.build.css))
     .pipe(server.stream());
   done();
