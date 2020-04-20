@@ -13,10 +13,16 @@
 }
 
 @media (min-width: $desktop-width) {
+  .page-header {
+    width: 100%;
+    background-color: rgba($black, 0.3);
+  }
+
   .page-header__nav {
-    position: absolute;
     top: 0;
     left: 0;
-    padding: 0 130px;
+    margin: 0;
+    padding: 0 $gap-desktop;
+    box-sizing: border-box;
   }
 }

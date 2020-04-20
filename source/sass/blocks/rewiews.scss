@@ -12,6 +12,6 @@
 
 @media (min-width: $desktop-width) {
   .reviews__slider {
-    padding: 0 130px;
+    padding: 0 $gap-desktop;
   }
 }

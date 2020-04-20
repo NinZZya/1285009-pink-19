@@ -57,15 +57,18 @@
   .menu {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    width: 620px;
+    justify-content: space-between;
+    width: 625px;
     margin: 0;
     padding: 0;
     background-color: transparent;
   }
 
   .menu__item {
+    width: auto;
     border-style: none;
+    margin: 0;
+    padding: 0;
 
     &:nth-child(1) {
       box-shadow: none;
@@ -74,6 +77,7 @@
 
   .menu__link {
     text-transform: none;
+    font-weight: 300;
   }
 
   .menu__link--active {

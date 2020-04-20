@@ -2,6 +2,7 @@
   position: relative;
   padding-top: 65px;
   color: $blue-dark;
+  background-color: $white;
   background-image: url("../img/bg-back-mobile@1x.jpg");
   background-position: top center;
   background-repeat: no-repeat;
@@ -145,12 +146,41 @@
 
 @media (min-width: $desktop-width) {
   .page-main {
-    padding-top: 178px;
     background-image: url("../img/bg-back-desktop@1x.jpg");
   }
 
+  .page-main--index {
+    background-image: url("../img/iphone-hand-desktop@1x.png"), url("../img/bg-back-desktop@1x.jpg");
+    background-position: top 209px left 26px, top center;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  .page-main__title {
+    @include title-desktop;
+  }
+
   .page-main__title--index {
-    font-size: 50px;
+    margin-top: 40px;
+    margin-left: 18px;
+  }
+
+  .page-main__intro {
+    width: 320px;
+    margin-top: 53px;
+    margin-bottom: 115px;
+  }
+
+  .page-main__information {
+    padding-top: 70px;
+  }
+
+  .page-main__prices {
+    margin: 45px 0 0;
+    padding: 20px 0 92px;
+  }
+
+  .page-main__contacts {
+    margin-top: 63px;
   }
 
   .page-main__application {

@@ -33,9 +33,18 @@
   letter-spacing: normal;
 }
 
-@mixin subtitle-table {
-  font-size: 18px;
-  font-weight: bold;
+@mixin title-desktop() {
+  font-size: 50px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 60px;
+  letter-spacing: normal;
+}
+
+@mixin subtitle-desktop() {
+  font-size: 30px;
+  font-weight: 300;
   font-stretch: normal;
   font-style: normal;
   line-height: 30px;

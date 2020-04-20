@@ -47,6 +47,7 @@
 .slider__btn {
   display: none;
 }
+
 @media (min-width: $tablet-width) {
   .slider__controls {
     margin: 34px 0 0;
@@ -56,6 +57,7 @@
 @media (min-width: $desktop-width) {
   .slider {
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -64,40 +66,44 @@
   }
 
   .slider__btn {
-    display: inline-block;
-    width: 41px;
-    height: 41px;
-    border-style: none;
+    display: block;
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 31px;
+    max-height: 31px;
+    margin: 0;
+    margin-top: 70px;
+    margin-right: 5px;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 0;
     background-color: transparent;
-    background-size: 22px 41px;
-    background-repeat: no-repeat;
-    background-position: center;
+    border: none;
+    transform: rotate(45deg);
   }
 
   .slider__btn--left {
-    margin-right: 105px;
-    margin-left: 10px;
-    background-image: url("../img/icon-review-arrow-left.svg");
+    border-bottom: 2px solid $grey-light;
+    border-left: 2px solid $grey-light;
   }
 
   .slider__btn--right {
-    margin-right: 10px;
-    margin-left: 105px;
-    background-image: url("../img/icon-review-arrow-right.svg");
+    border-top: 2px solid $grey-light;
+    border-right: 2px solid $grey-light;
   }
 
   .slider__list {
     position: relative;
+    width: 690px;
     padding-top: 163px;
 
     &::before {
       content: "";
       position: absolute;
-      top: -58px;
+      top: 48px;
       right: 50%;
-      width: 79px;
-      height: 63px;
-      margin-top: 72px;
+      width: 80px;
+      height: 65px;
       background-image: url("../img/icon-quotes.svg");
       background-repeat: no-repeat;
       background-position: center;
