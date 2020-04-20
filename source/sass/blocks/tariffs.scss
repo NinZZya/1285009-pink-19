@@ -81,9 +81,9 @@
 .tariffs__option {
   background-color: $white;
   box-sizing: border-box;
-  padding-top: 13px;
+  padding-top: 10px;
   padding-right: 20px;
-  padding-bottom: 12px;
+  padding-bottom: 10px;
   padding-left: 22px;
   font-size: 14px;
   line-height: 30px;
@@ -104,6 +104,10 @@
   display: none;
 }
 
+.tariffs__feature-name {
+  padding: 5px 0;
+}
+
 .tariffs__feature-wrapper {
   width: 100%;
   margin: 0;
@@ -117,6 +121,9 @@
   background: transparent;
 }
 
+.tariffs__feature-value--on {
+  margin-top: 8px;
+}
 
 .tariffs__feature-value--on .tariffs__feature-icon {
   fill: $green-light;

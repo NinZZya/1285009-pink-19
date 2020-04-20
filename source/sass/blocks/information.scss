@@ -5,10 +5,7 @@
 .information__promo {
   @include title-mobile;
   margin: 0;
-  padding-top: 10px;
-  padding-right: $gap-mobile;
-  padding-bottom: 10px;
-  padding-left: $gap-mobile;
+  padding: 12px $gap-mobile;
   text-align: center;
   color: $blue-dark;
 }
