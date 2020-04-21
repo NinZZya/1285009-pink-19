@@ -1,8 +1,5 @@
 .photos {
   position: relative;
-  margin: 0;
-  padding: 0;
-  padding-top: 40px;
 }
 
 .photos__list {
@@ -61,7 +58,7 @@
 
 .photos__wrapper {
   margin: 0;
-  padding: 25px 18px;
+  padding: 18px 10px 10px 18px;
   background-color: $grey-light;
   line-height: 24px;
 }
@@ -92,9 +89,10 @@
 
 .photos__rates {
   position: relative;
-  margin: 20px 0 0;
+  margin: 10px 0 9px;
   padding: 0;
-  padding-left: 38px;
+  padding-left: 31px;
+  font-size: 12px;
   color: $pink;
   text-transform: uppercase;
 

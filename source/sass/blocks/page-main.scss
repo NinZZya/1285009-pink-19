@@ -33,8 +33,12 @@
 }
 
 .page-main__text {
-  padding: 55px 15px;
+  padding: 23px $gap-mobile;
+  line-height: 30px;
   text-align: center;
+}
+.page-main__text--top {
+  padding: 45px $gap-mobile + 15px 10px;
 }
 
 .page-main__intro {
@@ -45,13 +49,20 @@
 
 .page-main__wrapper {
   margin: 0;
+  margin-top: 51px;
   padding: 0;
   background-color: $white;
 }
 
-.page-main__application {
+.page-main__photos {
   margin: 0;
-  padding: 20px 20px 40px;
+  padding: 0;
+  padding-top: 25px;
+}
+
+.page-main__application {
+  margin: 19px 0 0;
+  padding: 20px 22px 40px 18px;
 }
 
 .page-main__information {
@@ -67,7 +78,7 @@
 .page-main__prices {
   margin: 0;
   padding: 0;
-  padding-top: 127px;
+  padding-top: 35px;
   padding-bottom: 9px;
 }
 
@@ -134,7 +145,7 @@
     margin: 0;
     margin-top: 20px;
     padding: 0;
-    padding-top: 20px;
+    padding-top: 38px;
     padding-bottom: 65px;
   }
 
@@ -176,7 +187,7 @@
 
   .page-main__prices {
     margin: 45px 0 0;
-    padding: 20px 0 92px;
+    padding: 37px 0 92px;
   }
 
   .page-main__contacts {

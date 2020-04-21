@@ -96,7 +96,7 @@
   }
 
   .contacts__title {
-    font-size: 40px;
+    @include title-table;
   }
 
   .contacts__title-newline {
@@ -107,7 +107,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0 9px;
+    padding: 12px 9px 0;
   }
 
   .cotacts__text-wrapper {
@@ -178,7 +178,7 @@
 
   .contacts__value {
     padding: 0;
-    padding-top: 18px;
+    padding-top: 22px;
   }
 
   .contacts__map {

@@ -73,6 +73,10 @@
     &:nth-child(1) {
       box-shadow: none;
     }
+
+    &:nth-child(1)::before {
+      display: none;
+    }
   }
 
   .menu__link {

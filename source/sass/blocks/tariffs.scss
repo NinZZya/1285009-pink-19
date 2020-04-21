@@ -118,19 +118,12 @@
 }
 
 .tariffs__feature-value {
-  background: transparent;
+  margin: 0;
+  padding: 0;
 }
 
 .tariffs__feature-value--on {
   margin-top: 8px;
-}
-
-.tariffs__feature-value--on .tariffs__feature-icon {
-  fill: $green-light;
-}
-
-.tariffs__feature-value--off .tariffs__feature-icon {
-  fill: $red;
 }
 
 @media (min-width: $tablet-width) {
@@ -197,8 +190,12 @@
   }
 
   .tariffs__option {
-    padding-top: 8px;
+    padding-top: 2px;
     padding-bottom: 3px;
+  }
+
+  .tariffs__feature-value--off {
+    margin-top: 5px;
   }
 }
 
@@ -210,7 +207,7 @@
   .tariffs__header {
     min-width: 236px;
     padding-top: 15px;
-    padding-bottom: 20px;
+    padding-bottom: 23px;
   }
 
   .tariffs__header--hit {

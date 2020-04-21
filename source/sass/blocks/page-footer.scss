@@ -19,7 +19,23 @@
   text-align: center;
 }
 
+.page-footer__logo-image--mobile {
+  display: inline-block;
+}
+
+.page-footer__logo-image--desktop {
+  display: none;
+}
+
 @media (min-width: $tablet-width) {
+  .page-footer__logo-image--mobile {
+    display: inline-block;
+  }
+
+  .page-footer__logo-image--desktop {
+    display: none;
+  }
+
   .page-footer {
     display: flex;
     justify-content: space-between;
@@ -39,6 +55,14 @@
 }
 
 @media (min-width: $desktop-width) {
+  .page-footer__logo-image--mobile {
+    display: none
+  }
+
+  .page-footer__logo-image--desktop {
+    display: inline-block;
+  }
+
   .page-footer {
     padding: 63px $gap-desktop;
   }
