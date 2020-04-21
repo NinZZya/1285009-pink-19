@@ -26,7 +26,7 @@ var path = {
       html: "source/*.html",
       js: "source/js/**/*.js",
       style: "source/sass/style.scss",
-      img: "source/img/**/*.*",
+      img: "source/img/build/**/*.*",
       fonts: "source/fonts/**/*.*"
   },
   watch: {
