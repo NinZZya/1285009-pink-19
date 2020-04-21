@@ -1,27 +1,27 @@
-// const menuConfig = {
-//   container: {
-//     class: {
-//       item: ".logo"
-//     },
-//     name: {
-//       active: "logo--active"
-//     }
-//   },
-//   item: {
-//     id: "#menu",
-//     name: {
-//       active: "menu--active"
-//     }
-//   },
-//   btn: {
-//     class: {
-//       item: ".logo__btn"
-//     },
-//     name: {
-//       close: "logo__btn--close"
-//     }
-//   }
-// };
+const menuConfig = {
+  container: {
+    class: {
+      item: ".logo"
+    },
+    name: {
+      active: "logo--active"
+    }
+  },
+  item: {
+    id: "#menu",
+    name: {
+      active: "menu--active"
+    }
+  },
+  btn: {
+    class: {
+      item: ".logo__btn"
+    },
+    name: {
+      close: "logo__btn--close"
+    }
+  }
+};
 
 // let sliderConfig = {
 //   container: {
@@ -119,22 +119,22 @@
 //   }
 // };
 
-// const menuContainer = document.querySelector(menuConfig.container.class.item);
-// const menuItem = document.querySelector(menuConfig.item.id);
-// const menuBtn = menuContainer.querySelector(menuConfig.btn.class.item);
+const menuContainer = document.querySelector(menuConfig.container.class.item);
+const menuItem = document.querySelector(menuConfig.item.id);
+const menuBtn = menuContainer.querySelector(menuConfig.btn.class.item);
 
-// if (menuItem && menuBtn) {
-//   window.onload = function(){
-//     menuContainer.classList.remove(menuConfig.container.name.active);
-//     menuItem.classList.remove(menuConfig.item.name.active);
-//     menuBtn.classList.remove(menuConfig.btn.name.close);
-//   };
-//   menuBtn.addEventListener("click", function (evt) {
-//     menuContainer.classList.toggle(menuConfig.container.name.active);
-//     menuItem.classList.toggle(menuConfig.item.name.active);
-//     menuBtn.classList.toggle(menuConfig.btn.name.close);
-//   });
-// }
+if (menuItem && menuBtn) {
+  window.onload = function(){
+    menuContainer.classList.remove(menuConfig.container.name.active);
+    menuItem.classList.remove(menuConfig.item.name.active);
+    menuBtn.classList.remove(menuConfig.btn.name.close);
+  };
+  menuBtn.addEventListener("click", function (evt) {
+    menuContainer.classList.toggle(menuConfig.container.name.active);
+    menuItem.classList.toggle(menuConfig.item.name.active);
+    menuBtn.classList.toggle(menuConfig.btn.name.close);
+  });
+}
 
 // //Toogle element state or remove from old and add to new
 // function toggleElementsState(elementOld, elementNew, elementClass) {
