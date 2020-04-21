@@ -32,40 +32,30 @@
   margin: 0;
   padding: 0;
   background-color: transparent;
-  background-position: center;
-  background-repeat: no-repeat;
   border-style: none;
 }
 
-.application__button--crop {
-  background-image: url("../img/icon-editor-crop.svg");
-  background-size: 44px 44px;
+.application__button-image {
+  width: 48px;
+  height: 48px;
+  box-sizing: border-box;
+  color: rgba($blue-dark, 0.3);
 }
 
-.application__button--fill {
-  background-image: url("../img/icon-editor-fill.svg");
-  background-size: 48px 43px;
+.application__button-image--crop {
+  padding-bottom: 3px;
 }
 
-.application__button--contrast {
-  background-image: url("../img/icon-editor-contrast.svg");
-  background-size: 32px 32px;
+.application__button-image--contrast {
+  padding-top: 5px;
 }
 
-.application__button--active.application__button--crop {
-  background-image: url("../img/icon-editor-crop-active.svg");
-}
-
-.application__button--active.application__button--fill {
-  background-image: url("../img/icon-editor-fill-active.svg");
-}
-
-.application__button--active.application__button--contrast {
-  background-image: url("../img/icon-editor-contrast-active.svg");
+.application__button--active .application__button-image {
+  color: $pink;
 }
 
 .application__ranges-list {
-  margin: 0;
+  margin: 0 20px;
   padding: 0;
   padding-bottom: 24px;
 }
@@ -77,12 +67,24 @@
   &::after {
     content: "";
     position: absolute;
-    top: 34px;
-    left: -20px;
-    width: calc(100% + 40px);
+    top: 36px;
+    left: -40px;
+    width: calc(100% + 80px);
     height: 1px;
     background-color: rgba($blue-dark, 0.1);
   }
+}
+
+.application__ranges-item--crop .range__toggle {
+  left: 80%;
+}
+
+.application__ranges-item--fill .range__toggle {
+  left: 50%;
+}
+
+.application__ranges-item--contrast .range__toggle {
+  left: 20%;
 }
 
 .application__ranges-item--active {
@@ -91,7 +93,7 @@
 
 .application__wrapper-buttons {
   margin: 0;
-  padding: 38px 0 0;
+  padding: 49px 0 0;
   line-height: 0;
 }
 
