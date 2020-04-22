@@ -149,41 +149,41 @@
     </header>
 
     <main class="page-main">
-      <h1 class="page-main__title">Фотографии пользователей</h1>
+      <h1 class="page-main__title page-main__title--head">Фотографии пользователей</h1>
       <div class="page-main__wrapper">
         <p class="page-main__text page-main__text--top">
           Взгляните на фотографии, которые выкладывают пользователи!
           Видите, как не хватает ваших?
         </p>
         <div class="page-main__photos photos">
+          <div class="photos__item photos__item--panorama">
+            <a href="#" class="photos__link">
+              <picture class="photos__picture">
+                <source media="(min-width: 960px)" srcset="img/panorama-desktop@1x.jpg">
+                <source media="(min-width: 660px)" srcset="img/panorama-tablet@1x.jpg">
+                <img class="photos__image photos__image--panorama" src="img/panorama-mobile@1x.jpg" alt="панарома моста" width="320" height="137">
+              </picture>
+            </a>
+            <div class="photos__wrapper photos__wrapper--panorama">
+              <p class="photos__title photos__title--panorama">
+                <span class="photos__author">Анна</span>
+                <span class="photos__time">(5 минут назад)</span>
+              </p>
+              <p class="photos__text photos__text--panorama">
+                Прыгать или нет?
+                Напишите в комментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!
+              </p>
+              <p class="photos__rates photos__rates--panorama">
+                <input id="rate-post-1" type="checkbox" class="photos__rates-toggle">
+                <label for="rate-post-1" class="photos__rates-value photos__rates-value--panorama">Нравится: 215</label>
+              </p>
+            </div>
+          </div>
           <ul class="photos__list">
-            <li class="photos__item photos__item--panorama">
-              <a href="#" class="photos__link">
-                <picture class="photos__picture">
-                  <source media="(min-width: 1070px)" srcset="img/panorama-desktop@1x.jpg">
-                  <source media="(min-width: 660px)" srcset="img/panorama-tablet@1x.jpg">
-                  <img class="photos__image" src="img/panorama-mobile@1x.jpg" alt="панарома моста" width="320" height="137">
-                </picture>
-              </a>
-              <div class="photos__wrapper photos__wrapper--panorama">
-                <p class="photos__title">
-                  <span class="photos__author">Анна</span>
-                  <span class="photos__time">(5 минут назад)</span>
-                </p>
-                <p class="photos__text photos__text--panorama">
-                  Прыгать или нет?
-                  Напишите в комментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!
-                </p>
-                <p class="photos__rates photos__rates--panorama">
-                  <input id="rate-post-1" type="checkbox" class="photos__rates-toggle">
-                  <label for="rate-post-1" class="photos__rates-value">Нравится: 215</label>
-                </p>
-              </div>
-            </li>
             <li class="photos__item">
               <a href="#" class="photos__link">
                 <picture class="photos__picture">
-                  <source media="(min-width: 1070px)" srcset="img/photo-car-desktop@1x.jpg">
+                  <source media="(min-width: 960px)" srcset="img/photo-car-desktop@1x.jpg">
                   <source media="(min-width: 660px)" srcset="img/photo-car-tablet@1x.jpg">
                   <img src="img/photo-car-mobile@1x.jpg" class="photos__image" alt="Фото автомобиоя" width="280" height="180">
                 </picture>
@@ -205,7 +205,7 @@
             <li class="photos__item">
               <a href="#" class="photos__link">
                 <picture class="photos__picture">
-                  <source media="(min-width: 1070px)" srcset="img/photo-drumset-desktop@1x.jpg">
+                  <source media="(min-width: 960px)" srcset="img/photo-drumset-desktop@1x.jpg">
                   <source media="(min-width: 660px)" srcset="img/photo-drumset-tablet@1x.jpg">
                   <img src="img/photo-drumset-mobile@1x.jpg" class="photos__image" alt="Фото автомобиоя" width="280" height="180">
                 </picture>
@@ -227,7 +227,7 @@
             <li class="photos__item">
               <a href="#" class="photos__link">
                 <picture class="photos__picture">
-                  <source media="(min-width: 1070px)" srcset="img/photo-window-desktop@1x.jpg">
+                  <source media="(min-width: 960px)" srcset="img/photo-window-desktop@1x.jpg">
                   <source media="(min-width: 660px)" srcset="img/photo-window-tablet@1x.jpg">
                   <img src="img/photo-window-mobile@1x.jpg" class="photos__image" alt="Фото крыши с облаками" width="280" height="180">
                 </picture>
@@ -249,7 +249,7 @@
             <li class="photos__item">
               <a href="#" class="photos__link">
                 <picture class="photos__picture">
-                  <source media="(min-width: 1070px)" srcset="img/photo-fair-desktop@1x.jpg">
+                  <source media="(min-width: 960px)" srcset="img/photo-fair-desktop@1x.jpg">
                   <source media="(min-width: 660px)" srcset="img/photo-fair-tablet@1x.jpg">
                   <img src="img/photo-fair-mobile@1x.jpg" class="photos__image" alt="Фото рынка" width="280" height="180">
                 </picture>
@@ -271,7 +271,7 @@
             <li class="photos__item">
               <a href="#" class="photos__link">
                 <picture class="photos__picture">
-                  <source media="(min-width: 1070px)" srcset="img/photo-pov-desktop@1x.jpg">
+                  <source media="(min-width: 960px)" srcset="img/photo-pov-desktop@1x.jpg">
                   <source media="(min-width: 660px)" srcset="img/photo-pov-tablet@1x.jpg">
                   <img src="img/photo-pov-mobile@1x.jpg" class="photos__image" alt="Фото с вершиы горы" width="280" height="180">
                 </picture>
@@ -293,7 +293,7 @@
             <li class="photos__item">
               <a href="#" class="photos__link">
                 <picture class="photos__picture">
-                  <source media="(min-width: 1070px)" srcset="img/photo-wing-desktop@1x.jpg">
+                  <source media="(min-width: 960px)" srcset="img/photo-wing-desktop@1x.jpg">
                   <source media="(min-width: 660px)" srcset="img/photo-wing-tablet@1x.jpg">
                   <img src="img/photo-wing-mobile@1x.jpg" class="photos__image" alt="Фото неба и крыла самолета" width="280" height="180">
                 </picture>
@@ -321,11 +321,13 @@
         <section class="page-main__application application">
           <h2 class="visually-hidden">Конструктор фотографий</h2>
           <form action="https://echo.htmlacademy.ru" class="application__form" method="POST">
-            <picture class="application__wrapper">
-              <source media="(min-width: 1070px)" srcset="img/photo-road-desktop@1x.jpg">
-              <source media="(min-width: 660px)" srcset="img/photo-road-tablet@1x.jpg">
-              <img src="img/photo-road-mobile@1x.jpg" alt="заснеженная дорога" class="application__image" width="280" height="374">
-            </picture>
+            <div class="application__wrapper-picture">
+              <picture class="application__picture">
+                <source media="(min-width: 960px)" srcset="img/photo-road-desktop@1x.jpg">
+                <source media="(min-width: 660px)" srcset="img/photo-road-tablet@1x.jpg">
+                <img src="img/photo-road-mobile@1x.jpg" alt="заснеженная дорога" class="application__image" width="280" height="374">
+              </picture>
+            </div>
             <div id="application-controls" class="application__controls">
               <div class="application__filters">
                 <nav class="application__buttons-list">
@@ -335,7 +337,7 @@
                     </svg>
                   </button>
                   <button type="button" name="btn-fill" class="application__button" aria-label="Залить изображение">
-                    <svg class="application__button-image" width="48px" height="48px" role="img" aria-label="Залить изображение" focusable="false">
+                    <svg class="application__button-image application__button-image--fill" role="img" aria-label="Залить изображение" focusable="false">
                       <use xlink:href="#icon-editor-fill" />
                     </svg>
                   </button>

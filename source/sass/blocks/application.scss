@@ -38,7 +38,6 @@
 .application__button-image {
   width: 48px;
   height: 48px;
-  box-sizing: border-box;
   color: rgba($blue-dark, 0.3);
 }
 
@@ -111,75 +110,92 @@
 @media (min-width: $tablet-width) {
   .application__form {
     display: flex;
-    justify-content: space-between;
+  }
+
+  .application__wrapper-picture {
+    max-width: 300px;
+    height: 400px;
+    margin: 0;
+    margin-right: 10px;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .application__controls {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 260px;
+    max-width: 300px;
     margin: 0;
-    margin-right: 10px;
+    margin-left: 10px;
+    padding: 0;
+    padding-left: 25px;
   }
 
   .application__filters {
     display: flex;
-    height: 50%;
   }
 
   .application__buttons-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 0;
     padding: 0;
   }
 
   .application__button {
-    margin: 0;
-    padding: 23px 0;
-    box-sizing: border-box;
-    background-position: right center;
+    width: 24px;
+    height: 24px;
+    margin: 10px 0 35px;
   }
 
-  .application__button--crop {
-    background-size: 22px 22px;
-    background-image: url("../img/icon-editor-crop-active.svg");
+  .application__button-image {
+    width: 24px;
+    height: 24px;
   }
 
-  .application__button--fill {
-    background-size: 24px 22px;
-    background-image: url("../img/icon-editor-fill-active.svg");
+  .application__button-image--crop {
+    padding-left: 3px;
   }
 
-  .application__button--contrast {
-    background-image: url("../img/icon-editor-contrast-active.svg");
-    background-size: 16px 16px;
+  .application__button-image--fill {
+    padding-top: 4px;
+    padding-left: 3px;
+  }
+
+  .application__button-image--contrast {
+    width: 16px;
+    padding-top: 0;
+    padding-left: 5px;
   }
 
   .application__ranges-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     width: 100%;
+    margin: 0 6px 0 31px;
     padding: 0;
-    padding-left: 30px;
   }
 
   .application__ranges-item {
     display: flex;
     width: 100%;
-    height: 22px;
-    margin: 0;
-    padding: 37px 0;
+    height: 24px;
+    margin: 11px 0 35px;
+    padding: 0;
 
     &::after {
       top: auto;
-      bottom: 0;
-      left: -50px;
-      width: calc(100% + 55px);
+      bottom: -24px;
+      left: -56px;
+      width: calc(100% + 74px);
     }
+  }
+
+  .application__btn-upload {
+    margin-bottom: 24px;
   }
 }
 
@@ -190,7 +206,7 @@
     box-sizing: border-box;
   }
 
-  .application__wrapper {
+  .application__picture {
     width: 50%;
     margin: 0;
     padding: 45px 90px;
