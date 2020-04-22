@@ -32,14 +32,26 @@
   padding-bottom: 22px;
 }
 
+.page-main__title--contest {
+  padding-bottom: 0;
+}
+
 .page-main__text {
   padding: 23px $gap-mobile;
   line-height: 30px;
   text-align: center;
 }
 
-.page-main__text--top {
+.page-main__text--photo {
   padding: 45px $gap-mobile + 15px 10px;
+}
+
+.page-main__text--contest {
+  padding: 45px $gap-mobile 6px
+}
+
+.page-main__text--form-title {
+  display: none;
 }
 
 .page-main__intro {
@@ -142,7 +154,7 @@
     text-align: center;
   }
 
-  .page-main__text--top {
+  .page-main__text--photo {
     padding-top: 90px;
     padding-bottom: 35px;
   }
@@ -166,11 +178,6 @@
   .page-main__application {
     margin-top: 40px;
     padding: 57px $gap-table 54px;
-  }
-
-  .page-main__text--contest {
-    padding-right: 85px;
-    padding-left: 85px;
   }
 }
 
@@ -204,7 +211,7 @@
     margin: 0 auto;
   }
 
-  .page-main__text--top {
+  .page-main__text--photo {
     padding-bottom: 53px;
   }
 

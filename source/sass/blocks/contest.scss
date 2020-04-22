@@ -1,78 +1,88 @@
-.contest__form {
+.contest {
   margin: 0;
-  padding: 0;
   text-align: center;
   box-sizing: border-box;
 }
 
 .contest__wrapper {
   position: relative;
-  margin: 0;
-  padding: 0 17px;
+  margin: 10px 0;
+  padding: 0 $gap-mobile;
   text-align: left;
   border-style: none;
 }
 
+.contest__wrapper--user {
+  padding-bottom: 15px;
+}
+
 .contest__wrapper--progress,
 .contest__wrapper--application {
-  padding-top: 41px;
-  padding-bottom: 44px;
+  padding-top: 38px;
+  padding-bottom: 46px;
   background-color: $grey-light;
 }
 
-.contest__progress-list,
-.contest__application-list {
+.contest__wrapper--contacts {
+  margin-top: 18px;
+  margin-bottom: 25px;
+}
+
+.contest__progress-list {
   @include list-reset;
-  padding-top: 40px;
+  padding-top: 28px;
   font-size: 18px;
   line-height: 30px;
 }
 
-.contest__progress-item,
-.contest__application-item {
+.contest__progress-item {
   margin: 0;
   padding: 0;
-  margin-bottom: 44px;
-  margin-top: 44px;
+  margin-top: 52px;
 }
 
 .contest__progress-label {
   position: relative;
-  padding-left: 60px;
+  padding-left: 70px;
 
   &::before {
     content: "";
     position: absolute;
-    bottom: 50%;
-    left: 2px;
-    width: 35px;
-    height: 35px;
+    top: -8px;
+    left: 0;
+    width: 39px;
+    height: 39px;
     box-sizing: border-box;
-    border: solid 2px $grey;
+    border: 2px solid $grey;
     background-color: $white;
-    transform: translateY(50%);
   }
 }
 
 .contest__progress-value:checked + .contest__progress-label::after {
   content: "";
   position: absolute;
-  bottom: 50%;
-  left: 8px;
-  width: 22px;
-  height: 16px;
-  background-image: url("../img/icon-yes.svg");
-  transform: translateY(50%);
+  top: 3px;
+  left: 9px;
+  min-width: 20px;
+  max-width: 21px;
+  min-height: 9px;
+  max-height: 10px;
+  border-bottom: 2px solid $pink;
+  border-left: 2px solid $pink;
+  transform: rotate(-45deg);
 }
 
 .contest__label {
   display: block;
+  margin-bottom: 5px;
+  margin-left: 22px;
   text-transform: uppercase;
   color: $pink;
   line-height: 30px;
 }
 
 .contest__label--center {
+  margin: 0;
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
@@ -85,7 +95,7 @@
   text-transform: uppercase;
   text-align: center;
   color: $pink;
-  line-height: 30px;
+  line-height: 18px;
 }
 
 .contest__legend--contacts {
@@ -95,7 +105,8 @@
 .contest__input,
 .contest__comment-text {
   width: 100%;
-  padding: 13px 22px 12px;
+  margin-bottom: 3px;
+  padding: 14px 22px 15px;
   font-size: 18px;
   line-height: 30px;
   border: 2px solid $grey;
@@ -103,6 +114,7 @@
 }
 
 .contest__required-text {
+  margin: 35px 0 15px;
   text-transform: uppercase;
   text-align: center;
   line-height: 30px;
@@ -112,34 +124,56 @@
   color: $pink;
 }
 
+.contest__application-list {
+  @include list-reset;
+  padding-top: 28px;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.contest__application-item {
+  margin: 0;
+  padding: 0;
+  margin-top: 46px;
+}
+
 .contest__application-label {
   position: relative;
-  padding-left: 60px;
+  padding-left: 70px;
 
   &::before {
     content: "";
     position: absolute;
-    bottom: 50%;
-    left: 2px;
-    width: 35px;
-    height: 35px;
+    top: -6px;
+    left: 0;
+    width: 39px;
+    height: 39px;
     box-sizing: border-box;
     border: solid 2px $grey;
     border-radius: 50%;
     background-color: $white;
-    transform: translateY(50%);
   }
 }
 
 .contest__application-value:checked + .contest__application-label::after {
   content: "";
   position: absolute;
-  top: 5px;
+  top: 6px;
   left: 12px;
   width: 15px;
   height: 15px;
   border-radius: 50%;
   background-color: $pink;
+}
+
+.contest__wrapper--comment {
+  margin-top: 18px;
+}
+.contest__comment-text {
+  margin-top: 10px;
+  margin-bottom: 18px;
+  height: 201px;
+  resize: none;
 }
 
 .contest__btn-wrapper {
