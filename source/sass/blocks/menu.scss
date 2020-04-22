@@ -90,10 +90,10 @@
     &::after {
       content: "";
       position: absolute;
-      bottom: 20px;
-      left: 0;
+      bottom: 17px;
+      left: 4px;
       height: 2px;
-      width: 100%;
+      width: calc(100% - 8px);
       background-color: $white;
     }
   }

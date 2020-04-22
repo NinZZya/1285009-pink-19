@@ -175,6 +175,7 @@
   }
 
   .photos__title--panorama {
+    flex-grow: 1;
     margin-right: 20px;
   }
 
@@ -221,24 +222,34 @@
 
 @media (min-width: $desktop-width) {
   .photos__list {
-    justify-content: center;
+    padding-top: 29px;
+    padding-left: 0;
   }
 
   .photos__item {
-    width: 320px;
-    padding-right: 10px;
-    padding-left: 10px;
+    min-height: 555px;
+    margin-top: 22px;
+    margin-right: $gap-desktop;
+    margin-bottom: 32px;
+    margin-left: $gap-desktop;
+    padding: 0;
     box-sizing: border-box;
+    font-size: 14px;
   }
 
   .photos__item--panorama {
     width: 100%;
-    max-width: 1200px;
+    margin: 0;
     padding: 0;
+
+    &::before {
+      top: 55px;
+      right: 11px;
+    }
   }
 
   .photos__wrapper--panorama {
-    margin-right: 130px;
-    margin-left: 130px;
+    margin-right: $gap-desktop;
+    margin-left: $gap-desktop;
   }
 }

@@ -194,6 +194,20 @@
     margin-left: 18px;
   }
 
+  .page-main__title--head {
+    width: 655px;
+    margin: 0 auto;
+  }
+
+  .page-main__text {
+    width: 640px;
+    margin: 0 auto;
+  }
+
+  .page-main__text--top {
+    padding-bottom: 53px;
+  }
+
   .page-main__intro {
     width: 320px;
     margin-top: 53px;
@@ -214,7 +228,15 @@
   }
 
   .page-main__application {
-    margin: 0 auto;
-    padding: 0;
+    margin: 37px auto 28px;
+    padding-bottom: 57px;
+  }
+
+  .page-main__wrapper {
+    margin-top: 22px;
+  }
+
+  .page-main__photos {
+    padding-top: 36px;
   }
 }
