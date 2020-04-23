@@ -41,37 +41,6 @@
   margin-top: 52px;
 }
 
-.contest__progress-label {
-  position: relative;
-  padding-left: 70px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -8px;
-    left: 0;
-    width: 39px;
-    height: 39px;
-    box-sizing: border-box;
-    border: 2px solid $grey;
-    background-color: $white;
-  }
-}
-
-.contest__progress-value:checked + .contest__progress-label::after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 9px;
-  min-width: 20px;
-  max-width: 21px;
-  min-height: 9px;
-  max-height: 10px;
-  border-bottom: 2px solid $pink;
-  border-left: 2px solid $pink;
-  transform: rotate(-45deg);
-}
-
 .contest__label {
   display: block;
   margin-bottom: 5px;
@@ -135,35 +104,6 @@
   margin: 0;
   padding: 0;
   margin-top: 46px;
-}
-
-.contest__application-label {
-  position: relative;
-  padding-left: 70px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -6px;
-    left: 0;
-    width: 39px;
-    height: 39px;
-    box-sizing: border-box;
-    border: solid 2px $grey;
-    border-radius: 50%;
-    background-color: $white;
-  }
-}
-
-.contest__application-value:checked + .contest__application-label::after {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 12px;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: $pink;
 }
 
 .contest__wrapper--comment {
