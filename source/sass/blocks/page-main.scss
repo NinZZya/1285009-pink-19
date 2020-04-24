@@ -42,6 +42,11 @@
   text-align: center;
 }
 
+.page-main__title--photo,
+.page-main__title--contest {
+  margin-bottom: 51px;
+}
+
 .page-main__text--photo {
   padding: 45px $gap-mobile + 15px 10px;
 }
@@ -62,7 +67,6 @@
 
 .page-main__wrapper {
   margin: 0;
-  margin-top: 51px;
   padding: 0;
   background-color: $white;
 }
@@ -132,7 +136,14 @@
     box-sizing: border-box;
   }
 
-  .page-main__title--head {
+  .page-main__title--photo {
+    margin-bottom: 67px;
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  .page-main__title--contest {
+    margin-bottom: 0;
     font-size: 50px;
     line-height: 60px;
   }
@@ -159,6 +170,18 @@
     padding-bottom: 35px;
   }
 
+  .page-main__text--contest {
+    margin-top: 7px;
+    margin-bottom: 0;
+    padding: 90px 80px 0;
+  }
+
+  .page-main__text--form-title {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+  }
+
   .page-main__information {
     padding-top: 47px;
   }
@@ -172,7 +195,7 @@
   }
 
   .page-main__wrapper {
-    margin-top: 67px;
+    margin-top: 0;
   }
 
   .page-main__application {
@@ -201,7 +224,12 @@
     margin-left: 18px;
   }
 
-  .page-main__title--head {
+  .page-main__title--photo {
+    width: 655px;
+    margin: 0 auto;
+  }
+
+  .page-main__title--contest {
     width: 655px;
     margin: 0 auto;
   }

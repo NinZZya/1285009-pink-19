@@ -32,3 +32,9 @@
   border-left: 2px solid $pink;
   transform: rotate(-45deg);
 }
+
+@media (min-width: $tablet-width) {
+  .checkbox__label {
+    padding-left: 58px;
+  }
+}
