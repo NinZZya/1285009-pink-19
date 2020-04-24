@@ -7,6 +7,7 @@ var sass = require("gulp-sass");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var cssmin = require("gulp-csso");
+var imagemin = require("gulp-imagemin")
 var server = require("browser-sync").create();
 var jsmin = require("gulp-js-minify");
 var del = require("del");
@@ -67,10 +68,10 @@ gulp.task("css", function (done) {
     .pipe(postcss([
       autoprefixer({cascade: false})
     ]))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.build.css))
     .pipe(cssmin())
     .pipe(rename({suffix: ".min"}))
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.build.css))
     .pipe(server.stream());
   done();
@@ -98,10 +99,22 @@ gulp.task("favicon", function (done) {
   done();
 });
 
-gulp.task("img", function (done) {
+gulp.task("img", function(done) {
   gulp.src(path.src.img)
-    .pipe(gulp.dest(path.build.img));
-  done();
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.mozjpeg({quality: 75, progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+          plugins: [
+              {removeViewBox: true},
+              {cleanupIDs: false}
+          ]
+      })
+    ]))
+    .pipe(gulp.dest(path.build.img))
+    .pipe(server.stream());
+    done();
 });
 
 gulp.task("server", function () {
