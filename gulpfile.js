@@ -20,7 +20,8 @@ var path = {
       js: "build/js/",
       css: "build/css/",
       img: "build/img/",
-      fonts: "build/fonts/"
+      fonts: "build/fonts/",
+      favicon: "build/favicon.ico"
   },
   src: {
       html: "source/*.html",
@@ -34,7 +35,8 @@ var path = {
       js: "source/js/**/*.js",
       style: "source/sass/**/*.{scss,sass}",
       img: "source/img/**/*.{png,jpg,svg}",
-      fonts: "source/fonts/**/*.*"
+      fonts: "source/fonts/**/*.*",
+      favicon: "source/favicon.ico"
   },
   clean: "build"
 };
@@ -87,6 +89,12 @@ gulp.task("js", function(done) {
 gulp.task("html", function (done) {
   gulp.src(path.src.html)
     .pipe(gulp.dest(path.build.html));
+  done();
+});
+
+gulp.task("favicon", function (done) {
+  gulp.src(path.src.favicon)
+    .pipe(gulp.dest(path.build.favicon));
   done();
 });
 
