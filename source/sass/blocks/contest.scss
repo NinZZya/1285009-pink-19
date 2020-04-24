@@ -133,6 +133,10 @@
   box-sizing: border-box;
 }
 
+.contest__required-hidden {
+  display: none;
+}
+
 @media (min-width: $tablet-width) {
   .contest {
     display: flex;
@@ -149,8 +153,8 @@
   }
 
   .contest__wrapper--application {
-    order: 1;
     @include app-style;
+    order: 1;
     padding: 0 60px 58px;
   }
 
@@ -175,7 +179,7 @@
   }
 
   .contest__progress-item {
-    margin: 51px 0 0
+    margin: 51px 0 0;
   }
 
   .contest__wrapper--comment {
@@ -284,7 +288,6 @@
   .contest__btn-wrapper {
     margin: 0;
     padding: 0;
-    margin-bottom: 10px;
   }
 
   .contest__btn-submit {
@@ -292,7 +295,87 @@
   }
 
   .contest__required-text {
-    margin: 0 0 10px;
+    margin: 0;
     padding: 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .contest {
+    margin: 35px 10px 0;
+    font-size: 14px;
+    line-height: 30px;
+  }
+
+  .contest__wrapper {
+    margin: 0;
+  }
+
+  .contest__wrapper--user {
+    width: 435px;
+    margin: 0;
+    margin-right: 70px;
+    padding: 0;
+  }
+
+  .contest__wrapper--application {
+    width: 435px;
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: 37px;
+    padding: 3px 10px 0 74px;
+  }
+
+  .contest__legend--application {
+    width: 330px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .contest__wrapper--contacts {
+    margin: 0;
+    margin-top: 55px;
+    padding: 37px 58px 0;
+  }
+
+  .contest__wrapper--progress {
+    margin: 55px 0 0;
+    padding-bottom: 60px;
+  }
+
+  .contest__wrapper--comment {
+    margin: 64px 0 0;
+  }
+
+  .contest__wrapper--send {
+    margin-top: 66px;
+    padding: 0;
+  }
+
+  .contest__contacts-wrapper-col {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contest__contacts-wrapper {
+    width: 375px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .contest__progress-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .contest__comment-text {
+    margin-top: 28px;
+    margin-bottom: 19px;
+    height: 128px;
+  }
+
+  .contest__required-hidden {
+    display: inline;
   }
 }

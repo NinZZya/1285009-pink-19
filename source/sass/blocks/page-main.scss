@@ -230,7 +230,7 @@
   }
 
   .page-main__title--contest {
-    width: 655px;
+    width: 900px;
     margin: 0 auto;
   }
 
@@ -241,6 +241,18 @@
 
   .page-main__text--photo {
     padding-bottom: 53px;
+  }
+
+  .page-main__text--contest {
+    width: 800px;
+  }
+
+  .page-main__text--form-title {
+    display: inline;
+  }
+
+  .page-main__text-newline {
+    display: block;
   }
 
   .page-main__intro {

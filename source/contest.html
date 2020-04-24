@@ -151,9 +151,9 @@
       <h1 class="page-main__title page-main__title--contest">Конкурс на самое безбашенное путешествие с Пинк</h1>
       <div class="page-main__wrapper">
         <p class="page-main__text page-main__text--contest">
-          Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту!
+          <span>Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на<span class="page-main__text-newline"></span> вашу бонусную карту!</span>
+          <span class="page-main__text page-main__text--form-title">Пожалуйста, заполните форму ниже:</span>
         </p>
-        <h2 class="page-main__text page-main__text--form-title">Пожалуйста, заполните форму ниже:</h2>
         <form action="https://echo.htmlacademy.ru" class="contest" method="POST">
           <fieldset class="contest__wrapper contest__wrapper--user">
             <legend class="visually-hidden">Введите ФИО</legend>
@@ -172,46 +172,54 @@
           </fieldset>
           <fieldset class="contest__wrapper contest__wrapper--progress">
             <legend class="contest__legend contest__legend--progress">Ваши безбашенные достижения в путешествии</legend>
-            <ul class="contest__progress-list">
-              <li class="contest__progress-item checkbox">
-                <input type="checkbox" id="contest__progress-value-1" name="progress-value" value="contest__progress-value-1" class="checkbox__value" checked>
-                <label for="contest__progress-value-1" class="checkbox__label">Сделал селфи с акулой</label>
-              </li>
-              <li class="contest__progress-item checkbox">
-                <input type="checkbox" id="contest__progress-value-2" name="progress-value" value="contest__progress-value-2" class="checkbox__value" checked>
-                <label for="contest__progress-value-2" class="checkbox__label">Обгорел на пляже</label>
-              </li>
-              <li class="contest__progress-item checkbox">
-                <input type="checkbox" id="contest__progress-value-3" name="progress-value" value="contest__progress-value-3" class="checkbox__value">
-                <label for="contest__progress-value-3" class="checkbox__label">Видел Чака Норриса</label>
-              </li>
-              <li class="contest__progress-item checkbox">
-                <input type="checkbox" id="contest__progress-value-4" name="progress-value" value="contest__progress-value-4" class="checkbox__value">
-                <label for="contest__progress-value-4" class="checkbox__label">Накупил сувениров</label>
-              </li>
-              <li class="contest__progress-item checkbox">
-                <input type="checkbox" id="contest__progress-value-5" name="progress-value" value="contest__progress-value-5" class="checkbox__value" checked>
-                <label for="contest__progress-value-5" class="checkbox__label">Удержал башню</label>
-              </li>
-              <li class="contest__progress-item checkbox">
-                <input type="checkbox" id="contest__progress-value-6" name="progress-value" value="contest__progress-value-6" class="checkbox__value">
-                <label for="contest__progress-value-6" class="checkbox__label">Разгромил отель</label>
-              </li>
-            </ul>
+            <div class="contest__progress-list">
+              <div class="contest__progress-wrapper">
+                <div class="contest__progress-item checkbox">
+                  <input type="checkbox" id="contest__progress-value-1" name="progress-value" value="contest__progress-value-1" class="checkbox__value" checked>
+                  <label for="contest__progress-value-1" class="checkbox__label">Сделал селфи с акулой</label>
+                </div>
+                <div class="contest__progress-item checkbox">
+                  <input type="checkbox" id="contest__progress-value-2" name="progress-value" value="contest__progress-value-2" class="checkbox__value" checked>
+                  <label for="contest__progress-value-2" class="checkbox__label">Обгорел на пляже</label>
+                </div>
+              </div>
+              <div class="contest__progress-wrapper">
+                <div class="contest__progress-item checkbox">
+                  <input type="checkbox" id="contest__progress-value-3" name="progress-value" value="contest__progress-value-3" class="checkbox__value">
+                  <label for="contest__progress-value-3" class="checkbox__label">Видел Чака Норриса</label>
+                </div>
+                <div class="contest__progress-item checkbox">
+                  <input type="checkbox" id="contest__progress-value-4" name="progress-value" value="contest__progress-value-4" class="checkbox__value">
+                  <label for="contest__progress-value-4" class="checkbox__label">Накупил сувениров</label>
+                </div>
+              </div>
+              <div class="contest__progress-wrapper">
+                <div class="contest__progress-item checkbox">
+                  <input type="checkbox" id="contest__progress-value-5" name="progress-value" value="contest__progress-value-5" class="checkbox__value" checked>
+                  <label for="contest__progress-value-5" class="checkbox__label">Удержал башню</label>
+                </div>
+                <div class="contest__progress-item checkbox">
+                  <input type="checkbox" id="contest__progress-value-6" name="progress-value" value="contest__progress-value-6" class="checkbox__value">
+                  <label for="contest__progress-value-6" class="checkbox__label">Разгромил отель</label>
+                </div>
+              </div>
+            </div>
           </fieldset>
           <fieldset class="contest__wrapper contest__wrapper--contacts">
             <legend class="contest__legend contest__legend--contacts">Контактная информация</legend>
-            <p class="contest__contacts-wrapper">
-              <label for="contest__contacts-tel" class="contest__label contest__label--tel">Номер телефона</label>
-              <input type="tel" id="contest__contacts-tel" class="contest__input contest__input--contacts-tel"  name="user-tel" placeholder="Номер, пожалуйста" value="">
-            </p>
-            <p class="contest__contacts-wrapper">
-              <label for="contest__contacts-email" class="contest__label contest__label--email">Адрес почты</label>
-              <input type="email" id="contest__contacts-email" class="contest__input contest__input--contacts-email" name="user-email" placeholder="Введите почту *" value="" required>
-            </p>
+            <div class="contest__contacts-wrapper-col">
+              <p class="contest__contacts-wrapper">
+                <label for="contest__contacts-tel" class="contest__label contest__label--tel">Номер телефона</label>
+                <input type="tel" id="contest__contacts-tel" class="contest__input contest__input--contacts-tel"  name="user-tel" placeholder="Номер, пожалуйста" value="">
+              </p>
+              <p class="contest__contacts-wrapper">
+                <label for="contest__contacts-email" class="contest__label contest__label--email">Адрес почты</label>
+                <input type="email" id="contest__contacts-email" class="contest__input contest__input--contacts-email" name="user-email" placeholder="Введите почту *" value="" required>
+              </p>
+            </div>
           </fieldset>
           <fieldset class="contest__wrapper contest__wrapper--application">
-            <legend class="contest__legend">
+            <legend class="contest__legend contest__legend--application">
               С каким приложением путешествовали?
             </legend>
             <ul class="contest__application-list">
@@ -240,7 +248,7 @@
               <button type="submit" class="contest__btn-submit btn btn-submit">Отправить форму</button>
             </p>
             <p class="contest__required-text">
-              <span class="contest__required-label">*</span> — обязательные поля
+              <span class="contest__required-label">*</span> — обязательные <span class="contest__required-hidden">для заполнения </span>поля
             </p>
           </div>
         </form>
