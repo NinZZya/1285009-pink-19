@@ -18,6 +18,15 @@
   text-decoration: none;
   box-sizing: border-box;
   line-height: 0;
+  color: $white;
+
+  &:hover {
+    color: $pink;
+  }
+
+  &:active {
+    color: rgba($white, 0.3);
+  }
 }
 
 .logo__image-mobile {

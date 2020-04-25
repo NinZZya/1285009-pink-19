@@ -13,7 +13,10 @@ var jsmin = require("gulp-js-minify");
 var del = require("del");
 var rename = require("gulp-rename");
 var runSequence = require("gulp4-run-sequence");
-var fileSystem   = require("fs");
+var svgstore = require("gulp-svgstore");
+var svgmin = require("gulp-svgmin");
+var posthtml = require("gulp-posthtml");
+var include = require("posthtml-include");
 
 var path = {
   build: {
@@ -22,6 +25,7 @@ var path = {
       css: "build/css/",
       img: "build/img/",
       fonts: "build/fonts/",
+      sprite: "source/img/",
       favicon: "build/favicon.ico"
   },
   src: {
@@ -29,7 +33,9 @@ var path = {
       js: "source/js/**/*.js",
       style: "source/sass/style.scss",
       img: "source/img/build/**/*.*",
-      fonts: "source/fonts/**/*.*"
+      fonts: "source/fonts/**/*.*",
+      sprite: "source/img/sprite/*.svg",
+      favicon: "source/favicon.ico"
   },
   watch: {
       html: "source/**/*.html",
@@ -37,20 +43,32 @@ var path = {
       style: "source/sass/**/*.{scss,sass}",
       img: "source/img/**/*.{png,jpg,svg}",
       fonts: "source/fonts/**/*.*",
+      sprite: "source/img/sprite/*.svg",
       favicon: "source/favicon.ico"
   },
-  clean: "build"
+  clean: {
+    build: "build",
+    sprite: "source/img/spite.svg",
+  }
 };
 
-gulp.task("dir", function (done) {
-  if(!fileSystem.existsSync(path.clean)) {
-    fileSystem.mkdirSync(path.clean);
-  }
+gulp.task("clean", function (done) {
+  del(path.clean.build);
   done();
 });
 
-gulp.task("clean", function (done) {
-  del(path.clean);
+gulp.task("sprite", function(done) {
+  del(path.clean.sprite);
+  gulp.src(path.src.sprite)
+    .pipe(plumber())
+    .pipe(svgmin())
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest(path.build.sprite))
+    .pipe(server.stream());
   done();
 });
 
@@ -79,6 +97,7 @@ gulp.task("css", function (done) {
 
 gulp.task("js", function(done) {
   gulp.src(path.src.js)
+    .pipe(plumber())
     .pipe(gulp.dest(path.build.js))
     .pipe(jsmin())
     .pipe(rename({suffix: ".min"}))
@@ -89,6 +108,9 @@ gulp.task("js", function(done) {
 
 gulp.task("html", function (done) {
   gulp.src(path.src.html)
+    .pipe(posthtml([
+      include()
+    ]))
     .pipe(gulp.dest(path.build.html));
   done();
 });
@@ -131,12 +153,13 @@ gulp.task("server", function () {
   gulp.watch(path.watch.fonts, gulp.series("fonts"));
   gulp.watch(path.watch.img, gulp.series("img",server.reload));
   gulp.watch(path.watch.style, gulp.series("css"));
+  gulp.watch(path.watch.sprite, gulp.series("sprite", "html"));
+  gulp.watch(path.watch.favicon, gulp.series("favicon"));
   gulp.watch(path.watch.html).on("change", server.reload);
 });
 
 gulp.task("build", function(done) {
   runSequence(
-    "dir",
     "img",
     "fonts",
     "css",

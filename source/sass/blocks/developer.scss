@@ -9,14 +9,14 @@
   align-items: flex-start;
   padding-top: 10px;
   text-decoration: none;
-  color: $blue-dark;
+  color: $pink;
 
-  &:hover .developer__image {
-    fill: $blue-dark;
+  &:hover {
+    color: $blue-dark;
   }
 
-  &:active .developer__image {
-    fill: rgba($blue-dark, 0.3);
+  &:active {
+    color: rgba($blue-dark, 0.3);
   }
 }
 
@@ -26,4 +26,5 @@
   margin-top: 5px;
   margin-right: 14px;
   line-height: 18px;
+  color: $blue-dark;
 }

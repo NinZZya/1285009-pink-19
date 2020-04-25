@@ -18,6 +18,11 @@
   width: 100%;
 }
 
+.mobile-os__link {
+  display: block;
+  height: 100%;
+}
+
 @media (min-width: $tablet-width) {
   .mobile-os__list {
     padding: 45px 30px 30px;

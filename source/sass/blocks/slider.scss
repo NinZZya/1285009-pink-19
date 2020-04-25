@@ -80,6 +80,16 @@
     background-color: transparent;
     border: none;
     transform: rotate(45deg);
+
+    &:hover,
+    &:focus {
+      outline: none;
+      border-color: rgba($blue-dark, 0.6);
+    }
+
+    &:active {
+      border-color: rgba($blue-dark, 0.1);
+    }
   }
 
   .slider__btn--left {

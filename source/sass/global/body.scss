@@ -8,6 +8,11 @@ body {
   box-sizing: border-box;
 }
 
+a:focus {
+  outline: none;
+  box-shadow: 0 0 15px 0 $pink;
+}
+
 @media (min-width: $tablet-width) {
   body {
     max-width: $tablet-width;

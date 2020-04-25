@@ -11,6 +11,20 @@
   text-align: center;
 }
 
+.page-footer__logo-link {
+  display: block;
+  height: 100%;
+  color: $blue-dark;
+
+  &:hover {
+    color: $pink;
+  }
+
+  &:active {
+    color: rgba($blue-dark, 0.3);
+  }
+}
+
 .page-footer__social {
   padding: 36px 0 26px;
 }
