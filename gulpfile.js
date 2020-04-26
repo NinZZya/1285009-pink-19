@@ -32,7 +32,7 @@ var path = {
       html: "source/*.html",
       js: "source/js/**/*.js",
       style: "source/sass/style.scss",
-      img: "source/img/build/**/*.*",
+      img: "source/img/source/**/*.*",
       fonts: "source/fonts/**/*.*",
       sprite: "source/img/sprite/*.svg",
       favicon: "source/favicon.ico"
@@ -41,7 +41,7 @@ var path = {
       html: "source/**/*.html",
       js: "source/js/**/*.js",
       style: "source/sass/**/*.{scss,sass}",
-      img: "source/img/**/*.{png,jpg,svg}",
+      img: "source/img/source/**/*.{png,jpg,svg}",
       fonts: "source/fonts/**/*.*",
       sprite: "source/img/sprite/*.svg",
       favicon: "source/favicon.ico"
