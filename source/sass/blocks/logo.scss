@@ -1,14 +1,15 @@
 .logo {
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
-  padding: 21px 20px;
   width: 100%;
+  height: 66px;
   box-sizing: border-box;
+  background-color: rgba($black, 0.3);
+}
+
+.logo--active {
+  background-color: $blue-dark;
 }
 
 .logo__link {
@@ -17,9 +18,30 @@
   text-decoration: none;
   box-sizing: border-box;
   line-height: 0;
+  color: $white;
+
+  &:hover {
+    color: $pink;
+  }
+
+  &:active {
+    color: rgba($white, 0.3);
+  }
 }
 
-.logo__image {
+.logo__image-mobile {
+  margin: 0;
+  padding: 0;
+}
+
+.logo__image-tablet {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo__image-desktop {
+  display: none;
   margin: 0;
   padding: 0;
 }
@@ -55,25 +77,70 @@
   &::before,
   &::after {
     content: "";
-
     position: absolute;
     top: 10px;
-
-
-    width: 26px;
+    left: 24px;
+    width: 30px;
     height: 4px;
-
     background-color: #ffffff;
   }
 
   &::before {
-    left: 12px;
     transform: rotate(45deg);
     box-shadow: none;
   }
 
   &::after {
-    right: 12px;
     transform: rotate(-45deg);
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .logo {
+    align-items: flex-end;
+    padding: 27px 20px 43px;
+    height: 110px;
+  }
+
+  .logo__image-mobile {
+    display: none;
+  }
+
+  .logo__image-tablet {
+    display: block;
+  }
+
+  .logo__image-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .logo,
+  .logo--active {
+    position: static;
+    align-items: center;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+    background-color: transparent;
+  }
+
+  .logo__image-mobile {
+    display: none;
+  }
+
+  .logo__image-tablet {
+    display: none;
+  }
+
+  .logo__image-desktop {
+    display: block;
+  }
+
+  .logo__btn,
+  .logo__btn--close {
+    display: none;
   }
 }

@@ -7,12 +7,16 @@ var sass = require("gulp-sass");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var cssmin = require("gulp-csso");
+var imagemin = require("gulp-imagemin")
 var server = require("browser-sync").create();
 var jsmin = require("gulp-js-minify");
 var del = require("del");
 var rename = require("gulp-rename");
 var runSequence = require("gulp4-run-sequence");
-var fileSystem   = require("fs");
+var svgstore = require("gulp-svgstore");
+var svgmin = require("gulp-svgmin");
+var posthtml = require("gulp-posthtml");
+var include = require("posthtml-include");
 
 var path = {
   build: {
@@ -20,34 +24,51 @@ var path = {
       js: "build/js/",
       css: "build/css/",
       img: "build/img/",
-      fonts: "build/fonts/"
+      fonts: "build/fonts/",
+      sprite: "source/img/",
+      favicon: "build/favicon.ico"
   },
   src: {
       html: "source/*.html",
       js: "source/js/**/*.js",
       style: "source/sass/style.scss",
-      img: "source/img/**/*.*",
-      fonts: "source/fonts/**/*.*"
+      img: "source/img/source/**/*.*",
+      fonts: "source/fonts/**/*.*",
+      sprite: "source/img/sprite/*.svg",
+      favicon: "source/favicon.ico"
   },
   watch: {
       html: "source/**/*.html",
       js: "source/js/**/*.js",
       style: "source/sass/**/*.{scss,sass}",
-      img: "source/img/**/*.{png,jpg,svg}",
-      fonts: "source/fonts/**/*.*"
+      img: "source/img/source/**/*.{png,jpg,svg}",
+      fonts: "source/fonts/**/*.*",
+      sprite: "source/img/sprite/*.svg",
+      favicon: "source/favicon.ico"
   },
-  clean: "build"
+  clean: {
+    build: "build",
+    sprite: "source/img/spite.svg",
+  }
 };
 
-gulp.task("dir", function (done) {
-  if(!fileSystem.existsSync(path.clean)) {
-    fileSystem.mkdirSync(path.clean);
-  }
+gulp.task("clean", function (done) {
+  del(path.clean.build);
   done();
 });
 
-gulp.task("clean", function (done) {
-  del(path.clean);
+gulp.task("sprite", function(done) {
+  del(path.clean.sprite);
+  gulp.src(path.src.sprite)
+    .pipe(plumber())
+    .pipe(svgmin())
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest(path.build.sprite))
+    .pipe(server.stream());
   done();
 });
 
@@ -65,10 +86,10 @@ gulp.task("css", function (done) {
     .pipe(postcss([
       autoprefixer({cascade: false})
     ]))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.build.css))
     .pipe(cssmin())
     .pipe(rename({suffix: ".min"}))
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.build.css))
     .pipe(server.stream());
   done();
@@ -76,6 +97,7 @@ gulp.task("css", function (done) {
 
 gulp.task("js", function(done) {
   gulp.src(path.src.js)
+    .pipe(plumber())
     .pipe(gulp.dest(path.build.js))
     .pipe(jsmin())
     .pipe(rename({suffix: ".min"}))
@@ -86,14 +108,35 @@ gulp.task("js", function(done) {
 
 gulp.task("html", function (done) {
   gulp.src(path.src.html)
+    .pipe(posthtml([
+      include()
+    ]))
     .pipe(gulp.dest(path.build.html));
   done();
 });
 
-gulp.task("img", function (done) {
-  gulp.src(path.src.img)
-    .pipe(gulp.dest(path.build.img));
+gulp.task("favicon", function (done) {
+  gulp.src(path.src.favicon)
+    .pipe(gulp.dest(path.build.favicon));
   done();
+});
+
+gulp.task("img", function(done) {
+  gulp.src(path.src.img)
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.mozjpeg({quality: 75, progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+          plugins: [
+              {removeViewBox: true},
+              {cleanupIDs: false}
+          ]
+      })
+    ]))
+    .pipe(gulp.dest(path.build.img))
+    .pipe(server.stream());
+    done();
 });
 
 gulp.task("server", function () {
@@ -110,12 +153,13 @@ gulp.task("server", function () {
   gulp.watch(path.watch.fonts, gulp.series("fonts"));
   gulp.watch(path.watch.img, gulp.series("img",server.reload));
   gulp.watch(path.watch.style, gulp.series("css"));
+  gulp.watch(path.watch.sprite, gulp.series("sprite", "html"));
+  gulp.watch(path.watch.favicon, gulp.series("favicon"));
   gulp.watch(path.watch.html).on("change", server.reload);
 });
 
 gulp.task("build", function(done) {
   runSequence(
-    "dir",
     "img",
     "fonts",
     "css",

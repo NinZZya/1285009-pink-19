@@ -10,13 +10,18 @@
     "del": "^5.1.0",
     "gulp": "4.0.x",
     "gulp-csso": "^4.0.1",
+    "gulp-imagemin": "^7.1.0",
     "gulp-js-minify": "0.0.3",
     "gulp-plumber": "1.2.x",
     "gulp-postcss": "8.0.x",
+    "gulp-posthtml": "^3.0.4",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "4.0.x",
     "gulp-sourcemaps": "2.6.x",
+    "gulp-svgmin": "^2.2.0",
+    "gulp-svgstore": "^7.0.1",
     "gulp4-run-sequence": "^1.0.1",
+    "posthtml-include": "^1.4.3",
     "stylelint": "^10.1.0",
     "stylelint-config-htmlacademy": "0.1.x",
     "stylelint-config-standard": "^20.0.0"
@@ -25,7 +30,7 @@
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
     "test": "npm run editorconfig && npm run stylelint",
-    "build": "gulp clean && gulp build",
+    "build": "gulp clean && gulp sprite && gulp build",
     "start": "npm run build && gulp server"
   },
   "browserslist": [

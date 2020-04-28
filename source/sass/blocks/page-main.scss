@@ -2,23 +2,67 @@
   position: relative;
   padding-top: 65px;
   color: $blue-dark;
+  background-color: $white;
   background-image: url("../img/bg-back-mobile@1x.jpg");
   background-position: top center;
   background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.page-main--index {
+  position: relative;
+  padding-top: 65px;
+  color: $blue-dark;
+  background-image: url("../img/iphone-hand-mobile@1x.png"), url("../img/bg-back-mobile@1x.jpg");
+  background-position: top 176px left, top center;
+  background-repeat: no-repeat, no-repeat;
+  overflow: hidden;
 }
 
 .page-main__title {
+  @include title-mobile;
   margin: 0;
-  padding: 35px;
-  font-size: 24px;
-  font-weight: 300;
+  padding: 30px $gap-mobile;
   color: $white;
   text-align: center;
 }
 
+.page-main__title--index {
+  padding-top: 19px;
+  padding-bottom: 22px;
+}
+
+.page-main__title--contest {
+  padding-bottom: 0;
+}
+
 .page-main__text {
-  padding: 55px 15px;
+  padding: 23px $gap-mobile;
+  line-height: 30px;
   text-align: center;
+}
+
+.page-main__title--photo,
+.page-main__title--contest {
+  margin-bottom: 51px;
+}
+
+.page-main__text--photo {
+  padding: 45px $gap-mobile + 15px 10px;
+}
+
+.page-main__text--contest {
+  padding: 45px $gap-mobile 6px;
+}
+
+.page-main__text--form-title {
+  display: none;
+}
+
+.page-main__intro {
+  margin: 0;
+  margin-top: 295px;
+  padding: 0;
 }
 
 .page-main__wrapper {
@@ -27,7 +71,219 @@
   background-color: $white;
 }
 
-.page-main__application {
+.page-main__photos {
   margin: 0;
-  padding: 20px 20px 40px;
+  padding: 0;
+  padding-top: 25px;
+}
+
+.page-main__application {
+  margin: 19px 0 0;
+  padding: 20px 22px 40px 18px;
+}
+
+.page-main__information {
+  margin: 0;
+  padding: 30px 0;
+}
+
+.page-main__rewiews {
+  margin: 0;
+  padding: 0;
+}
+
+.page-main__prices {
+  margin: 0;
+  padding: 0;
+  padding-top: 35px;
+  padding-bottom: 9px;
+}
+
+.page-main__contacts {
+  margin: 0;
+  margin-top: 40px;
+  padding: 0;
+}
+
+@media (min-width: $tablet-width) {
+  .page-main {
+    padding-top: 178px;
+    background-image: url("../img/bg-back-tablet@1x.jpg");
+  }
+
+  .page-main--index {
+    background-image: url("../img/iphone-hand-tablet@1x.png"), url("../img/bg-back-tablet@1x.jpg");
+    background-position: top 184px left -20px, top center;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  .page-main__title {
+    @include title-table;
+    margin: 0;
+    padding: 0;
+    padding-right: $gap-table;
+    padding-bottom: 75px;
+    padding-left: $gap-table;
+    text-align: center;
+  }
+
+  .page-main__title--index {
+    width: 285px;
+    margin-top: 25px;
+    margin-left: 27px;
+    padding-bottom: 0;
+    line-height: 48px;
+    box-sizing: border-box;
+  }
+
+  .page-main__title--photo {
+    margin-bottom: 67px;
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  .page-main__title--contest {
+    margin-bottom: 0;
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  .page-main__intro {
+    width: 340px;
+    margin-top: 31px;
+    margin-bottom: 110px;
+  }
+
+  .page-main__text {
+    padding: 28px 110px;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 30px;
+    letter-spacing: normal;
+    text-align: center;
+  }
+
+  .page-main__text--photo {
+    padding-top: 90px;
+    padding-bottom: 35px;
+  }
+
+  .page-main__text--contest {
+    margin-top: 7px;
+    margin-bottom: 0;
+    padding: 90px 80px 0;
+  }
+
+  .page-main__text--form-title {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .page-main__information {
+    padding-top: 47px;
+  }
+
+  .page-main__prices {
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    padding-top: 38px;
+    padding-bottom: 65px;
+  }
+
+  .page-main__wrapper {
+    margin-top: 0;
+  }
+
+  .page-main__application {
+    margin-top: 40px;
+    padding: 57px $gap-table 54px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-main {
+    background-image: url("../img/bg-back-desktop@1x.jpg");
+  }
+
+  .page-main--index {
+    background-image: url("../img/iphone-hand-desktop@1x.png"), url("../img/bg-back-desktop@1x.jpg");
+    background-position: top 209px left 26px, top center;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  .page-main__title {
+    @include title-desktop;
+  }
+
+  .page-main__title--index {
+    margin-top: 40px;
+    margin-left: 18px;
+  }
+
+  .page-main__title--photo {
+    width: 655px;
+    margin: 0 auto;
+  }
+
+  .page-main__title--contest {
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  .page-main__text {
+    width: 640px;
+    margin: 0 auto;
+  }
+
+  .page-main__text--photo {
+    padding-bottom: 53px;
+  }
+
+  .page-main__text--contest {
+    width: 800px;
+  }
+
+  .page-main__text--form-title {
+    display: inline;
+  }
+
+  .page-main__text-newline {
+    display: block;
+  }
+
+  .page-main__intro {
+    width: 320px;
+    margin-top: 53px;
+    margin-bottom: 115px;
+  }
+
+  .page-main__information {
+    padding-top: 70px;
+  }
+
+  .page-main__prices {
+    margin: 45px 0 0;
+    padding: 37px 0 92px;
+  }
+
+  .page-main__contacts {
+    margin-top: 63px;
+  }
+
+  .page-main__application {
+    margin: 37px auto 28px;
+    padding-bottom: 57px;
+  }
+
+  .page-main__wrapper {
+    margin-top: 22px;
+  }
+
+  .page-main__photos {
+    padding-top: 36px;
+  }
 }

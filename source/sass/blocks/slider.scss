@@ -1,7 +1,5 @@
 .slider {
   width: 100%;
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -25,17 +23,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px 0;
+  margin: 29px 0 38px;
   padding: 0;
 }
 
 .slider__toogle {
-  width: 6px;
-  height: 6px;
-  margin: 0 10px;
+  width: 13px;
+  height: 13px;
+  margin: 0 6px;
   padding: 0;
   background-color: $blue-dark;
   opacity: 0.3;
+  border: 3px solid $white;
   border-radius: 50%;
 }
 
@@ -43,6 +42,82 @@
   opacity: 1;
   border: 3px solid $blue-dark;
   background-color: $white;
-  border-radius: 50%;
-  box-sizing: content-box;
+}
+
+.slider__btn {
+  display: none;
+}
+
+@media (min-width: $tablet-width) {
+  .slider__controls {
+    margin: 34px 0 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .slider__controls {
+    display: none;
+  }
+
+  .slider__btn {
+    display: block;
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 31px;
+    max-height: 31px;
+    margin: 0;
+    margin-top: 70px;
+    margin-right: 5px;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 0;
+    background-color: transparent;
+    border: none;
+    transform: rotate(45deg);
+
+    &:hover,
+    &:focus {
+      outline: none;
+      border-color: rgba($blue-dark, 0.6);
+    }
+
+    &:active {
+      border-color: rgba($blue-dark, 0.1);
+    }
+  }
+
+  .slider__btn--left {
+    border-bottom: 2px solid $grey-light;
+    border-left: 2px solid $grey-light;
+  }
+
+  .slider__btn--right {
+    border-top: 2px solid $grey-light;
+    border-right: 2px solid $grey-light;
+  }
+
+  .slider__list {
+    position: relative;
+    width: 690px;
+    padding-top: 157px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 44px;
+      right: 50%;
+      width: 80px;
+      height: 65px;
+      background-image: url("../img/icon-quotes.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: translateX(50%);
+    }
+  }
 }

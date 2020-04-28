@@ -1,8 +1,5 @@
 .photos {
   position: relative;
-  margin: 0;
-  padding: 0;
-  padding-top: 40px;
 }
 
 .photos__list {
@@ -11,35 +8,74 @@
 
 .photos__item {
   margin-bottom: 20px;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: $gap-mobile;
+  padding-left: $gap-mobile;
   line-height: 0;
   box-sizing: border-box;
 }
 
 .photos__item--panorama {
+  position: relative;
   padding: 0;
   line-height: 0;
   box-sizing: border-box;
+  overflow: hidden;
+
+  &::before {
+    content: "Панорама дня";
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 140px;
+    height: 36px;
+    margin: 0;
+    padding: 7px 5px;
+    z-index: 1;
+    box-sizing: border-box;
+    background-color: $pink;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 24px;
+    letter-spacing: normal;
+    text-align: center;
+  }
 }
 
-.photos__item--panorama .photos__wrapper {
-  margin-right: 20px;
-  margin-left: 20px;
+.photos__picture {
+  margin: 0;
+  padding: 0;
 }
 
 .photos__image {
   margin: 0;
   padding: 0;
-  line-height: 0;
   width: 100%;
+  height: 100%;
+  line-height: 0;
+}
+
+.photos__image--panorama {
+  position: relative;
+  left: 50%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%);
 }
 
 .photos__wrapper {
   margin: 0;
-  padding: 25px 18px;
+  padding: 18px 10px 10px 18px;
   background-color: $grey-light;
   line-height: 24px;
+}
+
+.photos__wrapper--panorama {
+  margin-right: $gap-mobile;
+  margin-left: $gap-mobile;
 }
 
 .photos__title {
@@ -62,22 +98,158 @@
 }
 
 .photos__rates {
+  margin: 0;
+  padding: 9px 0;
+}
+
+.photos__rates-toggle {
+  display: none;
+}
+
+.photos__rates-value {
   position: relative;
-  margin: 20px 0 0;
+  margin: 10px 0 9px;
   padding: 0;
-  padding-left: 38px;
+  padding-left: 31px;
+  font-size: 12px;
   color: $pink;
+  text-transform: uppercase;
 
   &::before {
     content: "";
     position: absolute;
     bottom: 50%;
     left: 0;
-
     width: 13px;
     height: 12px;
     background-image: url("../img/icon-heart.svg");
     background-repeat: no-repeat;
     transform: translateY(50%);
+  }
+}
+
+.photos__rates-toggle:checked + .photos__rates-value {
+  &::before {
+    background-image: url("../img/icon-heart-active.svg");
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .photos__list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 32px;
+    padding-left: $gap-table;
+  }
+
+  .photos__item {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 300px;
+    min-height: 455px;
+    height: 100%;
+    margin-right: $gap-table;
+    padding: 0;
+  }
+
+  .photos__item--panorama {
+    width: 100%;
+
+    &::before {
+      top: 57px;
+      right: 20px;
+    }
+  }
+
+  .photos__wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 24px 31px 22px 28px;
+  }
+
+  .photos__wrapper--panorama {
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 0;
+  }
+
+  .photos__title--panorama {
+    flex-grow: 1;
+    margin-right: 20px;
+  }
+
+  .photos__text {
+    flex-grow: 1;
+  }
+
+  .photos__text--panorama {
+    order: 1;
+    min-height: 0;
+  }
+
+  .photos__rates {
+    margin: 0;
+    padding: 0;
+  }
+
+  .photos__rates-value {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+
+    &::before {
+      bottom: auto;
+      right: 0;
+      left: auto;
+    }
+  }
+
+  .photos__rates-value--panorama {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    padding-right: 29px;
+
+    &::before {
+      bottom: auto;
+      right: 0;
+      left: auto;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .photos__list {
+    padding-top: 29px;
+    padding-left: 0;
+  }
+
+  .photos__item {
+    min-height: 555px;
+    margin-top: 22px;
+    margin-right: $gap-desktop;
+    margin-bottom: 32px;
+    margin-left: $gap-desktop;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  .photos__item--panorama {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    &::before {
+      top: 55px;
+      right: 11px;
+    }
+  }
+
+  .photos__wrapper--panorama {
+    margin-right: $gap-desktop;
+    margin-left: $gap-desktop;
   }
 }

@@ -3,3 +3,56 @@
   padding: 0;
   list-style: none;
 }
+
+
+@mixin title-mobile() {
+  font-size: 24px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 30px;
+  letter-spacing: normal;
+}
+
+@mixin subtitle-mobile {
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 30px;
+  letter-spacing: normal;
+}
+
+
+@mixin title-table() {
+  font-size: 40px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 50px;
+  letter-spacing: normal;
+}
+
+@mixin title-desktop() {
+  font-size: 50px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 60px;
+  letter-spacing: normal;
+}
+
+@mixin subtitle-desktop() {
+  font-size: 30px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 30px;
+  letter-spacing: normal;
+}
+
+@mixin app-style() {
+  background-color: $white;
+  border: 2px solid $grey;
+  margin: 30px 20px;
+}

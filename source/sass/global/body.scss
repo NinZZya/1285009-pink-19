@@ -1,0 +1,29 @@
+body {
+  max-width: 320px;
+  margin: 0 auto;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  background-color: $white;
+  box-sizing: border-box;
+}
+
+a:focus {
+  outline: none;
+  box-shadow: 0 0 15px 0 $pink;
+}
+
+@media (min-width: $tablet-width) {
+  body {
+    max-width: $tablet-width;
+  }
+}
+
+
+@media (min-width: $desktop-width) {
+  body {
+    max-width: $desktop-width;
+    font-size: 18px;
+    line-height: 30px;
+  }
+}

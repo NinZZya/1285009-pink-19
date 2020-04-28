@@ -1,6 +1,7 @@
 .range {
   position: relative;
-  margin: 10px 0;
+  display: flex;
+  align-items: center;
   padding: 0;
   box-sizing: border-box;
 }
@@ -30,18 +31,6 @@
   &:hover {
     background-color: $pink;
   }
-}
-
-.range--crop .range__toggle {
-  left: 85%;
-}
-
-.range--fill .range__toggle {
-  left: 55%;
-}
-
-.range--contrast .range__toggle {
-  left: 25%;
 }
 
 .range__toggle--grey {
