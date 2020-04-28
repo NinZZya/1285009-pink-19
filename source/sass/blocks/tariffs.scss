@@ -139,10 +139,10 @@
     position: relative;
 
     &::before {
-      top: -9px;
-      width: 70px;
-      height: 70px;
-      background-size: 70px 70px;
+      width: 61px;
+      height: 61px;
+      background-image: url("../img/bg-hit-tablet.svg");
+      background-size: 61px 61px;
     }
 
     &::after {
@@ -213,6 +213,7 @@
       top: 0;
       width: 75px;
       height: 75px;
+      background-image: url("../img/bg-hit.svg");
       background-size: 75px 75px;
     }
 
@@ -220,6 +221,10 @@
       top: 21px;
       left: 12px;
     }
+  }
+
+  .tariffs__title {
+    font-size: 18px;
   }
 
   .tariffs__value {

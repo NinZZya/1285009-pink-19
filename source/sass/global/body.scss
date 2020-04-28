@@ -1,5 +1,5 @@
 body {
-  max-width: $mobile-width;
+  min-width: $mobile-width;
   margin: 0 auto;
   font-family: "Open Sans", "Arial", sans-serif;
   font-size: 14px;
@@ -8,16 +8,8 @@ body {
   box-sizing: border-box;
 }
 
-@media (min-width: $tablet-width) {
-  body {
-    max-width: $tablet-width;
-  }
-}
-
-
 @media (min-width: $desktop-width) {
   body {
-    max-width: $desktop-width;
     font-size: 18px;
     line-height: 30px;
   }

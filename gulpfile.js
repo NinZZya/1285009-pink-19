@@ -32,7 +32,7 @@ var path = {
       html: "source/*.html",
       js: "source/js/**/*.js",
       style: "source/sass/style.scss",
-      img: "source/img/source/**/*.*",
+      img: "source/img/build/**/*.*",
       fonts: "source/fonts/**/*.*",
       sprite: "source/img/sprite/*.svg",
       favicon: "source/favicon.ico"
@@ -41,16 +41,48 @@ var path = {
       html: "source/**/*.html",
       js: "source/js/**/*.js",
       style: "source/sass/**/*.{scss,sass}",
-      img: "source/img/source/**/*.{png,jpg,svg}",
+      img: "source/img/build/**/*.{png,jpg,svg}",
       fonts: "source/fonts/**/*.*",
       sprite: "source/img/sprite/*.svg",
       favicon: "source/favicon.ico"
+  },
+  img: {
+    // src: "source/img/source/**/*.{png,jpg,svg}",
+    src: "source/img/source/iphone-hand-desktop@2x.png",
+    build: "source/img/build/"
   },
   clean: {
     build: "build",
     sprite: "source/img/spite.svg",
   }
 };
+
+
+gulp.task("build:img", function(done) {
+  gulp.src(path.img.src)
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.mozjpeg({quality: 75, progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+          plugins: [
+              {removeViewBox: true},
+              {cleanupIDs: false}
+          ]
+      })
+    ]))
+    .pipe(gulp.dest(path.img.build))
+    .pipe(server.stream());
+    done();
+});
+
+gulp.task("build:webp", function(done) {
+  gulp.src(path.img.webp)
+    .pipe(webp({quality: 90}))
+    .pipe(gulp.dest(path.img.build))
+    .pipe(server.stream());
+    done();
+});
 
 gulp.task("clean", function (done) {
   del(path.clean.build);
@@ -123,17 +155,6 @@ gulp.task("favicon", function (done) {
 
 gulp.task("img", function(done) {
   gulp.src(path.src.img)
-    .pipe(imagemin([
-      imagemin.gifsicle({interlaced: true}),
-      imagemin.mozjpeg({quality: 75, progressive: true}),
-      imagemin.optipng({optimizationLevel: 5}),
-      imagemin.svgo({
-          plugins: [
-              {removeViewBox: true},
-              {cleanupIDs: false}
-          ]
-      })
-    ]))
     .pipe(gulp.dest(path.build.img))
     .pipe(server.stream());
     done();
@@ -151,7 +172,7 @@ gulp.task("server", function () {
   gulp.watch(path.watch.js, gulp.series("js"));
   gulp.watch(path.watch.html, gulp.series("html"));
   gulp.watch(path.watch.fonts, gulp.series("fonts"));
-  gulp.watch(path.watch.img, gulp.series("img",server.reload));
+  gulp.watch(path.watch.img, gulp.series("img"));
   gulp.watch(path.watch.style, gulp.series("css"));
   gulp.watch(path.watch.sprite, gulp.series("sprite", "html"));
   gulp.watch(path.watch.favicon, gulp.series("favicon"));

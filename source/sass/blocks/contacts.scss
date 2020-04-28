@@ -57,6 +57,13 @@
   background-position: bottom center;
   background-repeat: no-repeat;
 
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/bg-map-mobile@2x.jpg");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 320px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -68,7 +75,7 @@
     background-image: url("../img/bg-triangle-white-footer.svg");
     background-repeat: no-repeat;
     background-position: bottom center;
-    background-size: 320px 35px;
+    background-size: 100% 100%;
   }
 }
 
@@ -102,7 +109,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 12px 9px 0;
+    padding: 5px 0 0;
   }
 
   .cotacts__text-wrapper {
@@ -126,9 +133,13 @@
     background-image: url("../img/bg-map-tablet@1x.jpg");
     background-position: bottom -128px left -20px;
 
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-map-tablet@2x.jpg");
+      background-size: 700px;
+    }
+
     &::before {
       height: 70px;
-      background-size: 705px 75px;
     }
   }
 
@@ -190,10 +201,15 @@
     min-height: 511px;
     background-image: url("../img/bg-map-desktop@1x.jpg");
     background-position: top -268px center;
+    background-size: 1200px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-map-desktop@2x.jpg");
+    }
 
     &::before {
       height: 115px;
-      background-size: 1200px 125px;
+      background-size: 120% 125px;
     }
   }
 
