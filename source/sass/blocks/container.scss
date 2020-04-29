@@ -12,7 +12,7 @@
 }
 
 @media (min-width: $tablet-width) {
-  .container  {
+  .container {
     max-width: $tablet-width;
     padding: 0 $gap-tablet;
   }
@@ -26,7 +26,7 @@
 
 
 @media (min-width: $desktop-width) {
-  .container  {
+  .container {
     max-width: $desktop-width;
     padding: 0 $gap-desktop;
   }

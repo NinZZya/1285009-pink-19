@@ -8,8 +8,6 @@
 
 .photos__item {
   margin-bottom: 20px;
-  padding-right: $gap-mobile;
-  padding-left: $gap-mobile;
   line-height: 0;
   box-sizing: border-box;
 }
@@ -19,7 +17,6 @@
   padding: 0;
   line-height: 0;
   box-sizing: border-box;
-  overflow: hidden;
 
   &::before {
     content: "Панорама дня";
@@ -62,6 +59,7 @@
   position: relative;
   left: 50%;
   width: auto;
+  min-width: 100%;
   height: auto;
   transform: translateX(-50%);
 }
@@ -71,11 +69,6 @@
   padding: 18px 10px 10px 18px;
   background-color: $grey-light;
   line-height: 24px;
-}
-
-.photos__wrapper--panorama {
-  margin-right: $gap-mobile;
-  margin-left: $gap-mobile;
 }
 
 .photos__title {
@@ -139,7 +132,7 @@
     display: flex;
     flex-wrap: wrap;
     padding-top: 32px;
-    padding-left: $gap-table;
+    justify-content: space-between;
   }
 
   .photos__item {
@@ -148,7 +141,6 @@
     flex-basis: 300px;
     min-height: 455px;
     height: 100%;
-    margin-right: $gap-table;
     padding: 0;
   }
 
@@ -229,9 +221,7 @@
   .photos__item {
     min-height: 555px;
     margin-top: 22px;
-    margin-right: $gap-desktop;
     margin-bottom: 32px;
-    margin-left: $gap-desktop;
     padding: 0;
     box-sizing: border-box;
     font-size: 14px;
@@ -243,13 +233,8 @@
     padding: 0;
 
     &::before {
-      top: 55px;
-      right: 11px;
+      top: 53px;
+      right: 130px;
     }
-  }
-
-  .photos__wrapper--panorama {
-    margin-right: $gap-desktop;
-    margin-left: $gap-desktop;
   }
 }

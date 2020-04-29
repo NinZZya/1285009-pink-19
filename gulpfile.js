@@ -14,7 +14,6 @@ var del = require("del");
 var rename = require("gulp-rename");
 var runSequence = require("gulp4-run-sequence");
 var svgstore = require("gulp-svgstore");
-var svgmin = require("gulp-svgmin");
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 
@@ -48,8 +47,11 @@ var path = {
   },
   img: {
     // src: "source/img/source/**/*.{png,jpg,svg}",
-    src: "source/img/source/iphone-hand-desktop@2x.png",
-    build: "source/img/build/"
+    src: "source/img/source/photo-*.jpg",
+    build: "source/img/build/",
+    jpg: "source/img/build/**/*.{jpeg,jpg,JPG,JPEG}",
+    png: "source/img/build/**/*.{png,PNG}",
+    svg: "source/img/build/**/*.{svg,SVG}"
   },
   clean: {
     build: "build",
@@ -76,12 +78,34 @@ gulp.task("build:img", function(done) {
     done();
 });
 
-gulp.task("build:webp", function(done) {
-  gulp.src(path.img.webp)
-    .pipe(webp({quality: 90}))
-    .pipe(gulp.dest(path.img.build))
+gulp.task("copy:jpg", function(done) {
+  gulp.src(path.img.jpg)
+    .pipe(gulp.dest(path.build.img))
     .pipe(server.stream());
     done();
+});
+
+gulp.task("copy:svg", function(done) {
+  gulp.src(path.img.svg)
+    .pipe(gulp.dest(path.build.img))
+    .pipe(server.stream());
+    done();
+});
+
+gulp.task("copy:png", function(done) {
+  gulp.src(path.img.png)
+    .pipe(gulp.dest(path.build.img))
+    .pipe(server.stream());
+    done();
+});
+
+gulp.task("img", function(done) {
+  runSequence(
+    "copy:svg",
+    "copy:png",
+    "copy:jpg",
+    done
+  );
 });
 
 gulp.task("clean", function (done) {
@@ -93,11 +117,9 @@ gulp.task("sprite", function(done) {
   del(path.clean.sprite);
   gulp.src(path.src.sprite)
     .pipe(plumber())
-    .pipe(svgmin())
     .pipe(svgstore({
       inlineSvg: true
     }))
-
     .pipe(rename("sprite.svg"))
     .pipe(gulp.dest(path.build.sprite))
     .pipe(server.stream());
@@ -151,13 +173,6 @@ gulp.task("favicon", function (done) {
   gulp.src(path.src.favicon)
     .pipe(gulp.dest(path.build.favicon));
   done();
-});
-
-gulp.task("img", function(done) {
-  gulp.src(path.src.img)
-    .pipe(gulp.dest(path.build.img))
-    .pipe(server.stream());
-    done();
 });
 
 gulp.task("server", function () {
