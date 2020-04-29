@@ -46,8 +46,7 @@ var path = {
       favicon: "source/favicon.ico"
   },
   img: {
-    // src: "source/img/source/**/*.{png,jpg,svg}",
-    src: "source/img/source/photo-*.jpg",
+    src: "source/img/source/**/*.{png,jpg,svg}",
     build: "source/img/build/",
     jpg: "source/img/build/**/*.{jpeg,jpg,JPG,JPEG}",
     png: "source/img/build/**/*.{png,PNG}",
