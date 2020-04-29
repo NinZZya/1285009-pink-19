@@ -96,7 +96,11 @@
 }
 
 .photos__rates-toggle {
-  display: none;
+  @include hidden;
+}
+
+.photos__rates-toggle:focus + .photos__rates-value::before {
+  box-shadow: 0 0 15px 0 $pink;
 }
 
 .photos__rates-value {

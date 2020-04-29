@@ -72,17 +72,6 @@
   display: none;
 }
 
-.contest__input,
-.contest__comment-text {
-  width: 100%;
-  margin-bottom: 3px;
-  padding: 14px 22px 15px;
-  font-size: 18px;
-  line-height: 30px;
-  border: 2px solid $grey;
-  box-sizing: border-box;
-}
-
 .contest__required-text {
   margin: 35px 0 15px;
   text-transform: uppercase;
@@ -114,6 +103,10 @@
 .contest__wrapper--send {
   margin: 0;
   padding: 0;
+}
+
+.contest__input {
+  margin-bottom: 3px;
 }
 
 .contest__comment-text {
@@ -238,10 +231,10 @@
     &::after {
       content: "";
       position: absolute;
-      top: -73px;
+      top: -72px;
       right: 2px;
-      width: 60px;
-      height: 60px;
+      width: 59px;
+      height: 59px;
       background-color: $grey;
       background-position: center;
       background-repeat: no-repeat;
@@ -290,16 +283,9 @@
     flex-direction: column-reverse;
   }
 
-  .contest__input {
-    padding-right: 19px;
-    padding-left: 19px;
-  }
-
   .contest__comment-text {
     margin-top: 31px;
     margin-bottom: 30px;
-    padding-right: 19px;
-    padding-left: 19px;
     height: 193px;
     resize: none;
   }

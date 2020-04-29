@@ -11,6 +11,12 @@
   padding: 0;
 }
 
+.container--intro {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .container--contest {
   max-width: $mobile-width;
   margin: 0 auto;
@@ -20,6 +26,12 @@
 @media (min-width: $tablet-width) {
   .container {
     max-width: $tablet-width;
+    padding: 0 $gap-tablet;
+  }
+
+  .container--intro {
+    max-width: $tablet-width;
+    margin: 0 auto;
     padding: 0 $gap-tablet;
   }
 
@@ -39,6 +51,11 @@
 
 @media (min-width: $desktop-width) {
   .container {
+    max-width: $desktop-width;
+    padding: 0 $gap-desktop;
+  }
+
+  .container--intro {
     max-width: $desktop-width;
     padding: 0 $gap-desktop;
   }

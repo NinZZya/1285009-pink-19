@@ -1,0 +1,25 @@
+.textarea {
+  width: 100%;
+  padding: 14px 22px 15px;
+  font-size: 18px;
+  line-height: 30px;
+  border: 2px solid $grey;
+  box-sizing: border-box;
+
+  &:hover {
+    border: 2px solid $blue-dark;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    border: 2px solid $pink;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .input {
+    padding-right: 19px;
+    padding-left: 19px;
+  }
+}

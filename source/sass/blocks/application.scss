@@ -38,17 +38,15 @@
   &:hover {
     color: rgba($blue-dark, 0.5);
   }
-
-  &:focus {
-    outline: none;
-    border-radius: 5px;
-    box-shadow: 0 0 15px 0 $pink;
-  }
 }
 
 .application__button-image {
   width: 48px;
   height: 48px;
+
+  &:hover {
+    color: rgba($blue-dark, 0.5);
+  }
 }
 
 .application__button-image--crop {

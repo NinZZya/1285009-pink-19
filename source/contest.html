@@ -67,15 +67,15 @@
               <legend class="visually-hidden">Введите ФИО</legend>
               <p class="contest__user-wrapper">
                 <label for="contest__user-surname" class="contest__label">Фамилия:</label>
-                <input type="text" id="contest__user-surname" class="contest__input contest__input--user-surname" name="user-surname" placeholder="Укажите фамилию *" value="" required>
+                <input type="text" id="contest__user-surname" class="input contest__input" name="user-surname" placeholder="Укажите фамилию *" value="" required>
               </p>
               <p class="contest__user-wrapper">
                 <label for="contest__user-name" class="contest__label">Имя:</label>
-                <input type="text" id="contest__user-name" class="contest__input contest__input--user-name" name="user-name" placeholder="Введите ваше имя *" value="" required>
+                <input type="text" id="contest__user-name" class="input contest__input" name="user-name" placeholder="Введите ваше имя *" value="" required>
               </p>
               <p class="contest__user-wrapper">
                 <label for="contest__user-secondname" class="contest__label">Отчество:</label>
-                <input type="text" id="contest__user-secondname" class="contest__input contest__input--user-secondname" name="user-secondname" placeholder="Ну и отчество тоже" value="">
+                <input type="text" id="contest__user-secondname" class="input contest__input" name="user-secondname" placeholder="Ну и отчество тоже" value="">
               </p>
             </fieldset>
             <fieldset class="contest__wrapper contest__wrapper--progress">
@@ -118,11 +118,11 @@
               <div class="contest__contacts-wrapper-col">
                 <p class="contest__contacts-wrapper">
                   <label for="contest__contacts-tel" class="contest__label contest__label--tel">Номер телефона</label>
-                  <input type="tel" id="contest__contacts-tel" class="contest__input contest__input--contacts-tel"  name="user-tel" placeholder="Номер, пожалуйста" value="">
+                  <input type="tel" id="contest__contacts-tel" class="input contest__input contest__input--contacts-tel"  name="user-tel" placeholder="Номер, пожалуйста" value="">
                 </p>
                 <p class="contest__contacts-wrapper">
                   <label for="contest__contacts-email" class="contest__label contest__label--email">Адрес почты</label>
-                  <input type="email" id="contest__contacts-email" class="contest__input contest__input--contacts-email" name="user-email" placeholder="Введите почту *" value="" required>
+                  <input type="email" id="contest__contacts-email" class="input contest__input contest__input--contacts-email" name="user-email" placeholder="Введите почту *" value="" required>
                 </p>
               </div>
             </fieldset>
@@ -148,7 +148,7 @@
             <fieldset class="contest__wrapper contest__wrapper--comment">
               <p class="contest__comment-wrapper">
                 <label for="contest__comment-text" class="contest__label contest__label--comment">Опишите свои эмоции</label>
-                <textarea name="comment-text" id="contest__comment-text" class="contest__comment-text" cols="30" rows="10" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
+                <textarea name="comment-text" id="contest__comment-text" class="textarea contest__comment-text" cols="30" rows="10" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
               </p>
             </fieldset>
             <div class="contest__wrapper contest__wrapper--send">
@@ -221,6 +221,6 @@
       </footer>
     </div>
     <script src="js/picturefill.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>
