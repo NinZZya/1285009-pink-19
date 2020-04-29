@@ -31,7 +31,7 @@ var path = {
       html: "source/*.html",
       js: "source/js/**/*.js",
       style: "source/sass/style.scss",
-      img: "source/img/build/**/*.*",
+      img: "source/img/bld/**/*.*",
       fonts: "source/fonts/**/*.*",
       sprite: "source/img/sprite/*.svg",
       favicon: "source/favicon.ico"
@@ -47,10 +47,10 @@ var path = {
   },
   img: {
     src: "source/img/source/**/*.{png,jpg,svg}",
-    build: "source/img/build/",
-    jpg: "source/img/build/**/*.{jpeg,jpg,JPG,JPEG}",
-    png: "source/img/build/**/*.{png,PNG}",
-    svg: "source/img/build/**/*.{svg,SVG}"
+    build: "source/img/bld/",
+    jpg: "source/img/bld/**/*.{jpeg,jpg,JPG,JPEG}",
+    png: "source/img/bld/**/*.{png,PNG}",
+    svg: "source/img/bld/**/*.{svg,SVG}"
   },
   clean: {
     build: "build",
