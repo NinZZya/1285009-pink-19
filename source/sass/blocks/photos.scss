@@ -58,8 +58,7 @@
 .photos__image--panorama {
   position: relative;
   left: 50%;
-  width: auto;
-  min-width: 100%;
+  width: 100%;
   height: auto;
   transform: translateX(-50%);
 }

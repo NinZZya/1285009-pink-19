@@ -238,13 +238,18 @@
 
   .page-main--index {
     background-image: url("../img/iphone-hand-desktop@1x.png"), url("../img/bg-back-desktop@1x.jpg");
-    background-position: top 209px right 3%, top center;
+    background-position: top 209px right -111px, top center;
     background-repeat: no-repeat, no-repeat;
     background-size: 1050px auto, auto 854px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/iphone-hand-desktop@2x.png"), url("../img/bg-back-desktop@2x.jpg");
     }
+
+    @media (min-width: 1200px) {
+      background-position: top 209px right 3%, top center;
+    }
+
     @media (min-width: 1440px) {
       background-position: top 209px left 60%, top center;
     }
@@ -256,7 +261,7 @@
 
   .page-main__title--index {
     margin-top: 40px;
-    margin-left: 8px;
+    margin-left: 25px;
   }
 
   .page-main__title--photo {
@@ -291,7 +296,7 @@
   }
 
   .page-main__intro {
-    width: 300px;
+    width: 320px;
     margin-top: 53px;
     margin-bottom: 115px;
   }

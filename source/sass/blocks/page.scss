@@ -1,47 +1,47 @@
-.container {
+.page__container {
   max-width: $mobile-width;
   margin: 0 auto;
   padding: 0 $gap-mobile;
   box-sizing: border-box;
 }
 
-.container--full {
+.page__container--full {
   max-width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.container--intro {
+.page__container--intro {
   max-width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.container--contest {
+.page__container--contest {
   max-width: $mobile-width;
   margin: 0 auto;
   padding: 0;
 }
 
 @media (min-width: $tablet-width) {
-  .container {
+  .page__container {
     max-width: $tablet-width;
     padding: 0 $gap-tablet;
   }
 
-  .container--intro {
+  .page__container--intro {
     max-width: $tablet-width;
     margin: 0 auto;
     padding: 0;
   }
 
-  .container--full {
+  .page__container--full {
     max-width: 100%;
     margin: 0;
     padding: 0;
   }
 
-  .container--contest {
+  .page__container--contest {
     max-width: $tablet-width;
     margin: 0 auto;
     padding: 0;
@@ -50,20 +50,19 @@
 
 
 @media (min-width: $desktop-width) {
-  .container {
+  .page__container {
     max-width: $desktop-width;
     padding: 0 $gap-desktop;
   }
 
-  .container--intro {
+  .page__container--intro {
     max-width: $desktop-width;
-    padding: 0 $gap-desktop;
+    padding: 0;
   }
 
-  .container--full,
-  .container--contest {
+  .page__container--full,
+  .page__container--contest {
     margin: 0 auto;
-    box-sizing: border-box;
   }
 
   .container--none {
