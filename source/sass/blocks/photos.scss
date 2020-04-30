@@ -90,42 +90,25 @@
   padding: 0;
 }
 
-.photos__rates {
-  margin: 0;
-  padding: 9px 0;
-}
-
-.photos__rates-toggle {
-  @include hidden;
-}
-
-.photos__rates-toggle:focus + .photos__rates-value::before {
-  box-shadow: 0 0 15px 0 $pink;
-}
-
 .photos__rates-value {
-  position: relative;
-  margin: 10px 0 9px;
+  display: flex;
+  margin: 14px 0;
   padding: 0;
-  padding-left: 31px;
   font-size: 12px;
   color: $pink;
   text-transform: uppercase;
 
   &::before {
     content: "";
-    position: absolute;
-    bottom: 50%;
-    left: 0;
     width: 13px;
     height: 12px;
+    margin-right: 17px;
     background-image: url("../img/icon-heart.svg");
     background-repeat: no-repeat;
-    transform: translateY(50%);
   }
 }
 
-.photos__rates-toggle:checked + .photos__rates-value {
+.photos__rates-value--active {
   &::before {
     background-image: url("../img/icon-heart-active.svg");
   }
@@ -184,34 +167,25 @@
     min-height: 0;
   }
 
-  .photos__rates {
-    margin: 0;
-    padding: 0;
-  }
-
   .photos__rates-value {
-    display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     margin: 0;
+    margin-bottom: 5px;
     padding: 0;
 
     &::before {
-      bottom: auto;
-      right: 0;
-      left: auto;
+      margin: 0;
+      padding: 0;
     }
   }
 
   .photos__rates-value--panorama {
-    position: relative;
     margin: 0;
     padding: 0;
-    padding-right: 29px;
 
     &::before {
-      bottom: auto;
-      right: 0;
-      left: auto;
+      margin-left: 15px;
     }
   }
 }
