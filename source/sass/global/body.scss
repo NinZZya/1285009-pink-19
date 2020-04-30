@@ -1,5 +1,7 @@
 body {
+  width: 100%;
   min-width: $mobile-width;
+  max-width: 2560px;
   margin: 0 auto;
   font-family: "Open Sans", "Arial", sans-serif;
   font-size: 14px;
