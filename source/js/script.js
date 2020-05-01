@@ -311,6 +311,7 @@ function moveToggleRange(appElementConfig) {
   const toggleElememt = document.querySelector(appElementConfig.toggle);
   const valueElememt = document.querySelector(appElementConfig.value);
   if (rangeElement) {
+    let maxValue = parseInt(window.getComputedStyle(rangeElement).getPropertyValue("width"), 10);
     rangeElement.onmousedown = function(evt) {
       let calcValue = Math.round(evt.offsetX / maxValue * 100);
       toggleElememt.style.left = String(calcValue) + appElementConfig.unit;
@@ -349,63 +350,66 @@ const userNameRegExp = /^[A-Za-zА-Яа-яЁё]*\s*$/;
 const userEmailRegExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const formContest = document.querySelector(".contest");
-const userSurname = formContest.querySelector("#contest__user-surname");
-const userName = formContest.querySelector("#contest__user-name");
-const userEmail = formContest.querySelector("#contest__contacts-email");
-const btnContestSubmit = formContest.querySelector("#btn-submit-contest");
 
-const modalMessage = formContest.querySelector(".contest__modal-message");
-const btnModalMessage = modalMessage.querySelector(".modal__btn");
+if (formContest) {
+  const userSurname = formContest.querySelector("#contest__user-surname");
+  const userName = formContest.querySelector("#contest__user-name");
+  const userEmail = formContest.querySelector("#contest__contacts-email");
+  const btnContestSubmit = formContest.querySelector("#btn-submit-contest");
 
-const modalError = formContest.querySelector(".contest__modal-error");
-const btnModalError = modalError.querySelector(".modal__btn");
+  const modalMessage = formContest.querySelector(".contest__modal-message");
+  const btnModalMessage = modalMessage.querySelector(".modal__btn");
 
-function validateValue(regExp,validateValue) {
-  return regExp.test(validateValue);
-}
+  const modalError = formContest.querySelector(".contest__modal-error");
+  const btnModalError = modalError.querySelector(".modal__btn");
 
-if (btnContestSubmit) {
-  btnContestSubmit.addEventListener("click", function(evt) {
-    evt.preventDefault();
+  function validateValue(regExp,validateValue) {
+    return regExp.test(validateValue);
+  }
 
-    let validationForm = true;
+  if (btnContestSubmit) {
+    btnContestSubmit.addEventListener("click", function(evt) {
+      evt.preventDefault();
 
-    userSurname.classList.remove("input-error");
-    userName.classList.remove("input-error");
-    userEmail.classList.remove("input-error");
+      let validationForm = true;
 
-    if (!validateValue(userSurnameRegExp,userSurname.value)) {
-      userSurname.classList.add("input-error");
-      validationForm = false;
-    }
+      userSurname.classList.remove("input-error");
+      userName.classList.remove("input-error");
+      userEmail.classList.remove("input-error");
 
-    if (!validateValue(userNameRegExp, userName.value)) {
-      userName.classList.add("input-error");
-      validationForm = false;
-    }
+      if (!validateValue(userSurnameRegExp,userSurname.value)) {
+        userSurname.classList.add("input-error");
+        validationForm = false;
+      }
 
-    if (!validateValue(userEmailRegExp, userEmail.value)) {
-      userEmail.classList.add("input-error");
-      validationForm = false;
-    }
+      if (!validateValue(userNameRegExp, userName.value)) {
+        userName.classList.add("input-error");
+        validationForm = false;
+      }
 
-    if (validationForm) {
-      modalMessage.classList.add("modal--active");
-    } else {
-      modalError.classList.add("modal--active");
-    }
-  });
-}
+      if (!validateValue(userEmailRegExp, userEmail.value)) {
+        userEmail.classList.add("input-error");
+        validationForm = false;
+      }
 
-if (btnModalMessage) {
-  btnModalMessage.addEventListener("click", function() {
-    modalMessage.classList.remove("modal--active");
-  })
-}
+      if (validationForm) {
+        modalMessage.classList.add("modal--active");
+      } else {
+        modalError.classList.add("modal--active");
+      }
+    });
+  }
 
-if (btnModalError) {
-  btnModalError.addEventListener("click", function() {
-    modalError.classList.remove("modal--active");
-  })
+  if (btnModalMessage) {
+    btnModalMessage.addEventListener("click", function() {
+      modalMessage.classList.remove("modal--active");
+    })
+  }
+
+  if (btnModalError) {
+    btnModalError.addEventListener("click", function() {
+      modalError.classList.remove("modal--active");
+    })
+  }
 }
 //---------- CONTESTR END ----------//
