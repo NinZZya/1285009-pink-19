@@ -34,7 +34,7 @@ if (menuItem && menuBtn) {
     menuItem.classList.remove(menuConfig.item.name.active);
     menuBtn.classList.remove(menuConfig.btn.name.close);
   };
-  menuBtn.addEventListener("click", function (evt) {
+  menuBtn.addEventListener("click", function(evt) {
     menuContainer.classList.toggle(menuConfig.container.name.active);
     menuItem.classList.toggle(menuConfig.item.name.active);
     menuBtn.classList.toggle(menuConfig.btn.name.close);
@@ -86,7 +86,7 @@ let sliderConfig = {
 const sliderContainer = document.querySelector(sliderConfig.container.id);
 
 if (sliderContainer) {
-  function changeSlide (sliderList, sliderToggles, sliderConfig) {
+  function changeSlide(sliderList, sliderToggles, sliderConfig) {
       sliderList[sliderConfig.index.current].classList.remove(sliderConfig.item.name.active);
       sliderList[sliderConfig.index.next].classList.add(sliderConfig.item.name.active);
       sliderToggles[sliderConfig.index.current].classList.remove(sliderConfig.btn.name.active);
@@ -98,7 +98,7 @@ if (sliderContainer) {
     const sliderController = sliderContainer.querySelector(sliderConfig.controls.class.item);
     const sliderToggles = Array.prototype.slice.call(sliderController.children);
     //Click toggle
-    sliderController.addEventListener("click", function (evt) {
+    sliderController.addEventListener("click", function(evt) {
       sliderConfig.index.next = sliderToggles.indexOf(evt.target);
       if (sliderConfig.index.next != -1) {
         const sliderToggleActive = sliderContainer.querySelector(sliderConfig.btn.class.active);
@@ -107,7 +107,7 @@ if (sliderContainer) {
       }
     });
     //Click arrow buttons
-    sliderContainer.addEventListener("click", function (evt) {
+    sliderContainer.addEventListener("click", function(evt) {
       if (evt.target.classList.contains(sliderConfig.btn.left.name)) {
         const sliderSlideActive = sliderContainer.querySelector(sliderConfig.item.class.active);
         sliderConfig.index.current = Array.prototype.slice.call(sliderList).indexOf(sliderSlideActive);
@@ -171,7 +171,7 @@ if (pricesContainer) {
   const pricesItem = pricesContainer.querySelector(pricesConfig.item.class.item);
   const pricesController = pricesContainer.querySelector(pricesConfig.controls.class.item);
   const pricesToggles = Array.prototype.slice.call(pricesController.children);
-  pricesController.addEventListener("click", function (evt) {
+  pricesController.addEventListener("click", function(evt) {
     pricesConfig.index.next = pricesToggles.indexOf(evt.target);
     if (pricesConfig.index.next != -1) {
       const pricesToggleActive = pricesContainer.querySelector(pricesConfig.btn.class.active);
@@ -206,7 +206,7 @@ const likeConfig = {
 
 const likeContainer = document.querySelector(likeConfig.container.id);
 if (likeContainer) {
-  likeContainer.addEventListener("click", function (evt) {
+  likeContainer.addEventListener("click", function(evt) {
     if (evt.target.classList.contains(likeConfig.btn.name.item)) {
       let ratesValue = evt.target.querySelector(likeConfig.item.class.item);
       if (evt.target.classList.contains(likeConfig.btn.name.active)) {
@@ -262,7 +262,7 @@ if (appEffectContainer) {
   const appEffectController = appEffectContainer.querySelector(appEffectConfig.controls.class.item);
   const appEffectButtons = Array.prototype.slice.call(appEffectController.children);
 
-  appEffectController.addEventListener("click", function (evt) {
+  appEffectController.addEventListener("click", function(evt) {
     appEffectConfig.index.next = appEffectButtons.indexOf(evt.target);
     if (appEffectConfig.index.next != -1) {
       const appEffectButtonActive = appEffectContainer.querySelector(appEffectConfig.btn.class.active);
@@ -335,17 +335,79 @@ moveToggleRange(appFillpConfig);
 moveToggleRange(appContrastConfig);
 
 if (btnAppReset) {
-  btnAppReset.addEventListener("click", function (evt) {
+  btnAppReset.addEventListener("click", function(evt) {
     evt.preventDefault();
-    console.log("WTF")
     resetRange(appCropConfig);
     resetRange(appFillpConfig);
     resetRange(appContrastConfig);
   })
 }
 
-//---------- APP MOVE RANGE BEGIN ----------//
+//---------- CONTEST BEGIN ----------//
+const userSurnameRegExp = /^[A-Za-zА-Яа-яЁё]*\s*$/;
+const userNameRegExp = /^[A-Za-zА-Яа-яЁё]*\s*$/;
+const userEmailRegExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+const formContest = document.querySelector(".contest");
+const userSurname = formContest.querySelector("#contest__user-surname");
+const userName = formContest.querySelector("#contest__user-name");
+const userEmail = formContest.querySelector("#contest__contacts-email");
+const btnContestSubmit = formContest.querySelector("#btn-submit-contest");
 
+const modalMessage = formContest.querySelector(".contest__modal-message");
+const btnModalMessage = modalMessage.querySelector(".modal__btn");
+
+const modalError = formContest.querySelector(".contest__modal-error");
+const btnModalError = modalError.querySelector(".modal__btn");
+
+function validateValue(regExp,validateValue) {
+  return regExp.test(validateValue);
+}
+
+if (btnContestSubmit) {
+  btnContestSubmit.addEventListener("click", function(evt) {
+    evt.preventDefault();
+
+    let validationForm = true;
+
+    userSurname.classList.remove("input-error");
+    userName.classList.remove("input-error");
+    userEmail.classList.remove("input-error");
+
+    if (!validateValue(userSurnameRegExp,userSurname.value)) {
+      userSurname.classList.add("input-error");
+      validationForm = false;
+    }
+
+    if (!validateValue(userNameRegExp, userName.value)) {
+      userName.classList.add("input-error");
+      validationForm = false;
+    }
+
+    if (!validateValue(userEmailRegExp, userEmail.value)) {
+      userEmail.classList.add("input-error");
+      validationForm = false;
+    }
+
+    if (validationForm) {
+      modalMessage.classList.add("modal--active");
+    } else {
+      modalError.classList.add("modal--active");
+    }
+  });
+}
+
+if (btnModalMessage) {
+  btnModalMessage.addEventListener("click", function() {
+    modalMessage.classList.remove("modal--active");
+  })
+}
+
+if (btnModalError) {
+  btnModalError.addEventListener("click", function() {
+    modalError.classList.remove("modal--active");
+  })
+}
+//---------- CONTESTR END ----------//
 
 
