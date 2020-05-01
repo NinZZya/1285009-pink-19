@@ -64,7 +64,7 @@
               Видите, как не хватает ваших?
             </p>
           </div>
-          <div class="page-main__photos photos">
+          <div id="photos" class="page-main__photos photos">
             <div class="photos__item photos__item--panorama">
               <a href="#" class="photos__link">
                 <picture class="photos__picture">
@@ -83,7 +83,7 @@
                     Прыгать или нет?
                     Напишите в комментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!
                   </p>
-                  <button type="button" name="rate-post-1"  class="photos__rates-value photos__rates-value--panorama"><span>Нравится: 215</span></button>
+                  <button type="button" name="rate-post-1"  class="photos__rates photos__rates--panorama"><span>Нравится: <span class="photos__rates-value">215</span></span></button>
                 </div>
               </div>
             </div>
@@ -105,7 +105,7 @@
                     <p class="photos__text">
                       Вчера он на луну летал, сегодня в руки к нам попал.
                     </p>
-                    <button type="button" name="rate-post-2"  class="photos__rates-value"><span>Нравится: 356</span></button>
+                    <button type="button" name="rate-post-2"  class="photos__rates"><span>Нравится: <span class="photos__rates-value">356</span></span></button>
                   </div>
                 </li>
                 <li class="photos__item">
@@ -124,7 +124,7 @@
                     <p class="photos__text">
                       Соседи будут рады!
                     </p>
-                    <button type="button" name="rate-post-3"  class="photos__rates-value"><span>Нравится: 666</span></button>
+                    <button type="button" name="rate-post-3"  class="photos__rates"><span>Нравится: <span class="photos__rates-value">666</span></button>
                   </div>
                 </li>
                 <li class="photos__item">
@@ -143,7 +143,7 @@
                     <p class="photos__text">
                       Здесь могла быть ваша цитата о высоком и вечном.
                     </p>
-                    <button type="button" name="rate-post-4"  class="photos__rates-value"><span>Нравится: 215</span></button>
+                    <button type="button" name="rate-post-4"  class="photos__rates"><span>Нравится: <span class="photos__rates-value">215</span></span></button>
                   </div>
                 </li>
                 <li class="photos__item">
@@ -162,7 +162,7 @@
                     <p class="photos__text">
                       Самая кубанская в мире!
                     </p>
-                    <button type="button" name="rate-post-5"  class="photos__rates-value"><span>Нравится: 4</span></button>
+                    <button type="button" name="rate-post-5"  class="photos__rates"><span>Нравится: <span class="photos__rates-value">4</span></span></button>
                   </div>
                 </li>
                 <li class="photos__item">
@@ -181,7 +181,7 @@
                     <p class="photos__text">
                       Где снег-то?
                     </p>
-                    <button type="button" name="rate-post-6"  class="photos__rates-value"><span>Нравится: 150</span></button>
+                    <button type="button" name="rate-post-6"  class="photos__rates"><span>Нравится: <span class="photos__rates-value">150</span></span></button>
                   </div>
                 </li>
                 <li class="photos__item">
@@ -200,7 +200,7 @@
                     <p class="photos__text">
                       Всем GM и взаимные лайки!
                     </p>
-                    <button type="button" name="rate-post-7"  class="photos__rates-value"><span>Нравится: 2560</span></button>
+                    <button type="button" name="rate-post-7"  class="photos__rates"><span>Нравится: <span class="photos__rates-value">2560</span></span></button>
                   </div>
                 </li>
               </ul>
@@ -232,8 +232,8 @@
                     </nav>
                     <div class="application__ranges-list">
                       <div class="application__ranges-item application__ranges-item--active range application__ranges-item--crop">
-                        <div class="range__bar"></div>
-                        <div class="range__toggle range__toggle--grey"></div>
+                        <div id="bar-crop" class="range__bar"></div>
+                        <div id="toggle-crop" class="range__toggle range__toggle--grey"></div>
                       </div>
                       <input type="text" value="80" class="visually-hidden" name="range-crop">
                       <div class="application__ranges-item range application__ranges-item--fill">
@@ -248,7 +248,7 @@
                       <input type="text" value="20" class="visually-hidden" name="range-contrast">
                     </div>
                   </div>
-                  <p class="application__wrapper-buttons">
+                  <p id="application-btn-form" class="application__wrapper-buttons">
                     <button type="submit" class="application__btn-upload btn-round btn-round--upload">Запостить</button>
                     <button type="reset" class="application__btn-reset btn-round btn-round--reset">Отмена</button>
                   </p>
@@ -302,6 +302,6 @@
       </div>
     </div>
     <script src="js/picturefill.min.js"></script>
-    <script src="js/script.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
