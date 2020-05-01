@@ -222,7 +222,7 @@ if (likeContainer) {
 //---------- LIKE END ----------//
 
 
-//---------- APP BEGIN ----------//
+//---------- APP SHOW RANGE BEGIN ----------//
 let appEffectConfig = {
   container: {
     id: "#application-controls"
@@ -278,6 +278,74 @@ if (appEffectContainer) {
 }
 
 
+//---------- APP APP SHOW RANGE END ----------//
+
+const appCropConfig = {
+  range: "#range-crop",
+  toggle: "#toggle-crop",
+  value: "#value-crop",
+  default: 80,
+  unit: "%"
+};
+
+const appFillpConfig = {
+  range: "#range-fill",
+  toggle: "#toggle-fill",
+  value: "#value-fill",
+  default: 50,
+  unit: "%"
+};
+
+const appContrastConfig = {
+  range: "#range-contrast",
+  toggle: "#toggle-contrast",
+  value: "#value-contrast",
+  default: 20,
+  unit: "%"
+};
+
+const btnAppReset = document.querySelector("#app-ranges-reset");
+
+function moveToggleRange(appElementConfig) {
+  const rangeElement = document.querySelector(appElementConfig.range);
+  const toggleElememt = document.querySelector(appElementConfig.toggle);
+  const valueElememt = document.querySelector(appElementConfig.value);
+  if (rangeElement) {
+    rangeElement.onmousedown = function(evt) {
+      let calcValue = Math.round(evt.offsetX / maxValue * 100);
+      toggleElememt.style.left = String(calcValue) + appElementConfig.unit;
+      valueElememt.value = calcValue;
+    }
+  }
+
+}
+
+function resetRange(appElementConfig) {
+  const rangeElement = document.querySelector(appElementConfig.range);
+  const toggleElememt = document.querySelector(appElementConfig.toggle);
+  const valueElememt = document.querySelector(appElementConfig.value);
+  if (rangeElement) {
+    toggleElememt.style.left = appElementConfig.default + appElementConfig.unit;
+    valueElememt.value = appElementConfig.default;
+  }
+}
+
+moveToggleRange(appCropConfig);
+moveToggleRange(appFillpConfig);
+moveToggleRange(appContrastConfig);
+
+if (btnAppReset) {
+  btnAppReset.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    console.log("WTF")
+    resetRange(appCropConfig);
+    resetRange(appFillpConfig);
+    resetRange(appContrastConfig);
+  })
+}
+
+//---------- APP MOVE RANGE BEGIN ----------//
 
 
-//---------- APP END ----------//
+
+

@@ -231,26 +231,26 @@
                       <button type="button" name="btn-contrast" class="application__button application__button--contrast" aria-label="Контрастность изображения"></button>
                     </nav>
                     <div class="application__ranges-list">
-                      <div class="application__ranges-item application__ranges-item--active range application__ranges-item--crop">
-                        <div id="bar-crop" class="range__bar"></div>
+                      <div id="range-crop" class="application__ranges-item application__ranges-item--active range application__ranges-item--crop">
+                        <div class="range__bar"></div>
                         <div id="toggle-crop" class="range__toggle range__toggle--grey"></div>
                       </div>
-                      <input type="text" value="80" class="visually-hidden" name="range-crop">
-                      <div class="application__ranges-item range application__ranges-item--fill">
+                      <input id="value-crop" type="text" value="80" class="visually-hidden" name="range-crop">
+                      <div id="range-fill" class="application__ranges-item range application__ranges-item--fill">
                         <div class="range__bar"></div>
-                        <div class="range__toggle range__toggle--grey"></div>
+                        <div id="toggle-fill" class="range__toggle range__toggle--grey"></div>
                       </div>
-                      <input type="text" value="50" class="visually-hidden" name="range-fill">
-                      <div class="application__ranges-item range application__ranges-item--contrast">
+                      <input id="value-fill" type="text" value="50" class="visually-hidden" name="range-fill">
+                      <div id="range-contrast" class="application__ranges-item range application__ranges-item--contrast">
                         <div class="range__bar"></div>
-                        <div class="range__toggle range__toggle--grey"></div>
+                        <div id="toggle-contrast" class="range__toggle range__toggle--grey"></div>
                       </div>
-                      <input type="text" value="20" class="visually-hidden" name="range-contrast">
+                      <input id="value-contrast" type="text" value="20" class="visually-hidden" name="range-contrast">
                     </div>
                   </div>
                   <p id="application-btn-form" class="application__wrapper-buttons">
                     <button type="submit" class="application__btn-upload btn-round btn-round--upload">Запостить</button>
-                    <button type="reset" class="application__btn-reset btn-round btn-round--reset">Отмена</button>
+                    <button id="app-ranges-reset" type="reset" class="application__btn-reset btn-round btn-round--reset">Отмена</button>
                   </p>
                 </div>
               </form>
