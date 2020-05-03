@@ -17,6 +17,7 @@
   padding: 0;
   line-height: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 
   &::before {
     content: "Панорама дня";
