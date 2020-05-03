@@ -46,8 +46,7 @@ var path = {
       favicon: "source/favicon.ico"
   },
   img: {
-    // src: "source/img/src/**/*.{png,jpg,svg}",
-    src: "source/img/src/iphone-screen-*",
+    src: "source/img/src/**/*.{png,jpg,svg}",
     build: "source/img/bld/",
     jpg: "source/img/bld/**/*.{jpeg,jpg,JPG,JPEG}",
     png: "source/img/bld/**/*.{png,PNG}",
