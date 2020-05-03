@@ -1,4 +1,4 @@
-//---------- MENU BEGIN ----------//
+//---------- MENU ----------//
 const menuConfig = {
   container: {
     class: {
@@ -41,10 +41,8 @@ if (menuItem && menuBtn) {
   });
 }
 
-//---------- MENU END ----------//
 
-
-//---------- SLIDER BEGIN ----------//
+//---------- SLIDER ----------//
 let sliderConfig = {
   container: {
     id: "#slider"
@@ -87,10 +85,10 @@ const sliderContainer = document.querySelector(sliderConfig.container.id);
 
 if (sliderContainer) {
   function changeSlide(sliderList, sliderToggles, sliderConfig) {
-    sliderList[sliderConfig.index.current].classList.remove(sliderConfig.item.name.active);
-    sliderList[sliderConfig.index.next].classList.add(sliderConfig.item.name.active);
-    sliderToggles[sliderConfig.index.current].classList.remove(sliderConfig.btn.name.active);
-    sliderToggles[sliderConfig.index.next].classList.add(sliderConfig.btn.name.active);
+      sliderList[sliderConfig.index.current].classList.remove(sliderConfig.item.name.active);
+      sliderList[sliderConfig.index.next].classList.add(sliderConfig.item.name.active);
+      sliderToggles[sliderConfig.index.current].classList.remove(sliderConfig.btn.name.active);
+      sliderToggles[sliderConfig.index.next].classList.add(sliderConfig.btn.name.active);
   }
 
   const sliderList = sliderContainer.querySelectorAll(sliderConfig.item.class.item);
@@ -128,10 +126,9 @@ if (sliderContainer) {
     }
   });
 }
-//---------- SLIDER END ----------//
 
 
-//---------- PRICES BEGIN ----------//
+//---------- PRICES ----------//
 const pricesConfig = {
   container: {
     id: "#prices"
@@ -182,10 +179,9 @@ if (pricesContainer) {
     }
   });
 }
-//---------- PRICES END ----------//
 
 
-//---------- LIKE BEGIN ----------//
+//---------- LIKE ----------//
 const likeConfig = {
   container: {
     id: "#photos"
@@ -218,10 +214,9 @@ if (likeContainer) {
     }
   });
 }
-//---------- LIKE END ----------//
 
 
-//---------- APP SHOW RANGE BEGIN ----------//
+//---------- APP SHOW RANGE ----------//
 let appEffectConfig = {
   container: {
     id: "#application-controls"
@@ -277,9 +272,7 @@ if (appEffectContainer) {
 }
 
 
-//---------- APP APP SHOW RANGE END ----------//
-
-//---------- APP MOVE RANGE BEGIN ----------//
+//---------- APP MOVE RANGE ----------//
 const appCropConfig = {
   range: "#range-crop",
   toggle: "#toggle-crop",
@@ -315,7 +308,7 @@ function moveToggleRange(appElementConfig) {
       let calcValue = evt.offsetX;
       if (appElementConfig.unit.indexOf("%") != -1) {
         let maxValue = parseInt(window.getComputedStyle(rangeElement).getPropertyValue("width"), 10);
-        calcValue = Math.round(calcValue/ maxValue * 100);
+        calcValue = Math.round(evt.offsetX / maxValue * 100);
       }
       toggleElememt.style.left = String(calcValue) + appElementConfig.unit;
       valueElememt.value = calcValue;
@@ -346,10 +339,9 @@ if (btnAppReset) {
     resetRange(appContrastConfig);
   })
 }
-//---------- APP MOVE RANGE END ----------//
 
 
-//---------- CONTEST BEGIN ----------//
+//---------- CONTEST FORM ----------//
 const userSurnameRegExp = /^[A-Za-zА-Яа-яЁё]*\s*$/;
 const userNameRegExp = /^[A-Za-zА-Яа-яЁё]*\s*$/;
 const userEmailRegExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -359,7 +351,10 @@ const formContest = document.querySelector(".contest");
 if (formContest) {
   const userSurname = formContest.querySelector("#contest__user-surname");
   const userName = formContest.querySelector("#contest__user-name");
+  const userSecondname = formContest.querySelector("#contest__user-secondname");
   const userEmail = formContest.querySelector("#contest__contacts-email");
+  const userTel = formContest.querySelector("#contest__contacts-tel");
+  const userComment = formContest.querySelector("#contest__comment-text");
   const btnContestSubmit = formContest.querySelector("#btn-submit-contest");
 
   const modalMessage = formContest.querySelector(".contest__modal-message");
@@ -382,23 +377,29 @@ if (formContest) {
       userName.classList.remove("input-error");
       userEmail.classList.remove("input-error");
 
-      if ((!validateValue(userSurnameRegExp, userSurname.value)) || (!userSurname.value)) {
+      if (!validateValue(userSurnameRegExp,userSurname.value)) {
         userSurname.classList.add("input-error");
         validationForm = false;
       }
 
-      if ((!validateValue(userNameRegExp, userName.value)) || (!userName.value)) {
+      if (!validateValue(userNameRegExp, userName.value)) {
         userName.classList.add("input-error");
         validationForm = false;
       }
 
-      if ((!validateValue(userEmailRegExp, userEmail.value)) || (!userEmail.value)) {
+      if (!validateValue(userEmailRegExp, userEmail.value)) {
         userEmail.classList.add("input-error");
         validationForm = false;
       }
 
       if (validationForm) {
         modalMessage.classList.add("modal--active");
+        userSurname.value = "";
+        userName.value = "";
+        userSecondname.value = "";
+        userEmail.value = "";
+        userTel.value = "";
+        userComment.value = "";
       } else {
         modalError.classList.add("modal--active");
       }
@@ -417,4 +418,3 @@ if (formContest) {
     })
   }
 }
-//---------- CONTESTR END ----------//
