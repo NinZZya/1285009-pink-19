@@ -7,7 +7,7 @@
 }
 
 .photos__item {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   line-height: 0;
   box-sizing: border-box;
 }
@@ -17,6 +17,7 @@
   padding: 0;
   line-height: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 
   &::before {
     content: "Панорама дня";
@@ -129,6 +130,7 @@
     flex-basis: 300px;
     min-height: 455px;
     height: 100%;
+    margin-bottom: 20px;
     padding: 0;
   }
 
@@ -139,6 +141,10 @@
       top: 57px;
       right: 20px;
     }
+  }
+
+  .photos__image--panorama {
+    min-width: 700px;
   }
 
   .photos__wrapper {
@@ -208,7 +214,8 @@
 
   .photos__item--panorama {
     width: 100%;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     padding: 0;
 
     &::before {

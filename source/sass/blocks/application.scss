@@ -95,31 +95,16 @@
 .application__button--active.application__button--crop {
   background-image: url("../img/icon-editor-crop-active.svg");
   opacity: 1;
-
-  &:hover {
-    background-image: url("../img/icon-editor-crop.svg");
-    opacity: 0.5;
-  }
 }
 
 .application__button--active.application__button--fill {
   background-image: url("../img/icon-editor-fill-active.svg");
   opacity: 1;
-
-  &:hover {
-    background-image: url("../img/icon-editor-fill.svg");
-    opacity: 0.5;
-  }
 }
 
 .application__button--active.application__button--contrast {
   background-image: url("../img/icon-editor-contrast-active.svg");
   opacity: 1;
-
-  &:hover {
-    background-image: url("../img/icon-editor-contrast.svg");
-    opacity: 0.5;
-  }
 }
 
 .application__ranges-list {

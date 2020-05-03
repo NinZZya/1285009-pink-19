@@ -23,6 +23,12 @@
   padding: 0;
 }
 
+.page__container--panorama {
+  max-width: $mobile-width;
+  margin: 0 auto;
+  padding: 0;
+}
+
 @media (min-width: $tablet-width) {
   .page__container {
     max-width: $tablet-width;
@@ -42,6 +48,12 @@
   }
 
   .page__container--contest {
+    max-width: $tablet-width;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .page__container--panorama {
     max-width: $tablet-width;
     margin: 0 auto;
     padding: 0;
@@ -67,6 +79,12 @@
 
   .container--none {
     margin: 0;
+    padding: 0;
+  }
+
+  .page__container--panorama {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0;
   }
 }

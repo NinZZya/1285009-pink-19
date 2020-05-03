@@ -134,6 +134,7 @@
   position: absolute;
   top: 775px;
   left: 50%;
+  z-index: 1;
   transform: translateX(-50%);
 }
 
@@ -141,6 +142,7 @@
   position: absolute;
   bottom: 450px;
   left: 50%;
+  z-index: 1;
   transform: translateX(-50%);
 }
 
