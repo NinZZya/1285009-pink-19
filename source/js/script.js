@@ -377,17 +377,17 @@ if (formContest) {
       userName.classList.remove("input-error");
       userEmail.classList.remove("input-error");
 
-      if (!validateValue(userSurnameRegExp,userSurname.value)) {
+      if ((!validateValue(userSurnameRegExp, userSurname.value)) || (userSurname.value == "")) {
         userSurname.classList.add("input-error");
         validationForm = false;
       }
 
-      if (!validateValue(userNameRegExp, userName.value)) {
+      if ((!validateValue(userNameRegExp, userName.value)) || (userName.value == "")) {
         userName.classList.add("input-error");
         validationForm = false;
       }
 
-      if (!validateValue(userEmailRegExp, userEmail.value)) {
+      if ((!validateValue(userEmailRegExp, userEmail.value)) || (userEmail.value == "")) {
         userEmail.classList.add("input-error");
         validationForm = false;
       }
