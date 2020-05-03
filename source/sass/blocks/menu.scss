@@ -43,6 +43,14 @@
   text-decoration: none;
   text-transform: uppercase;
   color: $white;
+
+  &:hover {
+    color: $pink;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 @media (min-width: $tablet-width) {
@@ -82,6 +90,10 @@
   .menu__link {
     text-transform: none;
     font-weight: 300;
+
+    &:active {
+      color: rgba($white, 0.3);
+    }
   }
 
   .menu__link--active {
@@ -95,6 +107,14 @@
       height: 2px;
       width: calc(100% - 8px);
       background-color: $white;
+    }
+
+    &:hover::after {
+      background-color: $pink;
+    }
+
+    &:active::after {
+      background-color: rgba($white, 0.3);
     }
   }
 }

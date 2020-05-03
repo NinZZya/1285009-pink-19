@@ -1,6 +1,5 @@
 .page-footer {
-  margin: 0;
-  padding: 40px 20px 39px;
+  padding: 40px 0 39px;
 }
 
 .page-footer--index {
@@ -30,6 +29,8 @@
 }
 
 .page-footer__developer {
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
@@ -54,7 +55,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 31px $gap-table;
+    padding: 31px 0;
   }
 
   .page-footer--index {
@@ -78,7 +79,7 @@
   }
 
   .page-footer {
-    padding: 63px $gap-desktop;
+    padding: 63px 0;
   }
 
   .page-footer__social {

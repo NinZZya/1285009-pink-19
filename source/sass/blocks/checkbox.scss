@@ -1,5 +1,5 @@
 .checkbox__value {
-  display: none;
+  @include hidden;
 }
 
 .checkbox__label {
@@ -17,6 +17,14 @@
     border: 2px solid $grey;
     background-color: $white;
   }
+
+  &:hover::before {
+    border: 2px solid $blue-dark;
+  }
+
+  &:active::before {
+    border: 2px solid $pink;
+  }
 }
 
 .checkbox__value:checked + .checkbox__label::after {
@@ -31,6 +39,10 @@
   border-bottom: 2px solid $pink;
   border-left: 2px solid $pink;
   transform: rotate(-45deg);
+}
+
+.checkbox__value:focus + .checkbox__label::before {
+  box-shadow: 0 0 4px 0 $pink;
 }
 
 @media (min-width: $tablet-width) {

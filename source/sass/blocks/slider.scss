@@ -32,10 +32,17 @@
   height: 13px;
   margin: 0 6px;
   padding: 0;
-  background-color: $blue-dark;
-  opacity: 0.3;
+  background-color: rgba($blue-dark, 0.3);
   border: 3px solid $white;
   border-radius: 50%;
+
+  &:hover {
+    background-color: rgba($blue-dark, 0.6);
+  }
+
+  &:active {
+    background-color: rgba($blue-dark, 0.1);
+  }
 }
 
 .slider__toogle--active {
@@ -77,12 +84,11 @@
     padding: 0;
     box-sizing: border-box;
     line-height: 0;
-    background-color: transparent;
+    background-color: $white;
     border: none;
     transform: rotate(45deg);
 
-    &:hover,
-    &:focus {
+    &:hover {
       outline: none;
       border-color: rgba($blue-dark, 0.6);
     }

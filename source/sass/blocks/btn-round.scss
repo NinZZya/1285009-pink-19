@@ -20,12 +20,6 @@
     background-color: rgba($grey, 0.1);
     color: $white;
   }
-
-  &:focus {
-    outline: none;
-    border-radius: 30px;
-    box-shadow: 0 0 15px 0 $pink;
-  }
 }
 
 .btn-round--download {

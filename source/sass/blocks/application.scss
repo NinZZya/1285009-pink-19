@@ -32,35 +32,94 @@
   padding: 0;
   box-sizing: border-box;
   background-color: transparent;
+  background-repeat: no-repeat;
   border-style: none;
-  color: rgba($blue-dark, 0.3);
+  opacity: 0.3;
+  cursor: pointer;
 
   &:hover {
-    color: rgba($blue-dark, 0.5);
+    opacity: 0.5;
   }
 
+  &:active,
   &:focus {
-    outline: none;
-    border-radius: 5px;
-    box-shadow: 0 0 15px 0 $pink;
+    opacity: 1;
   }
 }
 
-.application__button-image {
-  width: 48px;
-  height: 48px;
+.application__button--crop {
+  background-image: url("../img/icon-editor-crop.svg");
+  background-position: center;
+  background-size: 48px 48px;
+
+  &:hover {
+    background-image: url("../img/icon-editor-crop.svg");
+  }
+
+  &:active,
+  &:focus {
+    background-image: url("../img/icon-editor-crop-active.svg");
+  }
 }
 
-.application__button-image--crop {
-  padding-bottom: 3px;
+.application__button--fill {
+  background-image: url("../img/icon-editor-fill.svg");
+  background-position: center;
+  background-size: 48px 48px;
+
+  &:hover {
+    background-image: url("../img/icon-editor-fill.svg");
+  }
+
+  &:active,
+  &:focus {
+    background-image: url("../img/icon-editor-fill-active.svg");
+  }
 }
 
-.application__button-image--contrast {
-  padding-top: 5px;
+.application__button--contrast {
+  background-image: url("../img/icon-editor-contrast.svg");
+  background-position: center;
+  background-size: 32px 32px;
+
+  &:hover {
+    background-image: url("../img/icon-editor-contrast.svg");
+  }
+
+  &:active,
+  &:focus {
+    background-image: url("../img/icon-editor-contrast-active.svg");
+  }
 }
 
-.application__button--active {
-  color: $pink;
+.application__button--active.application__button--crop {
+  background-image: url("../img/icon-editor-crop-active.svg");
+  opacity: 1;
+
+  &:hover {
+    background-image: url("../img/icon-editor-crop.svg");
+    opacity: 0.5;
+  }
+}
+
+.application__button--active.application__button--fill {
+  background-image: url("../img/icon-editor-fill-active.svg");
+  opacity: 1;
+
+  &:hover {
+    background-image: url("../img/icon-editor-fill.svg");
+    opacity: 0.5;
+  }
+}
+
+.application__button--active.application__button--contrast {
+  background-image: url("../img/icon-editor-contrast-active.svg");
+  opacity: 1;
+
+  &:hover {
+    background-image: url("../img/icon-editor-contrast.svg");
+    opacity: 0.5;
+  }
 }
 
 .application__ranges-list {
@@ -159,26 +218,26 @@
     width: 24px;
     height: 24px;
     margin: 10px 0 35px;
+    box-sizing: border-box;
+    opacity: 1;
   }
 
-  .application__button-image {
-    width: 24px;
-    height: 24px;
+  .application__button--crop {
+    background-image: url("../img/icon-editor-crop-active.svg");
+    background-size: 24px 24px;
+    background-position: bottom 3px left 3px;
   }
 
-  .application__button-image--crop {
-    padding-left: 3px;
+  .application__button--fill {
+    background-image: url("../img/icon-editor-fill-active.svg");
+    background-size: 24px 24px;
+    background-position: top 3px left 3px;
   }
 
-  .application__button-image--fill {
-    padding-top: 4px;
-    padding-left: 3px;
-  }
-
-  .application__button-image--contrast {
-    width: 16px;
-    padding-top: 0;
-    padding-left: 5px;
+  .application__button--contrast {
+    background-image: url("../img/icon-editor-contrast-active.svg");
+    background-size: 16px 16px;
+    background-position: bottom right;
   }
 
   .application__ranges-list {
@@ -211,8 +270,12 @@
 
 @media (min-width: $desktop-width) {
   .application {
-    width: 940px;
+    max-width: $desktop-width - 20px;
     box-sizing: border-box;
+  }
+
+  .application__form {
+    margin: 0 10px;
   }
 
   .application__wrapper-picture {
@@ -234,24 +297,22 @@
     margin: 0 0 20px;
   }
 
-  .application__button-image {
-    width: 48px;
-    height: 48px;
+  .application__button--crop {
+    background-image: url("../img/icon-editor-crop-active.svg");
+    background-position: center;
+    background-size: 48px 48px;
   }
 
-  .application__button-image--crop {
-    width: 44px;
-    height: 44px;
-    padding-left: 0;
+  .application__button--fill {
+    background-image: url("../img/icon-editor-fill-active.svg");
+    background-position: center;
+    background-size: 48px 48px;
   }
 
-  .application__button-image--fill {
-    padding-left: 0;
-  }
-
-  .application__button-image--contrast {
-    padding-top: 11px;
-    padding-left: 0;
+  .application__button--contrast {
+    background-image: url("../img/icon-editor-contrast-active.svg");
+    background-position: center;
+    background-size: 32px 32px;
   }
 
   .application__ranges-list {
