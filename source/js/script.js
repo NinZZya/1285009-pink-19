@@ -87,47 +87,46 @@ const sliderContainer = document.querySelector(sliderConfig.container.id);
 
 if (sliderContainer) {
   function changeSlide(sliderList, sliderToggles, sliderConfig) {
-      sliderList[sliderConfig.index.current].classList.remove(sliderConfig.item.name.active);
-      sliderList[sliderConfig.index.next].classList.add(sliderConfig.item.name.active);
-      sliderToggles[sliderConfig.index.current].classList.remove(sliderConfig.btn.name.active);
-      sliderToggles[sliderConfig.index.next].classList.add(sliderConfig.btn.name.active);
+    sliderList[sliderConfig.index.current].classList.remove(sliderConfig.item.name.active);
+    sliderList[sliderConfig.index.next].classList.add(sliderConfig.item.name.active);
+    sliderToggles[sliderConfig.index.current].classList.remove(sliderConfig.btn.name.active);
+    sliderToggles[sliderConfig.index.next].classList.add(sliderConfig.btn.name.active);
   }
 
-  toggleElement(sliderContainer, sliderConfig);
-    const sliderList = sliderContainer.querySelectorAll(sliderConfig.item.class.item);
-    const sliderController = sliderContainer.querySelector(sliderConfig.controls.class.item);
-    const sliderToggles = Array.prototype.slice.call(sliderController.children);
-    //Click toggle
-    sliderController.addEventListener("click", function(evt) {
-      sliderConfig.index.next = sliderToggles.indexOf(evt.target);
-      if (sliderConfig.index.next != -1) {
-        const sliderToggleActive = sliderContainer.querySelector(sliderConfig.btn.class.active);
-        sliderConfig.index.current = sliderToggles.indexOf(sliderToggleActive);
+  const sliderList = sliderContainer.querySelectorAll(sliderConfig.item.class.item);
+  const sliderController = sliderContainer.querySelector(sliderConfig.controls.class.item);
+  const sliderToggles = Array.prototype.slice.call(sliderController.children);
+  //Click toggle
+  sliderController.addEventListener("click", function (evt) {
+    sliderConfig.index.next = sliderToggles.indexOf(evt.target);
+    if (sliderConfig.index.next != -1) {
+      const sliderToggleActive = sliderContainer.querySelector(sliderConfig.btn.class.active);
+      sliderConfig.index.current = sliderToggles.indexOf(sliderToggleActive);
+      changeSlide(sliderList, sliderToggles, sliderConfig);
+    }
+  });
+  //Click arrow buttons
+  sliderContainer.addEventListener("click", function (evt) {
+    if (evt.target.classList.contains(sliderConfig.btn.left.name)) {
+      const sliderSlideActive = sliderContainer.querySelector(sliderConfig.item.class.active);
+      sliderConfig.index.current = Array.prototype.slice.call(sliderList).indexOf(sliderSlideActive);
+
+      if (sliderConfig.index.current > 0) {
+        sliderConfig.index.next = sliderConfig.index.current - 1;
         changeSlide(sliderList, sliderToggles, sliderConfig);
       }
-    });
-    //Click arrow buttons
-    sliderContainer.addEventListener("click", function(evt) {
-      if (evt.target.classList.contains(sliderConfig.btn.left.name)) {
-        const sliderSlideActive = sliderContainer.querySelector(sliderConfig.item.class.active);
-        sliderConfig.index.current = Array.prototype.slice.call(sliderList).indexOf(sliderSlideActive);
+    }
 
-        if (sliderConfig.index.current > 0) {
-          sliderConfig.index.next = sliderConfig.index.current - 1;
-          changeSlide(sliderList, sliderToggles, sliderConfig);
-        }
+    if (evt.target.classList.contains(sliderConfig.btn.right.name)) {
+      const sliderSlideActive = sliderContainer.querySelector(sliderConfig.item.class.active);
+      sliderConfig.index.current = Array.prototype.slice.call(sliderList).indexOf(sliderSlideActive);
+
+      if (sliderConfig.index.current < sliderList.length - 1) {
+        sliderConfig.index.next = sliderConfig.index.current + 1;
+        changeSlide(sliderList, sliderToggles, sliderConfig);
       }
-
-      if(evt.target.classList.contains(sliderConfig.btn.right.name)) {
-        const sliderSlideActive = sliderContainer.querySelector(sliderConfig.item.class.active);
-        sliderConfig.index.current = Array.prototype.slice.call(sliderList).indexOf(sliderSlideActive);
-
-        if (sliderConfig.index.current < sliderList.length - 1) {
-          sliderConfig.index.next = sliderConfig.index.current + 1;
-          changeSlide(sliderList, sliderToggles, sliderConfig);
-        }
-      }
-    });
+    }
+  });
 }
 //---------- SLIDER END ----------//
 
@@ -377,17 +376,17 @@ if (formContest) {
       userName.classList.remove("input-error");
       userEmail.classList.remove("input-error");
 
-      if (!validateValue(userSurnameRegExp,userSurname.value)) {
+      if ((!validateValue(userSurnameRegExp, userSurname.value) || (!userSurname.value)) {
         userSurname.classList.add("input-error");
         validationForm = false;
       }
 
-      if (!validateValue(userNameRegExp, userName.value)) {
+      if (!validateValue(userNameRegExp, userName.value) || (!userName.value)) {
         userName.classList.add("input-error");
         validationForm = false;
       }
 
-      if (!validateValue(userEmailRegExp, userEmail.value)) {
+      if (!validateValue(userEmailRegExp, userEmail.value) || (!userEmail.value)) {
         userEmail.classList.add("input-error");
         validationForm = false;
       }
