@@ -1,7 +1,5 @@
 .tariffs {
   display: block;
-  margin: 0;
-  padding: 0;
   width: 840px;
   box-sizing: border-box;
   border-collapse: collapse;
@@ -118,12 +116,47 @@
 }
 
 .tariffs__feature-value {
-  margin: 0;
-  padding: 0;
+  position: relative;
 }
 
 .tariffs__feature-value--on {
-  margin-top: 8px;
+  padding: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 0;
+    min-width: 26px;
+    max-width: 27px;
+    min-height: 14px;
+    max-height: 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid $green;
+    border-left: 3px solid $green;
+    transform: rotate(-45deg);
+  }
+}
+
+.tariffs__feature-value--off {
+  padding: 0;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: -5px;
+    width: 35px;
+    height: 3px;
+    background-color: $red;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
 }
 
 @media (min-width: $tablet-width) {
@@ -141,10 +174,10 @@
     position: relative;
 
     &::before {
-      top: -9px;
-      width: 70px;
-      height: 70px;
-      background-size: 70px 70px;
+      width: 61px;
+      height: 61px;
+      background-image: url("../img/bg-hit-tablet.svg");
+      background-size: 61px 61px;
     }
 
     &::after {
@@ -167,13 +200,33 @@
     font-size: 18px;
   }
 
+  .tariffs__option {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
   .tariffs__option--feature {
     min-width: 153px;
     margin: 0;
-    padding: 15px;
+    padding: 7px 15px;
     text-transform: none;
     background-color: $white-dark;
     border: 2px solid $grey-light;
+  }
+
+  .tariffs__feature-value--on {
+    &::before {
+      top: -13px;
+      right: -13px;
+    }
+  }
+
+  .tariffs__feature-value--off {
+    &::before,
+    &::after {
+      top: 0;
+      right: -17px;
+    }
   }
 
   .tariffs__feature {
@@ -187,15 +240,6 @@
   .tariffs__feature-wrapper {
     justify-content: center;
     align-items: center;
-  }
-
-  .tariffs__option {
-    padding-top: 2px;
-    padding-bottom: 3px;
-  }
-
-  .tariffs__feature-value--off {
-    margin-top: 5px;
   }
 }
 
@@ -215,6 +259,7 @@
       top: 0;
       width: 75px;
       height: 75px;
+      background-image: url("../img/bg-hit.svg");
       background-size: 75px 75px;
     }
 
@@ -224,16 +269,20 @@
     }
   }
 
+  .tariffs__title {
+    font-size: 18px;
+  }
+
   .tariffs__value {
     @include title-mobile;
   }
 
   .tariffs__option {
     font-size: 18px;
-    padding: 11px 25px;
+    padding: 14px 25px;
   }
 
-  .tariffs__feature-value {
-    margin-top: 5px;
+  .tariffs__option--feature {
+    padding: 14px 25px;
   }
 }

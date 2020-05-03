@@ -1,10 +1,11 @@
 .radio__value {
-  display: none;
+  @include hidden;
 }
 
 .radio__label {
   position: relative;
   padding-left: 70px;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -18,6 +19,14 @@
     border-radius: 50%;
     background-color: $white;
   }
+
+  &:hover::before {
+    border: 2px solid $blue-dark;
+  }
+
+  &:active::before {
+    border: 2px solid $pink;
+  }
 }
 
 .radio__value:checked + .radio__label::after {
@@ -29,6 +38,10 @@
   height: 15px;
   border-radius: 50%;
   background-color: $pink;
+}
+
+.radio__value:focus + .radio__label::before {
+  box-shadow: 0 0 0 4px $pink;
 }
 
 @media (min-width: $tablet-width) {

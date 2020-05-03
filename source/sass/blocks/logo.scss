@@ -62,12 +62,19 @@
     left: 0;
     width: 50px;
     height: 4px;
-    background-color: #ffffff;
-    box-shadow: 0 10px 0 0 #ffffff, 0 20px 0 0 #ffffff;
+    background-color: $white;
+    box-shadow: 0 10px 0 0 $white, 0 20px 0 0 $white;
   }
 
-  &:hover {
-    opacity: 0.5;
+  &:hover::before {
+    background-color: $pink;
+    box-shadow: 0 10px 0 0 $pink, 0 20px 0 0 $pink;
+  }
+
+  &:active::before {
+    background-color: $pink;
+    box-shadow: 0 10px 0 0 $pink, 0 20px 0 0 $pink;
+    opacity: 0.3;
   }
 }
 
@@ -82,7 +89,7 @@
     left: 24px;
     width: 30px;
     height: 4px;
-    background-color: #ffffff;
+    background-color: $white;
   }
 
   &::before {
@@ -92,6 +99,17 @@
 
   &::after {
     transform: rotate(-45deg);
+  }
+
+  &:hover::before,
+  &:hover::after {
+    background-color: $pink;
+    box-shadow: none;
+  }
+
+  &:active::before,
+  &:active::after {
+    opacity: 0.3;
   }
 }
 

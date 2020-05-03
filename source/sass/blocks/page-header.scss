@@ -1,28 +1,17 @@
-.page-header {
+.page-header__nav {
   position: relative;
   z-index: 1;
-  margin: 0;
   margin-bottom: -66px;
-  padding: 0;
 }
 
 @media (min-width: $tablet-width) {
-  .page-header {
+  .page-header__nav {
     margin-bottom: -110px;
   }
 }
 
 @media (min-width: $desktop-width) {
-  .page-header {
-    width: 100%;
-    background-color: rgba($black, 0.3);
-  }
-
   .page-header__nav {
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding: 0 $gap-desktop;
-    box-sizing: border-box;
+    background-color: rgba($black, 0.3);
   }
 }

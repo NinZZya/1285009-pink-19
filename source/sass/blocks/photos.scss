@@ -8,8 +8,6 @@
 
 .photos__item {
   margin-bottom: 20px;
-  padding-right: $gap-mobile;
-  padding-left: $gap-mobile;
   line-height: 0;
   box-sizing: border-box;
 }
@@ -19,7 +17,6 @@
   padding: 0;
   line-height: 0;
   box-sizing: border-box;
-  overflow: hidden;
 
   &::before {
     content: "Панорама дня";
@@ -61,7 +58,7 @@
 .photos__image--panorama {
   position: relative;
   left: 50%;
-  width: auto;
+  width: 100%;
   height: auto;
   transform: translateX(-50%);
 }
@@ -71,11 +68,6 @@
   padding: 18px 10px 10px 18px;
   background-color: $grey-light;
   line-height: 24px;
-}
-
-.photos__wrapper--panorama {
-  margin-right: $gap-mobile;
-  margin-left: $gap-mobile;
 }
 
 .photos__title {
@@ -98,37 +90,26 @@
 }
 
 .photos__rates {
-  margin: 0;
-  padding: 9px 0;
-}
-
-.photos__rates-toggle {
-  display: none;
-}
-
-.photos__rates-value {
-  position: relative;
-  margin: 10px 0 9px;
+  display: flex;
+  margin: 14px 0;
   padding: 0;
-  padding-left: 31px;
   font-size: 12px;
   color: $pink;
   text-transform: uppercase;
+  background-color: transparent;
+  border: none;
 
   &::before {
     content: "";
-    position: absolute;
-    bottom: 50%;
-    left: 0;
     width: 13px;
     height: 12px;
+    margin-right: 17px;
     background-image: url("../img/icon-heart.svg");
     background-repeat: no-repeat;
-    transform: translateY(50%);
   }
 }
 
-.photos__rates-toggle:checked + .photos__rates-value {
+.photos__rates--active {
   &::before {
     background-image: url("../img/icon-heart-active.svg");
   }
@@ -139,7 +120,7 @@
     display: flex;
     flex-wrap: wrap;
     padding-top: 32px;
-    padding-left: $gap-table;
+    justify-content: space-between;
   }
 
   .photos__item {
@@ -148,7 +129,6 @@
     flex-basis: 300px;
     min-height: 455px;
     height: 100%;
-    margin-right: $gap-table;
     padding: 0;
   }
 
@@ -189,33 +169,24 @@
   }
 
   .photos__rates {
-    margin: 0;
-    padding: 0;
-  }
-
-  .photos__rates-value {
-    display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     margin: 0;
+    margin-bottom: 5px;
     padding: 0;
 
     &::before {
-      bottom: auto;
-      right: 0;
-      left: auto;
+      margin: 0;
+      padding: 0;
     }
   }
 
-  .photos__rates-value--panorama {
-    position: relative;
+  .photos__rates--panorama {
     margin: 0;
     padding: 0;
-    padding-right: 29px;
 
     &::before {
-      bottom: auto;
-      right: 0;
-      left: auto;
+      margin-left: 15px;
     }
   }
 }
@@ -229,9 +200,7 @@
   .photos__item {
     min-height: 555px;
     margin-top: 22px;
-    margin-right: $gap-desktop;
     margin-bottom: 32px;
-    margin-left: $gap-desktop;
     padding: 0;
     box-sizing: border-box;
     font-size: 14px;
@@ -243,13 +212,8 @@
     padding: 0;
 
     &::before {
-      top: 55px;
-      right: 11px;
+      top: 53px;
+      right: 130px;
     }
-  }
-
-  .photos__wrapper--panorama {
-    margin-right: $gap-desktop;
-    margin-left: $gap-desktop;
   }
 }

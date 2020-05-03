@@ -21,8 +21,12 @@ $link-color: $pink;
 $link-color--hover: $black;
 
 /* project size of devices*/
+$mobile-width: 320px;
 $tablet-width: 660px;
 $desktop-width: 960px;
 $gap-mobile: 20px;
+$gap-tablet: 20px;
 $gap-table: 20px;
 $gap-desktop: 10px;
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

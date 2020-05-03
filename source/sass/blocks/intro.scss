@@ -9,9 +9,7 @@
 .intro__wrapper {
   margin: 0;
   padding-top: 28px;
-  padding-right: $gap-mobile;
   padding-bottom: 17px;
-  padding-left: $gap-mobile;
   background-color: $blue-darkest;
 }
 
@@ -23,15 +21,6 @@
   .intro__wrapper {
     margin: 0;
     padding: 0;
-    padding-right: $gap-table;
-    padding-left: $gap-table;
     background-color: transparent;
-  }
-}
-
-@media (min-width: $desktop-width) {
-  .intro__wrapper {
-    padding-right: $gap-desktop;
-    padding-left: $gap-desktop;
   }
 }
