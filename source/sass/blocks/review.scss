@@ -46,6 +46,7 @@
     margin-bottom: 36px;
     padding: 0;
     font-size: 18px;
+    max-width: $tablet-width;
   }
 }
 
@@ -57,5 +58,9 @@
 
   .review__author-info {
     font-size: 18px;
+  }
+
+  .review__text {
+    max-width: $tablet-width + 30px;
   }
 }
