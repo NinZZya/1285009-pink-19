@@ -29,7 +29,7 @@
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
     "test": "npm run editorconfig && npm run stylelint",
-    "build": "gulp clean && gulp sprite && gulp build",
+    "build": "gulp clean && gulp sprite && gulp build && gulp clean:sprite",
     "start": "npm run build && gulp server"
   },
   "browserslist": [

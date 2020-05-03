@@ -54,7 +54,7 @@ var path = {
   },
   clean: {
     build: "build",
-    sprite: "source/img/spite.svg",
+    sprite: "source/img/sprite.svg",
   }
 };
 
@@ -113,7 +113,6 @@ gulp.task("clean", function (done) {
 });
 
 gulp.task("sprite", function(done) {
-  del(path.clean.sprite);
   gulp.src(path.src.sprite)
     .pipe(plumber())
     .pipe(svgstore({
@@ -122,6 +121,11 @@ gulp.task("sprite", function(done) {
     .pipe(rename("sprite.svg"))
     .pipe(gulp.dest(path.build.sprite))
     .pipe(server.stream());
+  done();
+});
+
+gulp.task("clean:sprite", function(done) {
+  del(path.clean.sprite);
   done();
 });
 
