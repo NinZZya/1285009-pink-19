@@ -1,4 +1,4 @@
-//---------- MENU BEGIN ----------//
+//---------- MENU ----------//
 const menuConfig = {
   container: {
     class: {
@@ -41,10 +41,8 @@ if (menuItem && menuBtn) {
   });
 }
 
-//---------- MENU END ----------//
 
-
-//---------- SLIDER BEGIN ----------//
+//---------- SLIDER ----------//
 let sliderConfig = {
   container: {
     id: "#slider"
@@ -93,46 +91,44 @@ if (sliderContainer) {
       sliderToggles[sliderConfig.index.next].classList.add(sliderConfig.btn.name.active);
   }
 
-  toggleElement(sliderContainer, sliderConfig);
-    const sliderList = sliderContainer.querySelectorAll(sliderConfig.item.class.item);
-    const sliderController = sliderContainer.querySelector(sliderConfig.controls.class.item);
-    const sliderToggles = Array.prototype.slice.call(sliderController.children);
-    //Click toggle
-    sliderController.addEventListener("click", function(evt) {
-      sliderConfig.index.next = sliderToggles.indexOf(evt.target);
-      if (sliderConfig.index.next != -1) {
-        const sliderToggleActive = sliderContainer.querySelector(sliderConfig.btn.class.active);
-        sliderConfig.index.current = sliderToggles.indexOf(sliderToggleActive);
+  const sliderList = sliderContainer.querySelectorAll(sliderConfig.item.class.item);
+  const sliderController = sliderContainer.querySelector(sliderConfig.controls.class.item);
+  const sliderToggles = Array.prototype.slice.call(sliderController.children);
+  //Click toggle
+  sliderController.addEventListener("click", function (evt) {
+    sliderConfig.index.next = sliderToggles.indexOf(evt.target);
+    if (sliderConfig.index.next != -1) {
+      const sliderToggleActive = sliderContainer.querySelector(sliderConfig.btn.class.active);
+      sliderConfig.index.current = sliderToggles.indexOf(sliderToggleActive);
+      changeSlide(sliderList, sliderToggles, sliderConfig);
+    }
+  });
+  //Click arrow buttons
+  sliderContainer.addEventListener("click", function (evt) {
+    if (evt.target.classList.contains(sliderConfig.btn.left.name)) {
+      const sliderSlideActive = sliderContainer.querySelector(sliderConfig.item.class.active);
+      sliderConfig.index.current = Array.prototype.slice.call(sliderList).indexOf(sliderSlideActive);
+
+      if (sliderConfig.index.current > 0) {
+        sliderConfig.index.next = sliderConfig.index.current - 1;
         changeSlide(sliderList, sliderToggles, sliderConfig);
       }
-    });
-    //Click arrow buttons
-    sliderContainer.addEventListener("click", function(evt) {
-      if (evt.target.classList.contains(sliderConfig.btn.left.name)) {
-        const sliderSlideActive = sliderContainer.querySelector(sliderConfig.item.class.active);
-        sliderConfig.index.current = Array.prototype.slice.call(sliderList).indexOf(sliderSlideActive);
+    }
 
-        if (sliderConfig.index.current > 0) {
-          sliderConfig.index.next = sliderConfig.index.current - 1;
-          changeSlide(sliderList, sliderToggles, sliderConfig);
-        }
+    if (evt.target.classList.contains(sliderConfig.btn.right.name)) {
+      const sliderSlideActive = sliderContainer.querySelector(sliderConfig.item.class.active);
+      sliderConfig.index.current = Array.prototype.slice.call(sliderList).indexOf(sliderSlideActive);
+
+      if (sliderConfig.index.current < sliderList.length - 1) {
+        sliderConfig.index.next = sliderConfig.index.current + 1;
+        changeSlide(sliderList, sliderToggles, sliderConfig);
       }
-
-      if(evt.target.classList.contains(sliderConfig.btn.right.name)) {
-        const sliderSlideActive = sliderContainer.querySelector(sliderConfig.item.class.active);
-        sliderConfig.index.current = Array.prototype.slice.call(sliderList).indexOf(sliderSlideActive);
-
-        if (sliderConfig.index.current < sliderList.length - 1) {
-          sliderConfig.index.next = sliderConfig.index.current + 1;
-          changeSlide(sliderList, sliderToggles, sliderConfig);
-        }
-      }
-    });
+    }
+  });
 }
-//---------- SLIDER END ----------//
 
 
-//---------- PRICES BEGIN ----------//
+//---------- PRICES ----------//
 const pricesConfig = {
   container: {
     id: "#prices"
@@ -183,10 +179,9 @@ if (pricesContainer) {
     }
   });
 }
-//---------- PRICES END ----------//
 
 
-//---------- LIKE BEGIN ----------//
+//---------- LIKE ----------//
 const likeConfig = {
   container: {
     id: "#photos"
@@ -219,10 +214,9 @@ if (likeContainer) {
     }
   });
 }
-//---------- LIKE END ----------//
 
 
-//---------- APP SHOW RANGE BEGIN ----------//
+//---------- APP SHOW RANGE ----------//
 let appEffectConfig = {
   container: {
     id: "#application-controls"
@@ -278,8 +272,7 @@ if (appEffectContainer) {
 }
 
 
-//---------- APP APP SHOW RANGE END ----------//
-
+//---------- APP MOVE RANGE ----------//
 const appCropConfig = {
   range: "#range-crop",
   toggle: "#toggle-crop",
@@ -311,9 +304,12 @@ function moveToggleRange(appElementConfig) {
   const toggleElememt = document.querySelector(appElementConfig.toggle);
   const valueElememt = document.querySelector(appElementConfig.value);
   if (rangeElement) {
-    let maxValue = parseInt(window.getComputedStyle(rangeElement).getPropertyValue("width"), 10);
     rangeElement.onmousedown = function(evt) {
-      let calcValue = Math.round(evt.offsetX / maxValue * 100);
+      let calcValue = evt.offsetX;
+      if (appElementConfig.unit.indexOf("%") != -1) {
+        let maxValue = parseInt(window.getComputedStyle(rangeElement).getPropertyValue("width"), 10);
+        calcValue = Math.round(evt.offsetX / maxValue * 100);
+      }
       toggleElememt.style.left = String(calcValue) + appElementConfig.unit;
       valueElememt.value = calcValue;
     }
@@ -344,7 +340,8 @@ if (btnAppReset) {
   })
 }
 
-//---------- CONTEST BEGIN ----------//
+
+//---------- CONTEST FORM ----------//
 const userSurnameRegExp = /^[A-Za-zА-Яа-яЁё]*\s*$/;
 const userNameRegExp = /^[A-Za-zА-Яа-яЁё]*\s*$/;
 const userEmailRegExp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -354,7 +351,10 @@ const formContest = document.querySelector(".contest");
 if (formContest) {
   const userSurname = formContest.querySelector("#contest__user-surname");
   const userName = formContest.querySelector("#contest__user-name");
+  const userSecondname = formContest.querySelector("#contest__user-secondname");
   const userEmail = formContest.querySelector("#contest__contacts-email");
+  const userTel = formContest.querySelector("#contest__contacts-tel");
+  const userComment = formContest.querySelector("#contest__comment-text");
   const btnContestSubmit = formContest.querySelector("#btn-submit-contest");
 
   const modalMessage = formContest.querySelector(".contest__modal-message");
@@ -394,6 +394,12 @@ if (formContest) {
 
       if (validationForm) {
         modalMessage.classList.add("modal--active");
+        userSurname.value = "";
+        userName.value = "";
+        userSecondname.value = "";
+        userEmail.value = "";
+        userTel.value = "";
+        userComment.value = "";
       } else {
         modalError.classList.add("modal--active");
       }
@@ -412,4 +418,3 @@ if (formContest) {
     })
   }
 }
-//---------- CONTESTR END ----------//

@@ -7,7 +7,7 @@
 }
 
 .photos__item {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   line-height: 0;
   box-sizing: border-box;
 }
@@ -129,16 +129,22 @@
     flex-basis: 300px;
     min-height: 455px;
     height: 100%;
+    margin-bottom: 20px;
     padding: 0;
   }
 
   .photos__item--panorama {
     width: 100%;
+    overflow-x: hidden;
 
     &::before {
       top: 57px;
       right: 20px;
     }
+  }
+
+  .photos__image--panorama {
+    min-width: 700px;
   }
 
   .photos__wrapper {
@@ -208,7 +214,8 @@
 
   .photos__item--panorama {
     width: 100%;
-    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0;
 
     &::before {
