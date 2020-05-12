@@ -50,7 +50,8 @@ var path = {
     build: "source/img/bld/",
     jpg: "source/img/bld/**/*.{jpeg,jpg,JPG,JPEG}",
     png: "source/img/bld/**/*.{png,PNG}",
-    svg: "source/img/bld/**/*.{svg,SVG}"
+    svg: "source/img/bld/**/*.{svg,SVG}",
+    webp: "source/img/bld/**/*.{webp,WEBP}"
   },
   clean: {
     build: "build",
@@ -98,11 +99,19 @@ gulp.task("copy:png", function(done) {
     done();
 });
 
+gulp.task("copy:webp", function(done) {
+  gulp.src(path.img.webp)
+    .pipe(gulp.dest(path.build.img))
+    .pipe(server.stream());
+    done();
+});
+
 gulp.task("img", function(done) {
   runSequence(
     "copy:svg",
     "copy:png",
     "copy:jpg",
+    "copy:webp",
     done
   );
 });
